@@ -8,12 +8,8 @@
       d:DesignHeight="600" d:DesignWidth="1000"
       Title="CleintMaintenance"     Style="{StaticResource WinAll}"  Height="620" Width="1100"  Background="LightBlue"  
      >
-
-    <Page.Resources>
-
-      
-
-    </Page.Resources>
+ 
+    
     <Grid Margin="10" >
 
         <Grid.ColumnDefinitions>
