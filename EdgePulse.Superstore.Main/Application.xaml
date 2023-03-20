@@ -4,9 +4,12 @@
              xmlns:local="clr-namespace:RetailEdge.Superstore.Main"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <Style x:Key="WinAll" TargetType="{x:Type Page}">
-            <Setter Property="FontFamily" Value="Arial" />
-            <Setter Property="FontSize"  Value="16" />
-        </Style>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml"/>
+
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -37,3 +37,4 @@ C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\bin\Debug
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\View\CleintMaintenance.baml
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\RetailEdge.SuperstoreBuild.Main.vbproj.CopyComplete
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\Application.baml
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\Resources\Styles\Styles.baml
