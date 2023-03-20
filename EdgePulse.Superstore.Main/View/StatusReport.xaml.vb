@@ -1,0 +1,3 @@
+﻿Class StatusReport
+
+End Class

@@ -1,0 +1,3 @@
+﻿Class KPIReport
+
+End Class

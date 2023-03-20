@@ -1,0 +1,140 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0-windows7.0": {
+      "EdgePulse.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/EdgePulse.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EdgePulse.Business.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "EdgePulse.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/EdgePulse.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EdgePulse.Entities.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "EdgePulse.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/EdgePulse.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EdgePulse.Infrastructure.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      }
+    }
+  },
+  "libraries": {
+    "EdgePulse.Business/1.0.0": {
+      "type": "project",
+      "path": "../EdgePulse.Business/EdgePulse.Business.vbproj",
+      "msbuildProject": "../EdgePulse.Business/EdgePulse.Business.vbproj"
+    },
+    "EdgePulse.Entities/1.0.0": {
+      "type": "project",
+      "path": "../EdgePulse.Entities/EdgePulse.Entities.vbproj",
+      "msbuildProject": "../EdgePulse.Entities/EdgePulse.Entities.vbproj"
+    },
+    "EdgePulse.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../EdgePulse.Infrastructure/EdgePulse.Infrastructure.vbproj",
+      "msbuildProject": "../EdgePulse.Infrastructure/EdgePulse.Infrastructure.vbproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0-windows7.0": [
+      "EdgePulse.Business >= 1.0.0",
+      "EdgePulse.Entities >= 1.0.0",
+      "EdgePulse.Infrastructure >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Sds\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.ClientManagment.Main\\RetailEdge.ClientManagement.Main.vbproj",
+      "projectName": "RetailEdge.ClientManagement.Main",
+      "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.ClientManagment.Main\\RetailEdge.ClientManagement.Main.vbproj",
+      "packagesPath": "C:\\Users\\Sds\\.nuget\\packages\\",
+      "outputPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.ClientManagment.Main\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Sds\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0-windows7.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "projectReferences": {
+            "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Business\\EdgePulse.Business.vbproj": {
+              "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Business\\EdgePulse.Business.vbproj"
+            },
+            "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Entities\\EdgePulse.Entities.vbproj": {
+              "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Entities\\EdgePulse.Entities.vbproj"
+            },
+            "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Infrastructure\\EdgePulse.Infrastructure.vbproj": {
+              "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Infrastructure\\EdgePulse.Infrastructure.vbproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0-windows7.0": {
+        "targetAlias": "net6.0-windows",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
