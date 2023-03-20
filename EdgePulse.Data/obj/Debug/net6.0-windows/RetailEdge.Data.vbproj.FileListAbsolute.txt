@@ -1,0 +1,15 @@
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\bin\Debug\net6.0-windows\RetailEdge.Data.deps.json
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\bin\Debug\net6.0-windows\RetailEdge.Data.dll
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\bin\Debug\net6.0-windows\RetailEdge.Data.pdb
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\bin\Debug\net6.0-windows\RetailEdge.Business.dll
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\bin\Debug\net6.0-windows\RetailEdge.Business.pdb
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\obj\Debug\net6.0-windows\RetailEdge.Data.vbproj.AssemblyReference.cache
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\obj\Debug\net6.0-windows\RetailEdge.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\obj\Debug\net6.0-windows\RetailEdge.Data.AssemblyInfoInputs.cache
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\obj\Debug\net6.0-windows\RetailEdge.Data.AssemblyInfo.vb
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\obj\Debug\net6.0-windows\RetailEdge.Data.vbproj.CoreCompileInputs.cache
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\obj\Debug\net6.0-windows\RetailEdge.Data.vbproj.CopyComplete
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\obj\Debug\net6.0-windows\RetailEdge.Data.dll
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\obj\Debug\net6.0-windows\refint\RetailEdge.Data.dll
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\obj\Debug\net6.0-windows\RetailEdge.Data.pdb
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\obj\Debug\net6.0-windows\ref\RetailEdge.Data.dll

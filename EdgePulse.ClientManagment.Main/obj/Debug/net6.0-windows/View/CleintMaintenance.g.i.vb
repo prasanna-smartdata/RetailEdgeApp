@@ -56,7 +56,7 @@ Partial Public Class CleintMaintenance
             Return
         End If
         _contentLoaded = true
-        Dim resourceLocater As System.Uri = New System.Uri("/RetailEdge.ClientManagement.Main;component/view/cleintmaintenance.xaml", System.UriKind.Relative)
+        Dim resourceLocater As System.Uri = New System.Uri("/RetailEdge.ClientManagement.Main;V1.0.0.0;component/view/cleintmaintenance.xaml", System.UriKind.Relative)
         
         #ExternalSource("..\..\..\..\View\CleintMaintenance.xaml",1)
         System.Windows.Application.LoadComponent(Me, resourceLocater)

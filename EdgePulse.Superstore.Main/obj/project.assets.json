@@ -1,11 +1,93 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {}
+    "net6.0-windows7.0": {
+      "RetailEdge.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/RetailEdge.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RetailEdge.Business.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "RetailEdge.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "RetailEdge.Business": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RetailEdge.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RetailEdge.Data.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "RetailEdge.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/RetailEdge.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RetailEdge.Entities.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "RetailEdge.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/RetailEdge.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RetailEdge.Infrastructure.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "RetailEdge.Business/1.0.0": {
+      "type": "project",
+      "path": "../EdgePulse.Business/RetailEdge.Business.vbproj",
+      "msbuildProject": "../EdgePulse.Business/RetailEdge.Business.vbproj"
+    },
+    "RetailEdge.Data/1.0.0": {
+      "type": "project",
+      "path": "../EdgePulse.Data/RetailEdge.Data.vbproj",
+      "msbuildProject": "../EdgePulse.Data/RetailEdge.Data.vbproj"
+    },
+    "RetailEdge.Entities/1.0.0": {
+      "type": "project",
+      "path": "../EdgePulse.Entities/RetailEdge.Entities.vbproj",
+      "msbuildProject": "../EdgePulse.Entities/RetailEdge.Entities.vbproj"
+    },
+    "RetailEdge.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../EdgePulse.Infrastructure/RetailEdge.Infrastructure.vbproj",
+      "msbuildProject": "../EdgePulse.Infrastructure/RetailEdge.Infrastructure.vbproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0-windows7.0": []
+    "net6.0-windows7.0": [
+      "RetailEdge.Business >= 1.0.0",
+      "RetailEdge.Data >= 1.0.0",
+      "RetailEdge.Entities >= 1.0.0",
+      "RetailEdge.Infrastructure >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Sds\\.nuget\\packages\\": {}
@@ -33,7 +115,20 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Business\\RetailEdge.Business.vbproj": {
+              "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Business\\RetailEdge.Business.vbproj"
+            },
+            "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Data\\RetailEdge.Data.vbproj": {
+              "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Data\\RetailEdge.Data.vbproj"
+            },
+            "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Entities\\RetailEdge.Entities.vbproj": {
+              "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Entities\\RetailEdge.Entities.vbproj"
+            },
+            "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj": {
+              "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj"
+            }
+          }
         }
       },
       "warningProperties": {

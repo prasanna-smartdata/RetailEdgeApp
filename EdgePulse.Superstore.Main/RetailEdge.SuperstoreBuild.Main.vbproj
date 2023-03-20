@@ -21,6 +21,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EdgePulse.Business\RetailEdge.Business.vbproj" />
+    <ProjectReference Include="..\EdgePulse.Data\RetailEdge.Data.vbproj" />
+    <ProjectReference Include="..\EdgePulse.Entities\RetailEdge.Entities.vbproj" />
+    <ProjectReference Include="..\EdgePulse.Infrastructure\RetailEdge.Infrastructure.vbproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="View\CleintMaintenance.xaml.vb">
       <SubType>Code</SubType>
     </Compile>

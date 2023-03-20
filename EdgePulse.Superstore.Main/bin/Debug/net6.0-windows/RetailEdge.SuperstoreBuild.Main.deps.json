@@ -7,14 +7,63 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "RetailEdge.SuperstoreBuild.Main/1.0.0": {
+        "dependencies": {
+          "RetailEdge.Business": "1.0.0",
+          "RetailEdge.Data": "1.0.0",
+          "RetailEdge.Entities": "1.0.0",
+          "RetailEdge.Infrastructure": "1.0.0"
+        },
         "runtime": {
           "RetailEdge.SuperstoreBuild.Main.dll": {}
+        }
+      },
+      "RetailEdge.Business/1.0.0": {
+        "runtime": {
+          "RetailEdge.Business.dll": {}
+        }
+      },
+      "RetailEdge.Data/1.0.0": {
+        "dependencies": {
+          "RetailEdge.Business": "1.0.0"
+        },
+        "runtime": {
+          "RetailEdge.Data.dll": {}
+        }
+      },
+      "RetailEdge.Entities/1.0.0": {
+        "runtime": {
+          "RetailEdge.Entities.dll": {}
+        }
+      },
+      "RetailEdge.Infrastructure/1.0.0": {
+        "runtime": {
+          "RetailEdge.Infrastructure.dll": {}
         }
       }
     }
   },
   "libraries": {
     "RetailEdge.SuperstoreBuild.Main/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RetailEdge.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RetailEdge.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RetailEdge.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RetailEdge.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -25,3 +25,15 @@ C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\RetailEdge.SuperstoreBuild.Main.pdb
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\RetailEdge.SuperstoreBuild.Main.genruntimeconfig.cache
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\ref\RetailEdge.SuperstoreBuild.Main.dll
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\View\CleintMaintenance.g.vb
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\bin\Debug\net6.0-windows\RetailEdge.Business.dll
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\bin\Debug\net6.0-windows\RetailEdge.Data.dll
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\bin\Debug\net6.0-windows\RetailEdge.Entities.dll
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\bin\Debug\net6.0-windows\RetailEdge.Infrastructure.dll
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\bin\Debug\net6.0-windows\RetailEdge.Business.pdb
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\bin\Debug\net6.0-windows\RetailEdge.Data.pdb
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\bin\Debug\net6.0-windows\RetailEdge.Entities.pdb
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\bin\Debug\net6.0-windows\RetailEdge.Infrastructure.pdb
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\View\CleintMaintenance.baml
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\RetailEdge.SuperstoreBuild.Main.vbproj.CopyComplete
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\Application.baml
