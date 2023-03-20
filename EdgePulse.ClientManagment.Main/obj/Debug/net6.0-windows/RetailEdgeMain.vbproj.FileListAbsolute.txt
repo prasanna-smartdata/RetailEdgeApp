@@ -1,6 +1,0 @@
-C:\smartdata\RetailAge\RetailEdgeMain\obj\Debug\net6.0-windows\RetailEdgeMain.vbproj.AssemblyReference.cache
-C:\smartdata\RetailAge\RetailEdgeMain\obj\Debug\net6.0-windows\MainWindow.g.vb
-C:\smartdata\RetailAge\RetailEdgeMain\obj\Debug\net6.0-windows\View\CleintMaintenance.g.vb
-C:\smartdata\RetailAge\RetailEdgeMain\obj\Debug\net6.0-windows\Application.g.vb
-C:\smartdata\RetailAge\RetailEdgeMain\obj\Debug\net6.0-windows\RetailEdgeMain_MarkupCompile.cache
-C:\smartdata\RetailAge\RetailEdgeMain\obj\Debug\net6.0-windows\RetailEdgeMain_MarkupCompile.lref
