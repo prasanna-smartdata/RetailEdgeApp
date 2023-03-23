@@ -5,9 +5,59 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RetailEdge.Superstore.Main"
         mc:Ignorable="d"
-        Title="MainWindow"  Height="650" Width="1100" WindowStartupLocation="CenterScreen" Background="LightBlue" ResizeMode="NoResize"
-        WindowStyle="SingleBorderWindow" FontFamily="Arial" FontSize="13">
+        Title="MainWindow"  Height="750" Width="1100" WindowStartupLocation="CenterScreen" Background="LightBlue" ResizeMode="NoResize"
+        WindowStyle="None" FontFamily="Arial" FontSize="13">
     <Grid>
-<Frame x:Name="mainWin"/>
+
+        <DockPanel Background="#FF726868"    VerticalAlignment="Top"    Height="40">
+            <Label Content="SUPER STORE PROCESSING " Width="400" Foreground="White"  HorizontalAlignment="Left" Margin="3" FontSize="24" />
+            <StackPanel  Width="350" HorizontalAlignment="Right" Orientation="Horizontal"   Margin="2" Height="38" >
+                <ItemsControl>
+
+                    <!-- target the wrapper parent of the child with a style -->
+                    <ItemsControl.ItemContainerStyle>
+                        <Style TargetType="Control">
+                            <Setter Property="Margin" Value="0 0 5 0"></Setter>
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+
+                    <!-- use a stack panel as the main container -->
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+
+                    <!-- put in your children -->
+                    <ItemsControl.Items>
+                        <Button   Width="100"  Content="Clients" FontSize="13" FontWeight="Bold"    >
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </Button.Resources>
+
+                        </Button>
+                        <Button Content="KPI Reports" Width="100" FontSize="13" FontWeight="Bold" >
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Button x:Name="btnExit" Content="Exit" Width="80" FontSize="13" FontWeight="Bold">
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </ItemsControl.Items>
+                </ItemsControl>
+            
+            </StackPanel>
+        </DockPanel>
+            <Frame x:Name="mainWin"  Margin="4,45"/>
+
     </Grid>
 </Window>

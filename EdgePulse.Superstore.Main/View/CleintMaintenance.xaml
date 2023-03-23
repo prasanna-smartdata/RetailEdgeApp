@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:RetailEdge.Superstore.Main"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="1000"
-      Title="CleintMaintenance"     Style="{StaticResource WinAll}"  Height="620" Width="1100"  Background="LightBlue"  
+      Title="CleintMaintenance"     Style="{StaticResource WinAll}"  Width="1100"  Background="LightBlue"  
      >
  
     
