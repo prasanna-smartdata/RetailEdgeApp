@@ -3,9 +3,8 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
-    <RootNamespace>RetailEdge.Superstore.Main</RootNamespace>
+    <RootNamespace>EdgePulse.ClientManagement</RootNamespace>
     <UseWPF>true</UseWPF>
-    <AssemblyName>RetailEdge.SuperstoreBuild.Main</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,14 +20,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EdgePulse.Business\RetailEdge.Business.vbproj" />
-    <ProjectReference Include="..\EdgePulse.Data\RetailEdge.Data.vbproj" />
-    <ProjectReference Include="..\EdgePulse.Entities\RetailEdge.Entities.vbproj" />
-    <ProjectReference Include="..\EdgePulse.Infrastructure\RetailEdge.Infrastructure.vbproj" />
+    <Folder Include="Resources\Images\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\Images\" />
+    <Page Update="Resources\Styles\Styles.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 
 </Project>

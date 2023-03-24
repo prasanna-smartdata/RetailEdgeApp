@@ -16,6 +16,7 @@ build/
 bld/
 [Bb]in/
 [Oo]bj/
+bin/Debug/net6.0-windows/
 
 # Roslyn cache directories
 *.ide/
