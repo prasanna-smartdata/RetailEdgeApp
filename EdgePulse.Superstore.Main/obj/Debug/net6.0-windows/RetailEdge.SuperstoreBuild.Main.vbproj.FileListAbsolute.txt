@@ -14,7 +14,6 @@ C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\bin\Debug
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\RetailEdge.SuperstoreBuild.Main.vbproj.AssemblyReference.cache
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\Resources\Styles\Styles.baml
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\MainWindow.g.vb
-C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\View\CleintMaintenance.g.vb
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\View\KPIReport.g.vb
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\View\ProcessForm.g.vb
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\View\StatusReport.g.vb
@@ -23,7 +22,6 @@ C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\RetailEdge.SuperstoreBuild.Main_MarkupCompile.lref
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\Application.baml
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\MainWindow.baml
-C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\View\CleintMaintenance.baml
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\View\KPIReport.baml
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\View\ProcessForm.baml
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\View\StatusReport.baml
@@ -38,3 +36,9 @@ C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\RetailEdge.SuperstoreBuild.Main.pdb
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\RetailEdge.SuperstoreBuild.Main.genruntimeconfig.cache
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\obj\Debug\net6.0-windows\ref\RetailEdge.SuperstoreBuild.Main.dll
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Superstore.Main\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

@@ -87,6 +87,12 @@
             "projectReferences": {
               "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Business\\RetailEdge.Business.vbproj": {
                 "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Business\\RetailEdge.Business.vbproj"
+              },
+              "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Entities\\RetailEdge.Entities.vbproj": {
+                "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Entities\\RetailEdge.Entities.vbproj"
+              },
+              "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj": {
+                "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj"
               }
             }
           }
@@ -100,6 +106,12 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -13,3 +13,7 @@ C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\obj\Debug\net6.0-win
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\obj\Debug\net6.0-windows\refint\RetailEdge.Data.dll
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\obj\Debug\net6.0-windows\RetailEdge.Data.pdb
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\obj\Debug\net6.0-windows\ref\RetailEdge.Data.dll
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\bin\Debug\net6.0-windows\RetailEdge.Entities.dll
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\bin\Debug\net6.0-windows\RetailEdge.Infrastructure.dll
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\bin\Debug\net6.0-windows\RetailEdge.Entities.pdb
+C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\bin\Debug\net6.0-windows\RetailEdge.Infrastructure.pdb
