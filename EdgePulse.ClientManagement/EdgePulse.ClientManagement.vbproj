@@ -24,6 +24,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EdgePulse.Entities\RetailEdge.Entities.vbproj" />
+    <ProjectReference Include="..\EdgePulse.Infrastructure\RetailEdge.Infrastructure.vbproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Page Update="Resources\Styles\Styles.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>

@@ -16,8 +16,10 @@ build/
 bld/
 [Bb]in/
 [Oo]bj/
-.vs
-**/bin/*
+.vs/
+EdgePulse.Data/bin/Debug/
+EdgePulse.Data/obj/Debug/
+ 
 
 # Roslyn cache directories
 *.ide/
