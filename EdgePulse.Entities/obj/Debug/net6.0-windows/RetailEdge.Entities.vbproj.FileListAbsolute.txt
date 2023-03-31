@@ -10,3 +10,15 @@ C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Entities\obj\Debug\net6.0
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Entities\obj\Debug\net6.0-windows\refint\RetailEdge.Entities.dll
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Entities\obj\Debug\net6.0-windows\RetailEdge.Entities.pdb
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Entities\obj\Debug\net6.0-windows\ref\RetailEdge.Entities.dll
+C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Entities\bin\Debug\net6.0-windows\RetailEdge.Entities.deps.json
+C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Entities\bin\Debug\net6.0-windows\RetailEdge.Entities.dll
+C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Entities\bin\Debug\net6.0-windows\RetailEdge.Entities.pdb
+C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Entities\obj\Debug\net6.0-windows\RetailEdge.Entities.vbproj.AssemblyReference.cache
+C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Entities\obj\Debug\net6.0-windows\RetailEdge.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Entities\obj\Debug\net6.0-windows\RetailEdge.Entities.AssemblyInfoInputs.cache
+C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Entities\obj\Debug\net6.0-windows\RetailEdge.Entities.AssemblyInfo.vb
+C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Entities\obj\Debug\net6.0-windows\RetailEdge.Entities.vbproj.CoreCompileInputs.cache
+C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Entities\obj\Debug\net6.0-windows\RetailEdge.Entities.dll
+C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Entities\obj\Debug\net6.0-windows\refint\RetailEdge.Entities.dll
+C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Entities\obj\Debug\net6.0-windows\RetailEdge.Entities.pdb
+C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Entities\obj\Debug\net6.0-windows\ref\RetailEdge.Entities.dll

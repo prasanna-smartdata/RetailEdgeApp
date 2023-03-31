@@ -12,59 +12,59 @@
 
         <Grid Margin="10" >
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150"  ></ColumnDefinition>
-            <ColumnDefinition Width="300" ></ColumnDefinition>
-            <ColumnDefinition Width="220" ></ColumnDefinition>
-            <ColumnDefinition Width="320" ></ColumnDefinition>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"  ></ColumnDefinition>
+                <ColumnDefinition Width="300" ></ColumnDefinition>
+                <ColumnDefinition Width="220" ></ColumnDefinition>
+                <ColumnDefinition Width="320" ></ColumnDefinition>
 
-            <ColumnDefinition Width="*" ></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="40"></RowDefinition>
+                <ColumnDefinition Width="*" ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
 
-            <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="150"></RowDefinition>
-            <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="150"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
 
-        </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal"  Grid.Column="0" Grid.Row="0" Margin="2"   Grid.ColumnSpan="4" >
-            <Label Content="Select Clients"  />
-            <ComboBox x:Name="selectClients"      Height="40" IsTextSearchEnabled="True" TextSearch.TextPath="clientNumber"  Margin="50,0,0,0"   Width="400"   HorizontalAlignment="Left"  
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal"  Grid.Column="0" Grid.Row="0" Margin="2"   Grid.ColumnSpan="4" >
+                <Label Content="Select Clients"  />
+                <ComboBox x:Name="selectClients"      Height="40" IsTextSearchEnabled="True" TextSearch.TextPath="clientNumber"  Margin="50,0,0,0"   Width="400"   HorizontalAlignment="Left"  
                       VerticalAlignment="Center"  >
-                <ComboBox.ItemTemplate>
+                    <ComboBox.ItemTemplate>
 
-                    <DataTemplate>
+                        <DataTemplate>
 
-                        <TextBlock  
+                            <TextBlock  
 
                          
                           Tag="{RelativeSource FindAncestor, AncestorType={x:Type ComboBox}}"
 
                         >
 
-                            <TextBlock.Text>
-                                <MultiBinding StringFormat="{}{0} ---- {1}">
-                                    <Binding Path="clientNumber"/>
-                                    <Binding Path="clientName"/>
-                                </MultiBinding>
-                            </TextBlock.Text>
-                        </TextBlock>
-                    </DataTemplate>
+                                <TextBlock.Text>
+                                    <MultiBinding StringFormat="{}{0} ---- {1}">
+                                        <Binding Path="clientNumber"/>
+                                        <Binding Path="clientName"/>
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
 
-                </ComboBox.ItemTemplate>
+                    </ComboBox.ItemTemplate>
 
-            </ComboBox>
-            <Label Content=" Fake Client"  />
-            <CheckBox Margin="30,0,0,0" ></CheckBox>
-        </StackPanel>
-        <Label Content="Superstores" Grid.Row="1" Grid.Column="0"  />
+                </ComboBox>
+                <Label Content=" Fake Client"  />
+                <CheckBox Margin="30,0,0,0" ></CheckBox>
+            </StackPanel>
+            <!-- <Label Content="Superstores" Grid.Row="1" Grid.Column="0" invi  />
         <ComboBox  x:Name="superStores"  Height="40"  Grid.Column="1" Grid.Row="1"   Grid.ColumnSpan="4" Width="400"   VerticalAlignment="Center"  HorizontalAlignment="Left" >
             <ComboBox.ItemTemplate>
 
@@ -77,136 +77,136 @@
                 </DataTemplate>
 
             </ComboBox.ItemTemplate>
-        </ComboBox>
+        </ComboBox>-->
+            <Button Grid.Column="3" Content="Manage Super Stores"  FontSize="16"   Background="#3B71CA" BorderBrush="#FFFFFFFF" Foreground="#FFFFFFFF"  Padding="10" HorizontalAlignment="Left" Margin="90,2,0,38" Grid.RowSpan="2" Width="220"   />
+            <!--Row 2-->
+            <Label Grid.Row="2" Grid.Column="0" Content="Client Name" />
+            <TextBox  Grid.Row="2" Grid.Column="1" />
+            <Label Grid.Column="2" Content="Email Address"  Grid.Row="2"  Margin="100,0,0,0"/>
+            <TextBox Grid.Row="2" Grid.Column="3" />
 
-        <!--Row 2-->
-        <Label Grid.Row="2" Grid.Column="0" Content="Client Name" />
-        <TextBox  Grid.Row="2" Grid.Column="1" />
-        <Label Grid.Column="2" Content="Email Address"  Grid.Row="2"  Margin="100,0,0,0"/>
-        <TextBox Grid.Row="2" Grid.Column="3" />
+            <!-- Row 3-->
+            <Label Grid.Row="3" Grid.Column="0" Content="Comment" />
+            <TextBox  Grid.Row="3" Grid.Column="1"  />
+            <Label Grid.Row="3" Grid.Column="2" Content="# of Sites"  Margin="100,0,0,0"   />
+            <TextBox Grid.Row="3" Grid.Column="3" Width="50"  HorizontalAlignment="Left"    />
 
-        <!-- Row 3-->
-        <Label Grid.Row="3" Grid.Column="0" Content="Comment" />
-        <TextBox  Grid.Row="3" Grid.Column="1"  />
-        <Label Grid.Row="3" Grid.Column="2" Content="# of Sites"  Margin="100,0,0,0"   />
-        <TextBox Grid.Row="3" Grid.Column="3" Width="50"  HorizontalAlignment="Left"    />
+            <!--Row 4-->
+            <Label Grid.Row="4" Grid.Column="0" Content="A/C Manager"   />
+            <ComboBox Grid.Row="4" Grid.Column="1" >
+                <ComboBoxItem Content="None"/>
+            </ComboBox>
 
-        <!--Row 4-->
-        <Label Grid.Row="4" Grid.Column="0" Content="A/C Manager"   />
-        <ComboBox Grid.Row="4" Grid.Column="1" >
-            <ComboBoxItem Content="None"/>
-        </ComboBox>
+            <!-- Row 5-->
+            <Label Grid.Row="5" Grid.Column="0" Content="Proactive Call - Date"   />
 
-        <!-- Row 5-->
-        <Label Grid.Row="5" Grid.Column="0" Content="Proactive Call - Date"   />
+            <DatePicker Grid.Column="1" HorizontalAlignment="Left"   Grid.Row="5" Height="30" VerticalAlignment="Center"/>
+            <Label Grid.Row="5" Grid.Column="2"   Margin="100,0,0,0"  >
+                <Label.Content>
+                    <AccessText TextWrapping="Wrap"  Text="Proactive Call - Comment"/>
+                </Label.Content>
+            </Label>
 
-        <DatePicker Grid.Column="1" HorizontalAlignment="Left"   Grid.Row="5" Height="30" VerticalAlignment="Center"/>
-        <Label Grid.Row="5" Grid.Column="2"   Margin="100,0,0,0"  >
-            <Label.Content>
-                <AccessText TextWrapping="Wrap"  Text="Proactive Call - Comment"/>
-            </Label.Content>
-        </Label>
+            <TextBox Grid.Row="5" Grid.Column="3" ></TextBox>
+            <!--Row 6-->
 
-        <TextBox Grid.Row="5" Grid.Column="3" ></TextBox>
-        <!--Row 6-->
+            <Label Grid.Row="6" Grid.Column="0" Content="REC/ERA Email"   />
+            <TextBox Grid.Row="6" Grid.Column="1" />
+            <Label Grid.Row="6" Grid.Column="2" Content="Buying Group"   Margin="100,0,0,0"/>
+            <ComboBox Grid.Row="6" Grid.Column="3" Margin="2,2,2,2"     >
+                <ComboBoxItem Content="None"/>
+                <ComboBoxItem Content="Gemtime"/>
+                <ComboBoxItem Content="ShowCase"/>
+                <ComboBoxItem Content="USAClient"/>
+                <ComboBoxItem Content="Nationalwide"/>
+            </ComboBox>
 
-        <Label Grid.Row="6" Grid.Column="0" Content="REC/ERA Email"   />
-        <TextBox Grid.Row="6" Grid.Column="1" />
-        <Label Grid.Row="6" Grid.Column="2" Content="Buying Group"   Margin="100,0,0,0"/>
-        <ComboBox Grid.Row="6" Grid.Column="3" Margin="2,2,2,2"     >
-            <ComboBoxItem Content="None"/>
-            <ComboBoxItem Content="Gemtime"/>
-            <ComboBoxItem Content="ShowCase"/>
-            <ComboBoxItem Content="USAClient"/>
-            <ComboBoxItem Content="Nationalwide"/>
-        </ComboBox>
+            <!--Row 7-->
+            <Label Grid.Row="4" Grid.Column="2" Content="Path" Margin="100,0,0,0"  ></Label>
+            <TextBox Grid.Row="4" Grid.Column="3"    />
 
-        <!--Row 7-->
-        <Label Grid.Row="4" Grid.Column="2" Content="Path" Margin="100,0,0,0"  ></Label>
-        <TextBox Grid.Row="4" Grid.Column="3"    />
-
-        <!--Row 8-->
-        <Grid Grid.ColumnSpan="4" Grid.Row="8" Grid.Column="0"  HorizontalAlignment="Left" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="145"></ColumnDefinition>
-                <ColumnDefinition Width="80"></ColumnDefinition>
-                <ColumnDefinition  Width="145"></ColumnDefinition>
-                <ColumnDefinition  Width="80"></ColumnDefinition>
-                <ColumnDefinition  Width="145"></ColumnDefinition>
-                <ColumnDefinition  Width="80"></ColumnDefinition>
-                <ColumnDefinition  Width="145"></ColumnDefinition>
-                <ColumnDefinition  Width="150"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-
-
-
-            </Grid.RowDefinitions>
-            <Label  Grid.Row="0" Grid.Column="0" Content="Active Client" ></Label>
-            <Label  Grid.Row="0" Grid.Column="2" Content="Use Edge s/w"   ></Label>
-            <CheckBox Grid.Row="0" Grid.Column="1"></CheckBox>
-            <CheckBox Grid.Row="0" Grid.Column="3"></CheckBox>
-            <Label Grid.Row="0" Grid.Column="4"  Content="Door Counter" ></Label>
-            <CheckBox Grid.Row="0" Grid.Column="5"  ></CheckBox>
-            <Label  Grid.Row="0" Grid.Column="6" Content="Mentoring Client" ></Label>
-            <CheckBox Grid.Row="0" Grid.Column="7"   ></CheckBox>
-            <!-- sub row 2-->
-            <Label  Grid.Row="1" Grid.Column="0" Content="Layaways on Pickup" ></Label>
-            <CheckBox Grid.Row="1" Grid.Column="1"   ></CheckBox>
-            <Label Grid.Row="1" Grid.Column="2"  Content="Macro Oked" ></Label>
-            <CheckBox Grid.Row="1" Grid.Column="3"  ></CheckBox>
-            <Label  Grid.Row="1" Grid.Column="4" Content="Supplier Web System"  ></Label>
-            <CheckBox Grid.Row="1" Grid.Column="5"   ></CheckBox>
-            <Label Grid.Row="1" Grid.Column="6"  Content="SQL Server HO" ></Label>
-            <CheckBox Grid.Row="1" Grid.Column="7"  ></CheckBox>
-            <Label  Grid.Row="2" Grid.Column="4" Content="Results"  ></Label>
-            <CheckBox Grid.Row="2" Grid.Column="5"   ></CheckBox>
-
-            <!-- sub row 3-->
-            <Label  Grid.Row="3" Grid.Column="2" Content="Edge Cfg HO Store #" ></Label>
-            <TextBox Grid.Row="3" Grid.Column="3"  Grid.ColumnSpan="2"  ></TextBox>
-            <Label Grid.Row="2" Grid.Column="2"  Content="KPI Lite" ></Label>
-            <CheckBox Grid.Row="2" Grid.Column="3"  ></CheckBox>
-
-            <Label  Grid.Row="2" Grid.Column="6" Content="EP S/Store allowed"  ></Label>
-            <CheckBox Grid.Row="2" Grid.Column="7"   ></CheckBox>
-            <Label  Grid.Row="2" Grid.Column="0" Content="Jewelsure" ></Label>
-            <CheckBox Grid.Row="2" Grid.Column="1"   ></CheckBox>
-
-            <!-- sub row 4-->
-
-            <Label Grid.Row="3" Grid.Column="0"  Content="Edge Pulse Enabled" ></Label>
-            <CheckBox Grid.Row="3" Grid.Column="1"  ></CheckBox>
-
-            <!-- sub row 5-->
-
-            <Label  Grid.Row="3" Grid.Column="6" Content="State"  ></Label>
-            <TextBox Grid.Row="3" Grid.Column="7"  Grid.ColumnSpan="2"  ></TextBox>
+            <!--Row 8-->
+            <Grid Grid.ColumnSpan="4" Grid.Row="8" Grid.Column="0"  HorizontalAlignment="Left" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="145"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                    <ColumnDefinition  Width="145"></ColumnDefinition>
+                    <ColumnDefinition  Width="80"></ColumnDefinition>
+                    <ColumnDefinition  Width="145"></ColumnDefinition>
+                    <ColumnDefinition  Width="80"></ColumnDefinition>
+                    <ColumnDefinition  Width="145"></ColumnDefinition>
+                    <ColumnDefinition  Width="150"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
 
 
-        </Grid>
 
-        <StackPanel Width="400" Grid.Column="1" Grid.Row="9"    Grid.ColumnSpan="3"  Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Center">
-            <Button  Content="Update" HorizontalAlignment="Left"    Template="{StaticResource SubmitButtonTemplate}"   Height="25" VerticalAlignment="Top"/>
+                </Grid.RowDefinitions>
+                <Label  Grid.Row="0" Grid.Column="0" Content="Active Client" ></Label>
+                <Label  Grid.Row="0" Grid.Column="2" Content="Use Edge s/w"   ></Label>
+                <CheckBox Grid.Row="0" Grid.Column="1"></CheckBox>
+                <CheckBox Grid.Row="0" Grid.Column="3"></CheckBox>
+                <Label Grid.Row="0" Grid.Column="4"  Content="Door Counter" ></Label>
+                <CheckBox Grid.Row="0" Grid.Column="5"  ></CheckBox>
+                <Label  Grid.Row="0" Grid.Column="6" Content="Mentoring Client" ></Label>
+                <CheckBox Grid.Row="0" Grid.Column="7"   ></CheckBox>
+                <!-- sub row 2-->
+                <Label  Grid.Row="1" Grid.Column="0" Content="Layaways on Pickup" ></Label>
+                <CheckBox Grid.Row="1" Grid.Column="1"   ></CheckBox>
+                <Label Grid.Row="1" Grid.Column="2"  Content="Macro Oked" ></Label>
+                <CheckBox Grid.Row="1" Grid.Column="3"  ></CheckBox>
+                <Label  Grid.Row="1" Grid.Column="4" Content="Supplier Web System"  ></Label>
+                <CheckBox Grid.Row="1" Grid.Column="5"   ></CheckBox>
+                <Label Grid.Row="1" Grid.Column="6"  Content="SQL Server HO" ></Label>
+                <CheckBox Grid.Row="1" Grid.Column="7"  ></CheckBox>
+                <Label  Grid.Row="2" Grid.Column="4" Content="Results"  ></Label>
+                <CheckBox Grid.Row="2" Grid.Column="5"   ></CheckBox>
+
+                <!-- sub row 3-->
+                <Label  Grid.Row="3" Grid.Column="2" Content="Edge Cfg HO Store #" ></Label>
+                <TextBox Grid.Row="3" Grid.Column="3"  Grid.ColumnSpan="2"  ></TextBox>
+                <Label Grid.Row="2" Grid.Column="2"  Content="KPI Lite" ></Label>
+                <CheckBox Grid.Row="2" Grid.Column="3"  ></CheckBox>
+
+                <Label  Grid.Row="2" Grid.Column="6" Content="EP S/Store allowed"  ></Label>
+                <CheckBox Grid.Row="2" Grid.Column="7"   ></CheckBox>
+                <Label  Grid.Row="2" Grid.Column="0" Content="Jewelsure" ></Label>
+                <CheckBox Grid.Row="2" Grid.Column="1"   ></CheckBox>
+
+                <!-- sub row 4-->
+
+                <Label Grid.Row="3" Grid.Column="0"  Content="Edge Pulse Enabled" ></Label>
+                <CheckBox Grid.Row="3" Grid.Column="1"  ></CheckBox>
+
+                <!-- sub row 5-->
+
+                <Label  Grid.Row="3" Grid.Column="6" Content="State"  ></Label>
+                <TextBox Grid.Row="3" Grid.Column="7"  Grid.ColumnSpan="2"  ></TextBox>
+
+
+            </Grid>
+
+            <StackPanel Width="400" Grid.Column="1" Grid.Row="9"    Grid.ColumnSpan="3"  Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Center">
+                <Button  Content="Update" HorizontalAlignment="Left"    Template="{StaticResource SubmitButtonTemplate}"   Height="25" VerticalAlignment="Top"/>
                 <Button  Content="Exit" HorizontalAlignment="Left"  Cursor="Hand" Click="btnExit_Click"  Name="btnExit"  Template="{StaticResource SubmitButtonTemplate}"   Height="25" Margin="20,0,0,0" VerticalAlignment="Top"/>
 
             </StackPanel>
 
-        <!--<DatePicker Grid.Row="3" Grid.Column="3"   Grid.RowSpan="2" />
+            <!--<DatePicker Grid.Row="3" Grid.Column="3"   Grid.RowSpan="2" />
         <TextBox Grid.Row="4" Grid.Column="1"  Grid.ColumnSpan="3"  />-->
 
-        <!-- Row 8-->
+            <!-- Row 8-->
 
 
 
-        <!-- Row 9-->
+            <!-- Row 9-->
 
 
 
-    </Grid>
+        </Grid>
     </StackPanel>
 </Window>
