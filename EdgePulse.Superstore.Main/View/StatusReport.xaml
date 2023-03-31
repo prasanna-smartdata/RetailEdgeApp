@@ -1,4 +1,4 @@
-﻿<local:ProcessForm x:Class="StatusReport"
+﻿<Page x:Class="StatusReport"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -18,21 +18,21 @@
                     <StackPanel>
                         <StackPanel Height="70" Width="400" Orientation="Horizontal">
                             <TextBlock FontWeight="Light" Height="18" FontSize="13" Margin="20,0,0,0" Text="Slect Store"></TextBlock>
-                            <ComboBox Margin="75,0,0,0" Width="229" Height="34" SelectionChanged="ComboBox_SelectionChanged" >
+                            <ComboBox Margin="75,0,0,0" Width="229" Height="34"  >
                                 <ComboBoxItem x:Name="store1" IsSelected="True" Content="Usa Client"/>
                                 <ComboBoxItem x:Name="store2" IsSelected="True" Content="Store........"/>
                             </ComboBox>
                         </StackPanel>
                         <StackPanel Height="70" Width="400" Orientation="Horizontal">
                             <TextBlock FontWeight="Light" Height="18" FontSize="13" Margin="20,0,0,0" Text="Select SuperStore"></TextBlock>
-                            <ComboBox Margin="40,0,0,0" Width="229" Height="34" SelectionChanged="ComboBox_SelectionChanged" >
+                            <ComboBox Margin="40,0,0,0" Width="229" Height="34"  >
                                 <ComboBoxItem x:Name="create" IsSelected="True" Content="Usa Client"/>
                                 <ComboBoxItem x:Name="create1" IsSelected="True" Content="Usa Client........"/>
                             </ComboBox>
                         </StackPanel>
                         <StackPanel Height="70" Width="400" Orientation="Horizontal">
                             <TextBlock FontWeight="Light" Height="18" FontSize="13" Margin="20,0,0,0" Text="Process Month"></TextBlock>
-                            <ComboBox Margin="55,0,0,0" Width="229" Height="34" SelectionChanged="ComboBox_SelectionChanged" >
+                            <ComboBox Margin="55,0,0,0" Width="229" Height="34"  >
                                 <ComboBoxItem x:Name="calendat" IsSelected="True" Content="Usa Client"/>
                                 <ComboBoxItem x:Name="calendar" IsSelected="True" Content="January 2023........"/>
                             </ComboBox>
@@ -57,4 +57,4 @@
     </StackPanel>
 
 
-</local:ProcessForm>
+</Page>

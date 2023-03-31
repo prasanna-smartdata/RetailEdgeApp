@@ -10,3 +10,15 @@ C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Business\obj\Debug\net6.0
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Business\obj\Debug\net6.0-windows\refint\RetailEdge.Business.dll
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Business\obj\Debug\net6.0-windows\RetailEdge.Business.pdb
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Business\obj\Debug\net6.0-windows\ref\RetailEdge.Business.dll
+C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Business\bin\Debug\net6.0-windows\RetailEdge.Business.deps.json
+C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Business\bin\Debug\net6.0-windows\RetailEdge.Business.dll
+C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Business\bin\Debug\net6.0-windows\RetailEdge.Business.pdb
+C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Business\obj\Debug\net6.0-windows\RetailEdge.Business.vbproj.AssemblyReference.cache
+C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Business\obj\Debug\net6.0-windows\RetailEdge.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Business\obj\Debug\net6.0-windows\RetailEdge.Business.AssemblyInfoInputs.cache
+C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Business\obj\Debug\net6.0-windows\RetailEdge.Business.AssemblyInfo.vb
+C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Business\obj\Debug\net6.0-windows\RetailEdge.Business.vbproj.CoreCompileInputs.cache
+C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Business\obj\Debug\net6.0-windows\RetailEdge.Business.dll
+C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Business\obj\Debug\net6.0-windows\refint\RetailEdge.Business.dll
+C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Business\obj\Debug\net6.0-windows\RetailEdge.Business.pdb
+C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Business\obj\Debug\net6.0-windows\ref\RetailEdge.Business.dll
