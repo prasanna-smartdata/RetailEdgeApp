@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Superstore.Main\\RetailEdge.SuperstoreBuild.Main.vbproj": {}
+    "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Superstore.Main\\RetailEdge.SuperstoreBuild.Main.vbproj": {}
   },
   "projects": {
-    "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Business\\RetailEdge.Business.vbproj": {
+    "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Business\\RetailEdge.Business.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Business\\RetailEdge.Business.vbproj",
+        "projectUniqueName": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Business\\RetailEdge.Business.vbproj",
         "projectName": "RetailEdge.Business",
-        "projectPath": "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Business\\RetailEdge.Business.vbproj",
-        "packagesPath": "C:\\Users\\bhara\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Business\\obj\\",
+        "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Business\\RetailEdge.Business.vbproj",
+        "packagesPath": "C:\\Users\\Sds\\.nuget\\packages\\",
+        "outputPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\bhara\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sds\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -45,8 +45,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -58,25 +57,25 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Data\\RetailEdge.Data.vbproj": {
+    "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Data\\RetailEdge.Data.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Data\\RetailEdge.Data.vbproj",
+        "projectUniqueName": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Data\\RetailEdge.Data.vbproj",
         "projectName": "RetailEdge.Data",
-        "projectPath": "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Data\\RetailEdge.Data.vbproj",
-        "packagesPath": "C:\\Users\\bhara\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Data\\obj\\",
+        "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Data\\RetailEdge.Data.vbproj",
+        "packagesPath": "C:\\Users\\Sds\\.nuget\\packages\\",
+        "outputPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\bhara\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sds\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -86,14 +85,14 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Business\\RetailEdge.Business.vbproj": {
-                "projectPath": "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Business\\RetailEdge.Business.vbproj"
+              "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Business\\RetailEdge.Business.vbproj": {
+                "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Business\\RetailEdge.Business.vbproj"
               },
-              "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Entities\\RetailEdge.Entities.vbproj": {
-                "projectPath": "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Entities\\RetailEdge.Entities.vbproj"
+              "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Entities\\RetailEdge.Entities.vbproj": {
+                "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Entities\\RetailEdge.Entities.vbproj"
               },
-              "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj": {
-                "projectPath": "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj"
+              "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj": {
+                "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj"
               }
             }
           }
@@ -119,8 +118,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -132,25 +130,25 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Entities\\RetailEdge.Entities.vbproj": {
+    "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Entities\\RetailEdge.Entities.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Entities\\RetailEdge.Entities.vbproj",
+        "projectUniqueName": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Entities\\RetailEdge.Entities.vbproj",
         "projectName": "RetailEdge.Entities",
-        "projectPath": "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Entities\\RetailEdge.Entities.vbproj",
-        "packagesPath": "C:\\Users\\bhara\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Entities\\obj\\",
+        "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Entities\\RetailEdge.Entities.vbproj",
+        "packagesPath": "C:\\Users\\Sds\\.nuget\\packages\\",
+        "outputPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\bhara\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sds\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -177,8 +175,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -190,25 +187,25 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj": {
+    "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj",
+        "projectUniqueName": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj",
         "projectName": "RetailEdge.Infrastructure",
-        "projectPath": "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj",
-        "packagesPath": "C:\\Users\\bhara\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Infrastructure\\obj\\",
+        "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj",
+        "packagesPath": "C:\\Users\\Sds\\.nuget\\packages\\",
+        "outputPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\bhara\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sds\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -235,8 +232,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -248,25 +244,25 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Superstore.Main\\RetailEdge.SuperstoreBuild.Main.vbproj": {
+    "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Superstore.Main\\RetailEdge.SuperstoreBuild.Main.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Superstore.Main\\RetailEdge.SuperstoreBuild.Main.vbproj",
+        "projectUniqueName": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Superstore.Main\\RetailEdge.SuperstoreBuild.Main.vbproj",
         "projectName": "RetailEdge.SuperstoreBuild.Main",
-        "projectPath": "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Superstore.Main\\RetailEdge.SuperstoreBuild.Main.vbproj",
-        "packagesPath": "C:\\Users\\bhara\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Superstore.Main\\obj\\",
+        "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Superstore.Main\\RetailEdge.SuperstoreBuild.Main.vbproj",
+        "packagesPath": "C:\\Users\\Sds\\.nuget\\packages\\",
+        "outputPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Superstore.Main\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\bhara\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sds\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -276,17 +272,17 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Business\\RetailEdge.Business.vbproj": {
-                "projectPath": "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Business\\RetailEdge.Business.vbproj"
+              "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Business\\RetailEdge.Business.vbproj": {
+                "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Business\\RetailEdge.Business.vbproj"
               },
-              "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Data\\RetailEdge.Data.vbproj": {
-                "projectPath": "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Data\\RetailEdge.Data.vbproj"
+              "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Data\\RetailEdge.Data.vbproj": {
+                "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Data\\RetailEdge.Data.vbproj"
               },
-              "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Entities\\RetailEdge.Entities.vbproj": {
-                "projectPath": "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Entities\\RetailEdge.Entities.vbproj"
+              "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Entities\\RetailEdge.Entities.vbproj": {
+                "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Entities\\RetailEdge.Entities.vbproj"
               },
-              "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj": {
-                "projectPath": "C:\\Users\\bhara\\Documents\\RetailEdgeApp\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj"
+              "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj": {
+                "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj"
               }
             }
           }
@@ -306,8 +302,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -319,7 +314,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

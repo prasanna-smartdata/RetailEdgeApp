@@ -48,7 +48,7 @@ Partial Public Class Application
     '''InitializeComponent
     '''</summary>
     <System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "7.0.4.0")>  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.7.0")>  _
     Public Sub InitializeComponent()
         If _contentLoaded Then
             Return
@@ -59,7 +59,7 @@ Partial Public Class Application
         Me.StartupUri = New System.Uri("MainWindow.xaml", System.UriKind.Relative)
         
         #End ExternalSource
-        Dim resourceLocater As System.Uri = New System.Uri("/RetailEdge.SuperstoreBuild.Main;V1.0.0.0;component/application.xaml", System.UriKind.Relative)
+        Dim resourceLocater As System.Uri = New System.Uri("/RetailEdge.SuperstoreBuild.Main;component/application.xaml", System.UriKind.Relative)
         
         #ExternalSource("..\..\..\Application.xaml",1)
         System.Windows.Application.LoadComponent(Me, resourceLocater)
@@ -72,7 +72,7 @@ Partial Public Class Application
     '''</summary>
     <System.STAThreadAttribute(),  _
      System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "7.0.4.0")>  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.7.0")>  _
     Public Shared Sub Main()
         Dim app As Application = New Application()
         app.InitializeComponent

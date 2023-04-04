@@ -50,13 +50,13 @@ Partial Public Class KPIReport
     '''InitializeComponent
     '''</summary>
     <System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "7.0.4.0")>  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.7.0")>  _
     Public Sub InitializeComponent() Implements System.Windows.Markup.IComponentConnector.InitializeComponent
         If _contentLoaded Then
             Return
         End If
         _contentLoaded = true
-        Dim resourceLocater As System.Uri = New System.Uri("/RetailEdge.SuperstoreBuild.Main;V1.0.0.0;component/view/kpireport.xaml", System.UriKind.Relative)
+        Dim resourceLocater As System.Uri = New System.Uri("/RetailEdge.SuperstoreBuild.Main;component/view/kpireport.xaml", System.UriKind.Relative)
         
         #ExternalSource("..\..\..\..\View\KPIReport.xaml",1)
         System.Windows.Application.LoadComponent(Me, resourceLocater)
@@ -65,7 +65,7 @@ Partial Public Class KPIReport
     End Sub
     
     <System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "7.0.4.0"),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.7.0"),  _
      System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never),  _
      System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes"),  _
      System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity"),  _

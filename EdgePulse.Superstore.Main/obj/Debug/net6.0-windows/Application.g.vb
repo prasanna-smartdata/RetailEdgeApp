@@ -48,7 +48,7 @@ Partial Public Class Application
     '''InitializeComponent
     '''</summary>
     <System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "7.0.4.0")>  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.7.0")>  _
     Public Sub InitializeComponent()
         If _contentLoaded Then
             Return
@@ -72,7 +72,7 @@ Partial Public Class Application
     '''</summary>
     <System.STAThreadAttribute(),  _
      System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "7.0.4.0")>  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.7.0")>  _
     Public Shared Sub Main()
         Dim app As Application = New Application()
         app.InitializeComponent
