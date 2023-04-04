@@ -2,7 +2,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style x:Key="WinAll" TargetType="{x:Type Window}">
         <Setter Property="FontFamily" Value="Arial" />
-        <Setter Property="FontSize"  Value="14" />
+        <Setter Property="FontSize"  Value="12" />
         
     </Style>
 
@@ -26,8 +26,8 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
     <ControlTemplate x:Key="SubmitButtonTemplate" TargetType="Button">
-        <Grid Height="{TemplateBinding Height}">
-            <Border Width="105" x:Name="BgEnabled" Background="#3B71CA" BorderBrush="#FFFFFFFF"  CornerRadius="5"    HorizontalAlignment="Right">
+        <Grid Height="{TemplateBinding Height}" Cursor="Hand">
+            <Border Width="{TemplateBinding Width}" x:Name="BgEnabled" Background="#3B71CA" BorderBrush="#FFFFFFFF"  CornerRadius="5"    HorizontalAlignment="Right">
                 <TextBlock x:Name="textBlock" Text="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFFFFFFF" />
             </Border>
         </Grid>

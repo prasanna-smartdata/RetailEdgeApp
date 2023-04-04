@@ -1,6 +1,5 @@
 ﻿Class CleintMaintenance
 
-    Private ViewModel As AddEditClientViewModel
 
     Public Sub New()
 

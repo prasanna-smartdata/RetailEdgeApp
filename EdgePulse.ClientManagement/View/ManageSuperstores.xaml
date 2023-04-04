@@ -5,8 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EdgePulse.ClientManagement"
         mc:Ignorable="d"
-        Title="ManageSuperstores" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="ManageSuperstores" Height="750" Width="1050" WindowStyle="None" Style="{StaticResource WinAll}"     Background="LightBlue"  >
+    <StackPanel>
+
+        <Label Content="SUPERSTORE MANAGEMENT" Width="1050" Background="#FF726868"    VerticalAlignment="Top"    Height="40" Foreground="White"  HorizontalAlignment="Left" Margin="3" FontSize="22" />
+
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="550"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions></Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal"    Margin="2"  >
+                    <Label Content="Select Superstore" />
+                    <ComboBox Width="300" ></ComboBox>
+                    <Button Width="100" Height="25" Margin="20,0,0,0"    Template="{StaticResource SubmitButtonTemplate}"  Content="Edit Superstore"></Button>
+                </StackPanel>
+                <Border Grid.Column="1" Grid.Row="1" Margin="5" Padding="5"   
+          BorderBrush="White" BorderThickness="1" CornerRadius="2"
+          VerticalAlignment="Top">
+                    <StackPanel >
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                            <Label Content="Filter" ></Label>
+                            <TextBox  Width="350"></TextBox>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label  Content="STORES" FontSize="15"  TextBlock.TextAlignment="Right" FontWeight="Bold"  Background="White"></Label>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            
+            </Grid>
+            <DockPanel Height="500" Grid.Column="1" Grid.Row="0">
+                <Label DockPanel.Dock="Top" Height="500"></Label>
+            </DockPanel>
+        </Grid>
+    </StackPanel>
 </Window>
