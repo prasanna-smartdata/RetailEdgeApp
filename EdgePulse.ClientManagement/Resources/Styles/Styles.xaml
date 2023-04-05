@@ -5,7 +5,12 @@
         <Setter Property="FontSize"  Value="12" />
         
     </Style>
-
+    <DataTemplate x:Key="CheckBoxCell">
+        <StackPanel Orientation="Horizontal">
+            <CheckBox IsChecked="{Binding Path=IsSelected, 
+      RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}}"/>
+        </StackPanel>
+    </DataTemplate>
     <ControlTemplate x:Key="TextBoxBaseControlTemplate" TargetType="{x:Type TextBoxBase}">
         <Border Background="{TemplateBinding Background}" 
                 x:Name="Bd" BorderBrush="Black"

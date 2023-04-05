@@ -2,6 +2,7 @@
     Inherits BaseEntity
     Implements ICloneable
 
+    Private _id As Int16
     Private _clientNum As String
     Private _fakeClient As Boolean
     Private _clientName As String
@@ -29,6 +30,17 @@
     Private _jewelsure As Boolean
     Private _results As Boolean
     Private _sqlServer As Boolean
+
+    Public Property ID() As Int16
+        Get
+            Return _id
+        End Get
+        Set(ByVal Value As Int16)
+            _id = Value
+            OnPropertyChanged("ID")
+        End Set
+    End Property
+
 
     Public Property ClientNumber() As String
         Get

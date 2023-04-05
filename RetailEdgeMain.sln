@@ -13,7 +13,7 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "RetailEdge.Data", "EdgePuls
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "RetailEdge.SuperstoreBuild.Main", "EdgePulse.Superstore.Main\RetailEdge.SuperstoreBuild.Main.vbproj", "{26F03092-AE34-4DFD-BCF0-6B0DF634E611}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "EdgePulse.ClientManagement", "EdgePulse.ClientManagement\EdgePulse.ClientManagement.vbproj", "{2168B465-74E0-4C20-B9E7-A29DC7078967}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "EdgePulse.ClientManagement", "EdgePulse.ClientManagement\EdgePulse.ClientManagement.vbproj", "{2168B465-74E0-4C20-B9E7-A29DC7078967}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

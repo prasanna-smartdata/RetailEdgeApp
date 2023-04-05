@@ -3,9 +3,9 @@
     Implements ICloneable
 
     Private _id As Int16
-    Private _clientNumber As Int16
-    Private _storeNumber As Int16
-    Private _superStoreId As Int16
+    Private _groupNum As String
+    Private _groupName As String
+    Private _deptsToUse As String
 
     Public Property ID() As Int16
         Get
@@ -17,32 +17,32 @@
         End Set
     End Property
 
-    Public Property ClientNumber() As Int16
+    Public Property GroupNum() As String
         Get
-            Return _clientNumber
+            Return _groupNum
         End Get
-        Set(ByVal Value As Int16)
-            _clientNumber = Value
-            OnPropertyChanged("ClientNumber")
+        Set(ByVal Value As String)
+            _groupNum = Value
+            OnPropertyChanged("GroupNum")
         End Set
     End Property
 
-    Public Property StoreNumber() As Int16
+    Public Property GroupName() As String
         Get
-            Return _storeNumber
+            Return _groupName
         End Get
-        Set(ByVal Value As Int16)
-            _storeNumber = Value
-            OnPropertyChanged("StoreNumber")
+        Set(ByVal Value As String)
+            _groupName = Value
+            OnPropertyChanged("GroupName")
         End Set
     End Property
-    Public Property SuperStoreId() As Int16
+    Public Property DeptsToUse() As Int16
         Get
-            Return _superStoreId
+            Return _deptsToUse
         End Get
         Set(ByVal Value As Int16)
-            _superStoreId = Value
-            OnPropertyChanged("SuperStoreId")
+            _deptsToUse = Value
+            OnPropertyChanged("DeptsToUse")
         End Set
     End Property
     Public Function Clone() As Object Implements ICloneable.Clone

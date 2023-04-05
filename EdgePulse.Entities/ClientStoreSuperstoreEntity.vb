@@ -1,10 +1,11 @@
-﻿Public Class StoreSuperstoreMapEntity
+﻿Public Class ClientStoreSuperstoreEntity
     Inherits BaseEntity
     Implements ICloneable
 
     Private _id As Int16
     Private _clientStoreId As Int16
     Private _superStoreGroupId As Int16
+    Private _dateCreated As Date
 
 
 
@@ -38,7 +39,17 @@
         End Set
     End Property
 
+    Public Property DateCreated() As Date
+        Get
+            Return _dateCreated
+        End Get
+        Set(ByVal Value As Date)
+            _dateCreated = Value
+            OnPropertyChanged("DateCreated")
+        End Set
+    End Property
+
     Public Function Clone() As Object Implements ICloneable.Clone
-        Return CType(Me.MemberwiseClone(), StoreSuperstoreMapEntity)
+        Return CType(Me.MemberwiseClone(), ClientStoreSuperstoreEntity)
     End Function
 End Class

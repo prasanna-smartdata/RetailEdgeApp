@@ -1,4 +1,4 @@
-﻿Public Class ClientBaseDL
+﻿Public Class RMHClientBaseDL
 
     Public ReadOnly Property ConnectionString() As String
         Get

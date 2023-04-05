@@ -4,13 +4,16 @@ Imports EdgePulse.Entities
 Imports EdgePulse.Infrastructure
 
 Public Class ClientDL
-    Inherits ClientBaseDL
+    Inherits RMHClientBaseDL
 
-    Public Function GetClients() As List(Of ClientEntity)
-        Dim _clients As List(Of ClientEntity) = New List(Of ClientEntity)()
+    'Geting the client details for the given id 
+    Public Function GetClientDetails(ByVal clientId As Int16) As ClientEntity
+        Dim _clientEntity As ClientEntity = Nothing
         Try
-            Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.getClients)
-            Dim _clientEntity As ClientEntity = Nothing
+
+
+            Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.getClientDetails)
+
             While reader.Read()
 
                 _clientEntity = New ClientEntity()
@@ -42,13 +45,55 @@ Public Class ClientDL
                 _clientEntity.SupportEmail = reader.Item("TheirSupportEmail")
                 _clientEntity.UseEdgeSW = reader.Item("TheEdge")
 
-                _clients.Add(_clientEntity)
             End While
         Catch ex As Exception
 
             Throw
         End Try
-        Return _clients
+        Return _clientEntity
     End Function
+
+    Public Function GetBuyingGroups() As List(Of BuyingGroupEntity)
+        Dim _buyingGroups As List(Of BuyingGroupEntity) = New List(Of BuyingGroupEntity)()
+        Try
+            Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.getBuyingGroups)
+            Dim _buyingGroup As BuyingGroupEntity = Nothing
+            While reader.Read()
+
+                _buyingGroup = New BuyingGroupEntity()
+                _buyingGroup.BuyingGroupID = reader.Item("BuyingGroupId")
+                _buyingGroup.BuyingGroupName = reader.Item("BuyingGroupName")
+
+                _buyingGroups.Add(_buyingGroup)
+            End While
+        Catch ex As Exception
+
+            Throw
+        End Try
+        Return _buyingGroups
+    End Function
+
+    Public Function GetSuperstores() As List(Of SuperstoreEntity)
+        Dim _superStores As List(Of SuperstoreEntity) = New List(Of SuperstoreEntity)()
+        Try
+            Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.GetSuperstores)
+            Dim _superStore As SuperstoreEntity = Nothing
+            While reader.Read()
+
+                _superStore = New SuperstoreEntity()
+                _superStore.ID = reader.Item("ID")
+                _superStore.GroupNum = reader.Item("GroupNum")
+                _superStore.GroupName = reader.Item("GroupName")
+                _superStore.DeptsToUse = reader.Item("DeptsToUse")
+
+                _superStores.Add(_superStore)
+            End While
+        Catch ex As Exception
+
+            Throw
+        End Try
+        Return _superStores
+    End Function
+
 
 End Class
