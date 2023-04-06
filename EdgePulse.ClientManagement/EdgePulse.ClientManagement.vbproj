@@ -20,14 +20,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\Images\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Prism.Wpf" Version="8.1.97" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EdgePulse.Business\RetailEdge.Business.vbproj" />
     <ProjectReference Include="..\EdgePulse.Entities\RetailEdge.Entities.vbproj" />
     <ProjectReference Include="..\EdgePulse.Infrastructure\RetailEdge.Infrastructure.vbproj" />
   </ItemGroup>

@@ -7,4 +7,10 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EdgePulse.Data\RetailEdge.Data.vbproj" />
+    <ProjectReference Include="..\EdgePulse.Entities\RetailEdge.Entities.vbproj" />
+    <ProjectReference Include="..\EdgePulse.Infrastructure\RetailEdge.Infrastructure.vbproj" />
+  </ItemGroup>
+
 </Project>

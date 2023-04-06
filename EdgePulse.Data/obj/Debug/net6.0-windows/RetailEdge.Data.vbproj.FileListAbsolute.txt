@@ -20,10 +20,8 @@ C:\Users\bhara\Documents\RetailEdgeApp\EdgePulse.Data\obj\Debug\net6.0-windows\r
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\bin\Debug\net6.0-windows\RetailEdge.Data.deps.json
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\bin\Debug\net6.0-windows\RetailEdge.Data.dll
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\bin\Debug\net6.0-windows\RetailEdge.Data.pdb
-C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\bin\Debug\net6.0-windows\RetailEdge.Business.dll
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\bin\Debug\net6.0-windows\RetailEdge.Entities.dll
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\bin\Debug\net6.0-windows\RetailEdge.Infrastructure.dll
-C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\bin\Debug\net6.0-windows\RetailEdge.Business.pdb
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\bin\Debug\net6.0-windows\RetailEdge.Entities.pdb
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\bin\Debug\net6.0-windows\RetailEdge.Infrastructure.pdb
 C:\smartdata\RetailAge\RetailEdgeApplication\EdgePulse.Data\obj\Debug\net6.0-windows\RetailEdge.Data.vbproj.AssemblyReference.cache

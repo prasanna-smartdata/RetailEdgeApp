@@ -51,25 +51,17 @@
                 Width="30"/>
                                         <GridViewColumn DisplayMemberBinding=
                           "{Binding Path=FirstName}" 
-                      Header="First Name" Width="100"/>
+                      Header="" Width="100"/>
 
                                         <GridViewColumn DisplayMemberBinding=
                           "{Binding Path=LastName}" 
                       Width="100">
-                                            <GridViewColumnHeader>Last Name
-                                                <GridViewColumnHeader.ContextMenu>
-                                                    <ContextMenu  MenuItem.Click="LastNameCM_Click"  
-                                        Name="LastNameCM">
-                                                        <MenuItem Header="Ascending" />
-                                                        <MenuItem Header="Descending" />
-                                                    </ContextMenu>
-                                                </GridViewColumnHeader.ContextMenu>
-                                            </GridViewColumnHeader>
+                                            
                                         </GridViewColumn>
 
                                         <GridViewColumn DisplayMemberBinding=
                           "{Binding Path=EmployeeNumber}" 
-                      Header="Employee No." Width="100"/>
+                      Header="" Width="100"/>
                                     </GridView>
 
                                 </ListView.View>

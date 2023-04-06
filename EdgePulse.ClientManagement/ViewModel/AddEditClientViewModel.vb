@@ -4,6 +4,7 @@ Imports EdgePulse.Infrastructure
 
 Imports Prism.Commands
 Imports System.Windows.Input
+Imports EdgePulse.Business
 
 Public Class AddEditClientViewModel
     Inherits ViewModelBase
@@ -16,11 +17,40 @@ Public Class AddEditClientViewModel
     Private _openSuperstoreCommand As DelegateCommand = Nothing
 
     Private _clientsCollection As New ObservableCollection(Of ClientEntity)
+    Private _clientManagementBL As New ClientManagementBL()
+    Private _client As ClientEntity
 
 #End Region
 
 
 #Region "Properties"
+    Private _isClientsLoaded As Boolean
+    Public Property IsClientsLoaded() As Boolean
+        Get
+            Return _isClientsLoaded
+        End Get
+        Set(ByVal value As Boolean)
+            _isClientsLoaded = value
+        End Set
+    End Property
+
+    Public Property ClientsCollection() As ObservableCollection(Of ClientEntity)
+        Get
+            Return _clientsCollection
+        End Get
+        Set(ByVal value As ObservableCollection(Of ClientEntity))
+            _clientsCollection = value
+        End Set
+    End Property
+
+    Public Property Client() As ClientEntity
+        Get
+            Return _client
+        End Get
+        Set(ByVal value As ClientEntity)
+            _client = value
+        End Set
+    End Property
     Public ReadOnly Property EditClickCommand As DelegateCommand
         Get
             Return If(Me._editClickCommand, New DelegateCommand(Of ClientEntity)(AddressOf UpdateClient))
@@ -55,6 +85,16 @@ Public Class AddEditClientViewModel
 
     Public Sub GetClients()
 
+        Try
+            Me._isClientsLoaded = True
+
+            _clientsCollection = New ObservableCollection(Of ClientEntity)(_clientManagementBL.GetClients())
+            Me._isClientsLoaded = False
+
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Public Sub GetBuyingGroups()
@@ -85,6 +125,16 @@ Public Class AddEditClientViewModel
 #End Region
 
 #Region "Wizards"
+
+    Public Sub New()
+
+        Try
+            GetClients()
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
 #End Region
 
 

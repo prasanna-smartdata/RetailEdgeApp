@@ -27,7 +27,17 @@
         "frameworks": {
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Data\\RetailEdge.Data.vbproj": {
+                "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Data\\RetailEdge.Data.vbproj"
+              },
+              "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Entities\\RetailEdge.Entities.vbproj": {
+                "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Entities\\RetailEdge.Entities.vbproj"
+              },
+              "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj": {
+                "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -85,9 +95,6 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Business\\RetailEdge.Business.vbproj": {
-                "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Business\\RetailEdge.Business.vbproj"
-              },
               "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Entities\\RetailEdge.Entities.vbproj": {
                 "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Entities\\RetailEdge.Entities.vbproj"
               },
@@ -226,6 +233,12 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

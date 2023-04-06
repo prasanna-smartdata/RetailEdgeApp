@@ -17,34 +17,35 @@ Public Class ClientDL
             While reader.Read()
 
                 _clientEntity = New ClientEntity()
-                _clientEntity.AccountManagerId = reader.Item("AccountManager")
-                _clientEntity.EmailAddress = reader.Item("Email")
-                _clientEntity.BuyingGroupId = reader.Item("BuyingGroupId")
-                _clientEntity.ClientName = reader.Item("ClientName")
-                _clientEntity.ClientNumber = reader.Item("ClientNum")
-                _clientEntity.Comment = reader.Item("Comment")
-                _clientEntity.FakeClient = reader.Item("FakeClient")
-                _clientEntity.HoStoreNumber = reader.Item("HOStoreNumber")
-                _clientEntity.IsActiveClient = reader.Item("ActiveClient")
-                _clientEntity.IsDoorCounter = reader.Item("DoorCounter")
-                _clientEntity.IsEdgePulseEnabled = reader.Item("EdgePulseEnabled")
-                _clientEntity.IsKPILite = reader.Item("KPILite")
-                _clientEntity.IsMacroOked = reader.Item("MacroOked")
-                _clientEntity.IsMentorningClient = reader.Item("MentoringClient")
-                _clientEntity.IsSuperStoreActive = reader.Item("SuperstoreActive")
-                _clientEntity.IsSupplierWebSystem = reader.Item("SupplierSystem")
-                _clientEntity.Jewelsure = reader.Item("Jewelsure")
-                _clientEntity.LayawaysOnPickUp = reader.Item("LaybuysOnPickup")
-                _clientEntity.NoOfSites = reader.Item("SilentManagerSites")
-                _clientEntity.Path = reader.Item("Where")
-                _clientEntity.ProactiveCallDate = reader.Item("LastAccountManagerCall")
-                _clientEntity.RecEmail = reader.Item("RECEmail")
-                _clientEntity.Results = reader.Item("Results")
-                _clientEntity.SqlServer = reader.Item("SQLServer")
-                _clientEntity.State = reader.Item("State")
-                _clientEntity.SupportEmail = reader.Item("TheirSupportEmail")
-                _clientEntity.UseEdgeSW = reader.Item("TheEdge")
-
+                With _clientEntity
+                    .AccountManagerId = reader.Item("AccountManager")
+                    .EmailAddress = reader.Item("Email")
+                    .BuyingGroupId = reader.Item("BuyingGroupId")
+                    .ClientName = reader.Item("ClientName")
+                    .ClientNumber = reader.Item("ClientNum")
+                    .Comment = reader.Item("Comment")
+                    .FakeClient = reader.Item("FakeClient")
+                    .HoStoreNumber = reader.Item("HOStoreNumber")
+                    .IsActiveClient = reader.Item("ActiveClient")
+                    .IsDoorCounter = reader.Item("DoorCounter")
+                    .IsEdgePulseEnabled = reader.Item("EdgePulseEnabled")
+                    .IsKPILite = reader.Item("KPILite")
+                    .IsMacroOked = reader.Item("MacroOked")
+                    .IsMentorningClient = reader.Item("MentoringClient")
+                    .IsSuperStoreActive = reader.Item("SuperstoreActive")
+                    .IsSupplierWebSystem = reader.Item("SupplierSystem")
+                    .Jewelsure = reader.Item("Jewelsure")
+                    .LayawaysOnPickUp = reader.Item("LaybuysOnPickup")
+                    .NoOfSites = reader.Item("SilentManagerSites")
+                    .Path = reader.Item("Where")
+                    .ProactiveCallDate = reader.Item("LastAccountManagerCall")
+                    .RecEmail = reader.Item("RECEmail")
+                    .Results = reader.Item("Results")
+                    .SqlServer = reader.Item("SQLServer")
+                    .State = reader.Item("State")
+                    .SupportEmail = reader.Item("TheirSupportEmail")
+                    .UseEdgeSW = reader.Item("TheEdge")
+                End With
             End While
         Catch ex As Exception
 
@@ -81,10 +82,14 @@ Public Class ClientDL
             While reader.Read()
 
                 _superStore = New SuperstoreEntity()
-                _superStore.ID = reader.Item("ID")
-                _superStore.GroupNum = reader.Item("GroupNum")
-                _superStore.GroupName = reader.Item("GroupName")
-                _superStore.DeptsToUse = reader.Item("DeptsToUse")
+
+                With _superStore
+                    .ID = reader.Item("ID")
+                    .GroupNum = reader.Item("GroupNum")
+                    .GroupName = reader.Item("GroupName")
+                    .DeptsToUse = reader.Item("DeptsToUse")
+
+                End With
 
                 _superStores.Add(_superStore)
             End While
@@ -96,4 +101,38 @@ Public Class ClientDL
     End Function
 
 
+    Function GetClientStores() As List(Of ClientStoreDetailsEntity)
+        Dim _clientStores As New List(Of ClientStoreDetailsEntity)
+        Try
+            Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.GetClientStores)
+
+            While reader.Read()
+
+            End While
+
+        Catch ex As Exception
+
+        End Try
+        Return _clientStores
+    End Function
+
+
+    Function GetClients() As List(Of ClientEntity)
+        Dim _clients As New List(Of ClientEntity)
+        Try
+            Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.getClients)
+
+            While reader.Read()
+                Dim _client = New ClientEntity()
+                _client.id = reader("ID")
+                _client.ClientName = reader("ClientName")
+                _client.ClientNumber = reader("ClientNum")
+                _clients.Add(_client)
+            End While
+
+        Catch ex As Exception
+
+        End Try
+        Return _clients
+    End Function
 End Class

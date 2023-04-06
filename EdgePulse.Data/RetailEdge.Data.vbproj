@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EdgePulse.Business\RetailEdge.Business.vbproj" />
     <ProjectReference Include="..\EdgePulse.Entities\RetailEdge.Entities.vbproj" />
     <ProjectReference Include="..\EdgePulse.Infrastructure\RetailEdge.Infrastructure.vbproj" />
   </ItemGroup>

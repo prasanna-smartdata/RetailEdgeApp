@@ -3,10 +3,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:controls="clr-namespace:System.Windows.Controls;assembly=PresentationFramework"
+      
         xmlns:local="clr-namespace:EdgePulse.ClientManagement"  Width="1050"
       Title="CleintMaintenance"  WindowState="Normal" WindowStyle="None" ResizeMode="NoResize"
-        Style="{StaticResource WinAll}"     Background="LightBlue"  
+           Background="LightBlue"  
    >
+    <Window.Resources>
+        <ResourceDictionary>
+            <controls:BooleanToVisibilityConverter x:Key="boolToVisibilityConverter" />
+        </ResourceDictionary>
+    </Window.Resources>
+
     <StackPanel>
 
         <Label Content="CLIENT MANAGEMENT" Width="1050" Background="#FF726868"    VerticalAlignment="Top"    Height="40" Foreground="White"  HorizontalAlignment="Left" Margin="3" FontSize="22" />
@@ -36,31 +44,39 @@
 
             </Grid.RowDefinitions>
             <Label Content="Select Clients"  Grid.Column="0" Grid.Row="1" Margin="2"  />
-            <ComboBox x:Name="selectClients"  Grid.Column="1" Grid.Row="1"   Grid.ColumnSpan="2" Margin="2"    Height="40" IsTextSearchEnabled="True" TextSearch.TextPath="clientNumber"    Width="400"   HorizontalAlignment="Left"  
-                      VerticalAlignment="Center"  >
+            <ComboBox x:Name="selectClients"   Height="35"  Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"  TextSearch.TextPath="ClientName"     ItemsSource="{Binding ClientsCollection}"   IsTextSearchEnabled="True"  Width="400"       HorizontalAlignment="Left"  
+                       VerticalAlignment="Center" IsEditable="True"  >
+                <ComboBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel  />
+                    </ItemsPanelTemplate>
+                </ComboBox.ItemsPanel>
                 <ComboBox.ItemTemplate>
 
                     <DataTemplate>
 
-                        <TextBlock  
 
-                         
+                        <TextBlock  
+                           
+                           Width="350"
                           Tag="{RelativeSource FindAncestor, AncestorType={x:Type ComboBox}}"
 
                         >
 
                             <TextBlock.Text>
                                 <MultiBinding StringFormat="{}{0} ---- {1}">
-                                    <Binding Path="clientNumber"/>
-                                    <Binding Path="clientName"/>
+                                    <Binding Path="ClientNumber"/>
+                                    <Binding Path="ClientName"/>
                                 </MultiBinding>
                             </TextBlock.Text>
                         </TextBlock>
+
                     </DataTemplate>
 
                 </ComboBox.ItemTemplate>
 
             </ComboBox>
+
             <Label Content=" Fake Client"  Grid.Column="2" Grid.Row="1" Margin="100,0,0,0" />
             <CheckBox   Grid.Column="3" Grid.Row="1" Margin="2"  ></CheckBox>
             <!-- <Label Content="Superstores" Grid.Row="1" Grid.Column="0" invi  />
@@ -93,7 +109,7 @@
 
             <!--Row 4-->
             <Label Grid.Row="4" Grid.Column="0" Content="A/C Manager"   />
-            <ComboBox Grid.Row="4" Grid.Column="1" >
+            <ComboBox Grid.Row="4" Grid.Column="1" Height="34" Style="{ StaticResource ComboBox250}" >
                 <ComboBoxItem Content="None"/>
             </ComboBox>
 
@@ -113,7 +129,8 @@
             <Label Grid.Row="6" Grid.Column="0" Content="REC/ERA Email"   />
             <TextBox Grid.Row="6" Grid.Column="1" />
             <Label Grid.Row="6" Grid.Column="2" Content="Buying Group"   Margin="100,0,0,0"/>
-            <ComboBox Grid.Row="6" Grid.Column="3" Margin="2,2,2,2"     >
+            <ComboBox Grid.Row="6" Grid.Column="3" Margin="2,2,2,2"  Height="34"  Style="{ StaticResource ComboBox250}"   >
+              
                 <ComboBoxItem Content="None"/>
                 <ComboBoxItem Content="Gemtime"/>
                 <ComboBoxItem Content="ShowCase"/>

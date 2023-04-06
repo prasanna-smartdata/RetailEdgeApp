@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "fgueRlHz3FirKo5pjd0atwEVzRohfiokPAk5vZNSijhTbIUBTlDe85q15XLs86WxQ6AUIjg4UkfwfRn1juLE+A==",
+  "dgSpecHash": "lGj/4Zbs6CPl/UYU+MZfHEYDcZLvBINfdIChFzhYaKqtEIGf1JlS+fQdZHXGof/CuP+qM5dHGJVYiNY71AYJuQ==",
   "success": true,
   "projectFilePath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Sds\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\Sds\\.nuget\\packages\\system.configuration.configurationmanager\\7.0.0\\system.configuration.configurationmanager.7.0.0.nupkg.sha512",
+    "C:\\Users\\Sds\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
+    "C:\\Users\\Sds\\.nuget\\packages\\system.security.cryptography.protecteddata\\7.0.0\\system.security.cryptography.protecteddata.7.0.0.nupkg.sha512",
+    "C:\\Users\\Sds\\.nuget\\packages\\system.security.permissions\\7.0.0\\system.security.permissions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Sds\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

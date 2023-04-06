@@ -3,6 +3,6 @@
     Public Const getBuyingGroups = "getBuyingGroups"
     Public Const GetSuperstores = "getSuperstores"
     Public Const GetClientStores = "getClientStores"
-
+    Public Const getClientDetails = "getClientDetails"
 
 End Class
