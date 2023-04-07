@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EdgePulse.ClientManagement"
         mc:Ignorable="d"
-        Title="ManageSuperstores" Height="750" Width="1050" WindowStyle="None" Style="{StaticResource WinAll}"     Background="LightBlue"  >
+        Title="ManageSuperstores"  WindowStartupLocation="Manual" 
+    Left="0" Top="0" WindowState="Normal" Width="1050"   Height="700"   WindowStyle="None"   Background="LightBlue"  >
     <StackPanel>
 
         <Label Content="SUPERSTORE MANAGEMENT" Width="1050" Background="#FF726868"    VerticalAlignment="Top"    Height="40" Foreground="White"  HorizontalAlignment="Left" Margin="3" FontSize="22" />

@@ -45,6 +45,12 @@ Public Class ClientDL
                     .State = reader.Item("State")
                     .SupportEmail = reader.Item("TheirSupportEmail")
                     .UseEdgeSW = reader.Item("TheEdge")
+                    .SalesMaximum = reader.Item("SalesMaximum")
+                    .SalesMinimum = reader.Item("SalesMinimum")
+                    .StockMaximum = reader.Item("StockMaximum")
+                    .StockMinimum = reader.Item("StockMinimum")
+                    .StockMaximumQty = reader.Item("StockMaximumQty")
+                    .StockMinimumQty = reader.Item("StockMinimumQty")
                 End With
             End While
         Catch ex As Exception
@@ -111,7 +117,7 @@ Public Class ClientDL
             End While
 
         Catch ex As Exception
-
+            Throw
         End Try
         Return _clientStores
     End Function
@@ -127,6 +133,7 @@ Public Class ClientDL
                 _client.id = reader("ID")
                 _client.ClientName = reader("ClientName")
                 _client.ClientNumber = reader("ClientNum")
+                _client.ClientDisplayName = _client.ClientNumber + " ---- " + _client.ClientName
                 _clients.Add(_client)
             End While
 

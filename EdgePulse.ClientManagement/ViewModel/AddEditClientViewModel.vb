@@ -20,10 +20,23 @@ Public Class AddEditClientViewModel
     Private _clientManagementBL As New ClientManagementBL()
     Private _client As ClientEntity
 
+
 #End Region
 
 
 #Region "Properties"
+
+    Private _selectedClient As ClientEntity
+    Public Property SelectedClient() As ClientEntity
+        Get
+            Return _selectedClient
+        End Get
+        Set(ByVal value As ClientEntity)
+            _selectedClient = value
+
+        End Set
+    End Property
+
     Private _isClientsLoaded As Boolean
     Public Property IsClientsLoaded() As Boolean
         Get
@@ -31,6 +44,7 @@ Public Class AddEditClientViewModel
         End Get
         Set(ByVal value As Boolean)
             _isClientsLoaded = value
+
         End Set
     End Property
 
@@ -40,17 +54,11 @@ Public Class AddEditClientViewModel
         End Get
         Set(ByVal value As ObservableCollection(Of ClientEntity))
             _clientsCollection = value
+
         End Set
     End Property
 
-    Public Property Client() As ClientEntity
-        Get
-            Return _client
-        End Get
-        Set(ByVal value As ClientEntity)
-            _client = value
-        End Set
-    End Property
+
     Public ReadOnly Property EditClickCommand As DelegateCommand
         Get
             Return If(Me._editClickCommand, New DelegateCommand(Of ClientEntity)(AddressOf UpdateClient))

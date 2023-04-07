@@ -4,6 +4,7 @@
 
     Private _id As Int16
     Private _clientNum As String
+    Private _displayName As String
     Private _fakeClient As Boolean
     Private _clientName As String
     Private _path As String
@@ -30,7 +31,79 @@
     Private _jewelsure As Boolean
     Private _results As Boolean
     Private _sqlServer As Boolean
+    Private _salesMaximum As Long
+    Private _stockMinimumQty As Long
+    Private _stockMaximumQty As Long
+    Private _salesMinimum As Long
+    Private _stockMinimum As Long
+    Private _stockMaximum As Long
+    Public Property StockMaximum() As Long
+        Get
+            Return _stockMaximum
+        End Get
+        Set(ByVal value As Long)
+            _stockMaximum = value
+            OnPropertyChanged("StockMaximum")
 
+        End Set
+    End Property
+
+    Public Property StockMinimum() As Long
+        Get
+            Return _stockMinimum
+        End Get
+        Set(ByVal value As Long)
+            _stockMinimum = value
+            OnPropertyChanged("StockMinimum")
+
+        End Set
+    End Property
+
+
+    Public Property SalesMaximum() As Long
+        Get
+            Return _salesMaximum
+        End Get
+        Set(ByVal value As Long)
+            _salesMaximum = value
+            OnPropertyChanged("SalesMaximum")
+
+        End Set
+    End Property
+
+    Public Property SalesMinimum() As Long
+        Get
+            Return _salesMinimum
+        End Get
+        Set(ByVal value As Long)
+            _salesMinimum = value
+            OnPropertyChanged("SalesMinimum")
+
+        End Set
+    End Property
+
+    Public Property StockMaximumQty() As Long
+        Get
+            Return _stockMaximumQty
+        End Get
+        Set(ByVal value As Long)
+            _stockMaximumQty = value
+            OnPropertyChanged("SalesMinimum")
+
+        End Set
+    End Property
+
+
+    Public Property StockMinimumQty() As Long
+        Get
+            Return _stockMinimumQty
+        End Get
+        Set(ByVal value As Long)
+            _stockMinimumQty = value
+            OnPropertyChanged("StockMinimumQty")
+
+        End Set
+    End Property
     Public Property ID() As Int16
         Get
             Return _id
@@ -41,6 +114,15 @@
         End Set
     End Property
 
+    Public Property ClientDisplayName() As String
+        Get
+            Return _displayName
+        End Get
+        Set(ByVal Value As String)
+            _displayName = Value
+            OnPropertyChanged("ClientDisplayName")
+        End Set
+    End Property
 
     Public Property ClientNumber() As String
         Get
