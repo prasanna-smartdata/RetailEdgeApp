@@ -13,19 +13,20 @@
 
         <Grid Margin="10" Height="600">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="550"></ColumnDefinition>
+                <ColumnDefinition Width="570"></ColumnDefinition>
+                <ColumnDefinition Width="120*"/>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0" Grid.Column="0">
+            <Grid Grid.Row="0" Grid.Column="0"  >
                 <Grid.ColumnDefinitions></Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
-                    
+
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal"    Margin="2"  >
                     <Label Content="Select Superstore" />
@@ -57,7 +58,7 @@
                                         <GridViewColumn DisplayMemberBinding=
                           "{Binding Path=LastName}" 
                       Width="100">
-                                            
+
                                         </GridViewColumn>
 
                                         <GridViewColumn DisplayMemberBinding=
@@ -70,9 +71,9 @@
                         </StackPanel>
                     </StackPanel>
                 </Border>
-            
+
             </Grid>
-            <DockPanel Height="550" Grid.Column="1" Grid.Row="0">
+            <DockPanel  Grid.Column="1" Grid.Row="0">
                 <Label DockPanel.Dock="Top" Height="500"></Label>
             </DockPanel>
         </Grid>

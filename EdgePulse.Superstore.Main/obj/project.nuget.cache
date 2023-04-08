@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "pV9SqOvXdBAHNCmLZhxOrjujtVL3QcbFfYHZ3WUjK2U0Gzrl79ymvr93jbt3u2AxGoVJy/QZEKeADMSsxGyVOQ==",
+  "dgSpecHash": "HpolJzA4055DPh7nxaW7LqD0Jnb+o69euMBnYFGH0YSuPYiwgk6qERHx4vmXnr9+TuadzFBR1ERvb9jTFcyzvw==",
   "success": true,
   "projectFilePath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Superstore.Main\\RetailEdge.SuperstoreBuild.Main.vbproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sds\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Sds\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Sds\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\Sds\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.31\\microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512",
+    "C:\\Users\\Sds\\.nuget\\packages\\prism.core\\8.1.97\\prism.core.8.1.97.nupkg.sha512",
+    "C:\\Users\\Sds\\.nuget\\packages\\prism.wpf\\8.1.97\\prism.wpf.8.1.97.nupkg.sha512",
     "C:\\Users\\Sds\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\Sds\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Sds\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
