@@ -3,6 +3,8 @@ Imports Prism.Commands
 Public Class SuperstoreProcessViewModel
     Inherits ViewModelBase
 
+    Public Event BuildSuperstoreCompletedEvent As EventHandler(Of EventArgs)
+    Public Event RestartSuperstoreProcessEvent As EventHandler(Of EventArgs)
 
     Private _showStatusReport As Boolean = True
     Public Property ShowStatusReport() As Boolean
@@ -77,12 +79,40 @@ Public Class SuperstoreProcessViewModel
 
     End Property
 
-    Private _startBuildClick As DelegateCommand
-    Public ReadOnly Property StartBuildClick() As DelegateCommand
+
+
+    Private _buildProcessClick As DelegateCommand
+    Public ReadOnly Property BuildProcessClick() As DelegateCommand
         Get
-            Return _startBuildClick
+            If _buildProcessClick Is Nothing Then
+                _buildProcessClick = New DelegateCommand(AddressOf BuildProcess)
+            End If
+
+            Return _buildProcessClick
         End Get
 
+    End Property
+
+    Private _showKPIReportButton As Boolean = True
+    Public Property ShowKPIReportButton() As Boolean
+        Get
+            Return _showKPIReportButton
+        End Get
+        Set(ByVal value As Boolean)
+            _showKPIReportButton = value
+        End Set
+    End Property
+
+    Private _buildSuperstoreCompleted As Boolean = False
+    Public Property BuildSuperstoreCompleted() As Boolean
+        Get
+            Return _buildSuperstoreCompleted
+        End Get
+        Set(ByVal value As Boolean)
+            _buildSuperstoreCompleted = value
+
+            OnPropertyChanged("BuildSuperstoreCompleted")
+        End Set
     End Property
     Private Sub GenerateStatusReport()
         Try
@@ -109,23 +139,24 @@ Public Class SuperstoreProcessViewModel
                 ShowCancel = False
 
             End If
+
+            If BuildSuperstoreCompleted Then
+                RaiseEvent RestartSuperstoreProcessEvent(Me, New EventArgs)
+            End If
         Catch ex As Exception
 
         End Try
     End Sub
 
-    Sub ContinueToBuildProcess()
+    Protected Overridable Sub OnBuildSuperstoreCompleted(e As EventArgs)
 
-        Try
-
-        Catch ex As Exception
-
-        End Try
+        RaiseEvent BuildSuperstoreCompletedEvent(Me, e)
     End Sub
 
     Sub BuildProcess()
         Try
-
+            BuildSuperstoreCompleted = True
+            OnBuildSuperstoreCompleted(New EventArgs())
         Catch ex As Exception
 
         End Try

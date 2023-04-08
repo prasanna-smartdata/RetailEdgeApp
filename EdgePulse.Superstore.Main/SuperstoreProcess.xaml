@@ -16,38 +16,20 @@
 
         <DockPanel Background="#FF726868"    VerticalAlignment="Top"    Height="40">
             <Label Content="SUPER STORE PROCESSING " Width="400" Foreground="White"  HorizontalAlignment="Left" Margin="3" FontSize="24" />
+            <StackPanel  Width="100" HorizontalAlignment="Right" Orientation="Horizontal"   Margin="2" Height="38" Loaded="StackPanel_Loaded" >
+                         <Button  x:Name="btnExit" Cursor="Hand" Content="Exit" Width="80" FontSize="13" FontWeight="Bold">
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                 
+            </StackPanel>
         </DockPanel>
         <StackPanel Orientation="Horizontal" Margin="50">
-            <Border BorderBrush="White" CornerRadius="5" BorderThickness="2">
-                <Grid Grid.Row="0" Margin="0,20,0,0" Width="500" Grid.Column="0"  >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="140"></ColumnDefinition>
-                        <ColumnDefinition Width="200"></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="40"></RowDefinition>
-                        <RowDefinition Height="40"></RowDefinition>
+            <Frame x:Name="mainWin"  NavigationUIVisibility="Hidden" Margin="4,45"/>
 
-                        <RowDefinition Height="*"></RowDefinition>
-
-                    </Grid.RowDefinitions>
-                    <Label Content="Select Superstore"  Grid.Column="0" Grid.Row="0" />
-                    <ComboBox  Width="180" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0"  ></ComboBox>
-                    <Label Content="Process Month"  Grid.Column="0" Grid.Row="1" />
-                    <ComboBox Width="100" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" ></ComboBox>
-
-                    <StackPanel Grid.Row="2" Grid.Column="0" Margin="20"  VerticalAlignment="Top"  Grid.ColumnSpan="3" Orientation="Horizontal" >
-                        <Button  Command="{Binding GenerateStaturReportClick}"  Template="{StaticResource SubmitButtonTemplate}"  Visibility="{Binding ShowStatusReport,Converter={StaticResource boolToVisibilityConverter}}"  Content="Generate Status Report" Width="150" Margin="5" Height="30" HorizontalAlignment="Center"></Button>
-                        <Button  Command="{Binding CancelButtonClick}"  Template="{StaticResource SubmitButtonTemplate}"  Visibility="{Binding ShowCancel,Converter={StaticResource boolToVisibilityConverter}}"  Content="Cancel" Width="100" Margin="5" Height="30" HorizontalAlignment="Center"></Button>
-
-                        <Button  Command="{Binding CancelButtonClick}"  Template="{StaticResource SubmitButtonTemplate}"  Visibility="{Binding ShowBuildSuperstore,Converter={StaticResource boolToVisibilityConverter}}"  Content="Build Superstore" Width="100" Margin="5" Height="30" HorizontalAlignment="Center"></Button>
-                    </StackPanel>
-                </Grid>
-
-            </Border>
-
-          
             <Label  Grid.Column="1" Grid.Row="0" Height="500"></Label>
 
         </StackPanel>
