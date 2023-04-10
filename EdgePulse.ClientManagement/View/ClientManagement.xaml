@@ -62,45 +62,45 @@
             </ComboBox>
 
             <Label Content=" Fake Client"  Grid.Column="2" Grid.Row="1" Margin="100,0,0,0" />
-            <CheckBox   Grid.Column="3" Grid.Row="1" Margin="2"  ></CheckBox>
+            <CheckBox   Grid.Column="3" Grid.Row="1" Margin="2" IsChecked="{Binding FakeClient}" ></CheckBox>
 
             <Button Grid.Row="0" Grid.Column="3" Content="Manage Super Stores"  Command="{Binding OpenSuperstorCommand }"    Margin="80,0,0,0"
                    Template="{StaticResource SubmitButtonTemplate}"     HorizontalAlignment="Left" Width="170"  Height="25"      />
             <!--Row 2-->
             <Label Grid.Row="2" Grid.Column="0" Content="Client Name" />
-            <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding SelectedClient.ClientName}" />
+            <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding ClientName}" />
             <Label Grid.Column="2" Content="Email Address"  Grid.Row="2"  Margin="100,0,0,0"/>
-            <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding SelectedClient.EmailAddress}" />
+            <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding EmailAddress}" />
 
             <!-- Row 3-->
             <Label Grid.Row="3" Grid.Column="0" Content="Comment" />
-            <TextBox  Grid.Row="3" Grid.Column="1"  Text="{Binding SelectedClient.ClientName}"/>
+            <TextBox  Grid.Row="3" Grid.Column="1"  Text="{Binding Comment}"/>
             <Label Grid.Row="3" Grid.Column="2" Content="# of Sites"  Margin="100,0,0,0"   />
-            <TextBox Grid.Row="3" Grid.Column="3" Width="50"  HorizontalAlignment="Left"    />
+            <TextBox Grid.Row="3" Grid.Column="3" Width="50"  HorizontalAlignment="Left"  Text="{Binding NoOfSites}"  />
 
             <!--Row 4-->
             <Label Grid.Row="4" Grid.Column="0" Content="A/C Manager"   />
-            <ComboBox Grid.Row="4" Grid.Column="1" Height="34" Style="{ StaticResource ComboBox250}" >
+            <ComboBox Grid.Row="4" Grid.Column="1" Height="34" Style="{ StaticResource ComboBox250}" SelectedItem="{Binding AccountManagerId}" >
                 <ComboBoxItem Content="None"/>
             </ComboBox>
             <Label Grid.Row="4" Grid.Column="2" Content="Path" Margin="100,0,0,0"  ></Label>
-            <TextBox Grid.Row="4" Grid.Column="3"   Text="{Binding SelectedClient.ClientName}" />
+            <TextBox Grid.Row="4" Grid.Column="3"   Text="{Binding Path}" />
 
             <!-- Row 5-->
             <Label Grid.Row="5" Grid.Column="0" Content="Proactive Call - Date"   />
 
-            <DatePicker Grid.Column="1" HorizontalAlignment="Left"   Grid.Row="5" Height="30" VerticalAlignment="Center"/>
+            <DatePicker Grid.Column="1" HorizontalAlignment="Left"   Grid.Row="5" Height="30" VerticalAlignment="Center" SelectedDate="{Binding Path=ProactiveCallDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Grid.Row="5" Grid.Column="2"   Margin="100,0,0,0"  >
                 <Label.Content>
                     <AccessText TextWrapping="Wrap"  Text="Proactive Call - Comment"/>
                 </Label.Content>
             </Label>
 
-            <TextBox Grid.Row="5" Grid.Column="3" Text="{Binding SelectedClient.ClientName}"></TextBox>
+            <TextBox Grid.Row="5" Grid.Column="3" Text="{Binding Comment}"></TextBox>
             <!--Row 6-->
 
             <Label Grid.Row="6" Grid.Column="0" Content="REC/ERA Email"   />
-            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding SelectedClient.ClientName}" />
+            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding RecEmail}" />
             <Label Grid.Row="6" Grid.Column="2" Content="Buying Group"   Margin="100,0,0,0"/>
             <ComboBox Grid.Row="6" Grid.Column="3" Margin="2,2,2,2"  Height="34"  Style="{ StaticResource ComboBox250}"   >
 
@@ -132,18 +132,18 @@
                 </Grid.RowDefinitions>
 
                 <Label  Grid.Row="0" Grid.Column="0" Content="Sales Maximum " ></Label>
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding SelectedClient.ClientName}"></TextBox>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding SalesMaximum}"></TextBox>
                 <Label  Grid.Row="0" Grid.Column="2"  HorizontalAlignment="Center" Content="Stock Maximum " ></Label>
-                <TextBox Grid.Row="0" Grid.Column="3" Text="{Binding SelectedClient.ClientName}"></TextBox>
-                <Label  Grid.Row="0" Grid.Column="4" Content="Sales Maximum Qty " ></Label>
-                <TextBox Grid.Row="0" Grid.Column="5" Text="{Binding SelectedClient.ClientName}"></TextBox>
+                <TextBox Grid.Row="0" Grid.Column="3" Text="{Binding StockMaximum}"></TextBox>
+                <Label  Grid.Row="0" Grid.Column="4" Content="Sales Maximum Qty "  ></Label>
+                <TextBox Grid.Row="0" Grid.Column="5" Text="{Binding SalesMaximum}"></TextBox>
 
                 <Label  Grid.Row="1" Grid.Column="0" Content="Sales Minumum" ></Label>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding SelectedClient.ClientName}"></TextBox>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding SalesMinimum}"></TextBox>
                 <Label  Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" Content="Stock Minimum " ></Label>
-                <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding SelectedClient.ClientName}"></TextBox>
+                <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding StockMinimum}"></TextBox>
                 <Label  Grid.Row="1" Grid.Column="4" Content="Sales Minimum Qty" ></Label>
-                <TextBox Grid.Row="1" Grid.Column="5" Text="{Binding SelectedClient.ClientName}"></TextBox>
+                <TextBox Grid.Row="1" Grid.Column="5" Text="{Binding SalesMinimum}"></TextBox>
 
             </Grid>
             
@@ -170,44 +170,44 @@
                 </Grid.RowDefinitions>
                 <Label  Grid.Row="0" Grid.Column="0" Content="Active Client" ></Label>
                 <Label  Grid.Row="0" Grid.Column="2" Content="Use Edge s/w"   ></Label>
-                <CheckBox Grid.Row="0" Grid.Column="1"></CheckBox>
-                <CheckBox Grid.Row="0" Grid.Column="3"></CheckBox>
+                <CheckBox Grid.Row="0" Grid.Column="1" IsChecked="{Binding IsActiveClient}"></CheckBox>
+                <CheckBox Grid.Row="0" Grid.Column="3" IsChecked="{Binding UseEdgeSW}"></CheckBox>
                 <Label Grid.Row="0" Grid.Column="4"  Content="Door Counter" ></Label>
-                <CheckBox Grid.Row="0" Grid.Column="5"  ></CheckBox>
+                <CheckBox Grid.Row="0" Grid.Column="5"  IsChecked="{Binding IsDoorCounter}"></CheckBox>
                 <Label  Grid.Row="0" Grid.Column="6" Content="Mentoring Client" ></Label>
-                <CheckBox Grid.Row="0" Grid.Column="7"   ></CheckBox>
+                <CheckBox Grid.Row="0" Grid.Column="7"  IsChecked="{Binding IsMentorningClient}" ></CheckBox>
                 <!-- sub row 2-->
                 <Label  Grid.Row="1" Grid.Column="0" Content="Layaways on Pickup" ></Label>
-                <CheckBox Grid.Row="1" Grid.Column="1"   ></CheckBox>
+                <CheckBox Grid.Row="1" Grid.Column="1" IsChecked="{Binding LayawaysOnPickUp}"  ></CheckBox>
                 <Label Grid.Row="1" Grid.Column="2"  Content="Macro Oked" ></Label>
-                <CheckBox Grid.Row="1" Grid.Column="3"  ></CheckBox>
+                <CheckBox Grid.Row="1" Grid.Column="3"  IsChecked="{Binding IsMacroOked}"></CheckBox>
                 <Label  Grid.Row="1" Grid.Column="4" Content="Supplier Web System"  ></Label>
-                <CheckBox Grid.Row="1" Grid.Column="5"   ></CheckBox>
+                <CheckBox Grid.Row="1" Grid.Column="5"  IsChecked="{Binding IsSupplierWebSystem}" ></CheckBox>
                 <Label Grid.Row="1" Grid.Column="6"  Content="SQL Server HO" ></Label>
-                <CheckBox Grid.Row="1" Grid.Column="7"  ></CheckBox>
+                <CheckBox Grid.Row="1" Grid.Column="7" IsChecked="{Binding SqlServer}" ></CheckBox>
                 <Label  Grid.Row="2" Grid.Column="4" Content="Results"  ></Label>
-                <CheckBox Grid.Row="2" Grid.Column="5"   ></CheckBox>
+                <CheckBox Grid.Row="2" Grid.Column="5"  IsChecked="{Binding Results}" ></CheckBox>
 
                 <!-- sub row 3-->
                 <Label  Grid.Row="3" Grid.Column="2" Content="Edge Cfg HO Store #" ></Label>
-                <TextBox Grid.Row="3" Grid.Column="3"  Grid.ColumnSpan="2"  ></TextBox>
+                <TextBox Grid.Row="3" Grid.Column="3"  Grid.ColumnSpan="2" Text="{Binding HoStoreNumber}" ></TextBox>
                 <Label Grid.Row="2" Grid.Column="2"  Content="KPI Lite" ></Label>
-                <CheckBox Grid.Row="2" Grid.Column="3"  ></CheckBox>
+                <CheckBox Grid.Row="2" Grid.Column="3"  IsChecked="{Binding IsKPILite}"></CheckBox>
 
                 <Label  Grid.Row="2" Grid.Column="6" Content="EP S/Store allowed"  ></Label>
                 <CheckBox Grid.Row="2" Grid.Column="7"   ></CheckBox>
                 <Label  Grid.Row="2" Grid.Column="0" Content="Jewelsure" ></Label>
-                <CheckBox Grid.Row="2" Grid.Column="1"   ></CheckBox>
+                <CheckBox Grid.Row="2" Grid.Column="1"  IsChecked="{Binding Jewelsure}" ></CheckBox>
 
                 <!-- sub row 4-->
 
                 <Label Grid.Row="3" Grid.Column="0"  Content="Edge Pulse Enabled" ></Label>
-                <CheckBox Grid.Row="3" Grid.Column="1"  ></CheckBox>
+                <CheckBox Grid.Row="3" Grid.Column="1" IsChecked="{Binding IsEdgePulseEnabled}" ></CheckBox>
 
                 <!-- sub row 5-->
 
                 <Label  Grid.Row="3" Grid.Column="6" Content="State"  ></Label>
-                <TextBox Grid.Row="3" Grid.Column="7"  Grid.ColumnSpan="2"  ></TextBox>
+                <TextBox Grid.Row="3" Grid.Column="7"  Grid.ColumnSpan="2"  Text="{Binding State}"></TextBox>
 
 
             </Grid>
