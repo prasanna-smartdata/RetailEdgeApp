@@ -17,8 +17,7 @@ bld/
 [Bb]in/
 [Oo]bj/
 .vs/
-*/bin/Debug/
-*/obj/Debug/
+
  
 
 # Roslyn cache directories
