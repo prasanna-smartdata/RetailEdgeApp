@@ -10,9 +10,11 @@ Public Class ClientDL
     Public Function GetClientDetails(ByVal clientId As Int16) As ClientEntity
         Dim _clientEntity As ClientEntity = Nothing
         Try
+            Dim sqlParams(1) As SqlParameter
+            sqlParams(0) = New SqlParameter("@ClientID", SqlDbType.Int)
+            sqlParams(0).Value = clientId
 
-
-            Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.getClientDetails)
+            Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.getClientDetails, sqlParams)
 
             While reader.Read()
 
@@ -143,17 +145,30 @@ Public Class ClientDL
         Return _clients
     End Function
 
-    Function UpdateClient(ByVal Client As ClientEntity) As Boolean
+    Function UpdateClient(ByVal client As ClientEntity) As Boolean
+
+        Try
+
+            Dim sqlParams(7) As SqlParameter
+            sqlParams(0) = New SqlParameter("@ClientId", client.ID, SqlDbType.Int)
+            sqlParams(1) = New SqlParameter("@ClientName", client.ClientName, SqlDbType.VarChar, 100)
+            sqlParams(2) = New SqlParameter("@AccountManager", client.AccountManagerId, SqlDbType.NVarChar, 50)
+            sqlParams(3) = New SqlParameter("@NoOfSites", client.NoOfSites, SqlDbType.Int)
+            sqlParams(4) = New SqlParameter("@Comment", client.Comment, SqlDbType.NVarChar)
+            sqlParams(5) = New SqlParameter("@Path", client.Path, SqlDbType.NVarChar)
+            sqlParams(6) = New SqlParameter("@BuyingGroupId", client.BuyingGroupId, SqlDbType.Int)
+            sqlParams(7) = New SqlParameter("@ProactiveCallDate", client.ProactiveCallDate.ToString(), SqlDbType.Date)
 
 
 
+            SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.StoredProcedure, "UpdateClientInfo", sqlParams)
 
-        Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.getClients)
+
+        Catch ex As Exception
+
+        End Try
 
         Return True
-
-
-
     End Function
 
 

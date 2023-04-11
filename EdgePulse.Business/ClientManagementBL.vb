@@ -9,18 +9,28 @@ Public Class ClientManagementBL
 
 #Region "Add Edit Client"
 
-    Function GetClients() As List(Of ClientEntity)
+    Shared Function GetClients() As List(Of ClientEntity)
 
         Try
             Dim clientDL As New ClientDL()
             Return clientDL.GetClients()
         Catch ex As Exception
-
+            Throw
         End Try
 
         Return Nothing
     End Function
 
+    Shared Function GetClientDetails(ByVal clientId As Int32) As ClientEntity
+
+        Try
+            Dim clientDL As New ClientDL()
+            Return clientDL.GetClientDetails(clientId)
+        Catch ex As Exception
+            Throw
+        End Try
+        Return Nothing
+    End Function
     Function UpdateClient(ByVal Client As ClientEntity) As Boolean
 
 
@@ -29,7 +39,7 @@ Public Class ClientManagementBL
             Return clientDL.UpdateClient(Client)
 
         Catch ex As Exception
-
+            Throw
         End Try
 
 

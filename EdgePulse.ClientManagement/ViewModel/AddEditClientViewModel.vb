@@ -37,7 +37,18 @@ Public Class AddEditClientViewModel
         End Set
     End Property
 
+    Public Property Client() As ClientEntity
+        Get
+            Return _client
+        End Get
+        Set(ByVal value As ClientEntity)
+            _client = value
+
+        End Set
+    End Property
     Private _isClientsLoaded As Boolean
+    Private _loadClient As DelegateCommand(Of ClientEntity)
+
     Public Property IsClientsLoaded() As Boolean
         Get
             Return _isClientsLoaded
@@ -87,16 +98,29 @@ Public Class AddEditClientViewModel
         End Get
     End Property
 
+    Public ReadOnly Property LoadClient As DelegateCommand
+        Get
+            Return If(Me._loadClient, New DelegateCommand(AddressOf LoadClientDetails))
+        End Get
+    End Property
+
 #End Region
 
 #Region "Methods"
 
+    Public Sub LoadClientDetails()
+        Try
+            Client = ClientManagementBL.GetClientDetails(SelectedClient.ID)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
     Public Sub GetClients()
 
         Try
             Me._isClientsLoaded = True
 
-            _clientsCollection = New ObservableCollection(Of ClientEntity)(_clientManagementBL.GetClients())
+            _clientsCollection = New ObservableCollection(Of ClientEntity)(ClientManagementBL.GetClients())
             Me._isClientsLoaded = False
 
         Catch ex As Exception

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
          xmlns:controls="clr-namespace:System.Windows.Controls;assembly=PresentationFramework"
       
-        xmlns:local="clr-namespace:EdgePulse.ClientManagement"  Width="1050"  WindowStartupLocation="Manual" 
+        xmlns:local="clr-namespace:EdgePulse.ClientManagement" xmlns:i="http://schemas.microsoft.com/xaml/behaviors" Width="1050"  WindowStartupLocation="Manual" 
     Left="0" Top="0" Height="730"
       Title="CleintMaintenance"  WindowState="Normal" WindowStyle="None" ResizeMode="NoResize"
            Background="LightBlue"  
@@ -48,10 +48,15 @@
             </Grid.RowDefinitions>
             <Label Content="Select Clients"  Grid.Column="0" Grid.Row="1" Margin="2"  />
 
-            <ComboBox x:Name="selectClients" SelectedItem="{Binding SelectedClient}" 
+            <ComboBox x:Name="selectClients" SelectedItem="{Binding SelectedClient}"  
                       Height="35"  Grid.Column="1" Grid.Row="1"   TextSearch.TextPath="ClientDisplayName"   
                       ItemsSource="{Binding  Path=ClientsCollection}" DisplayMemberPath="ClientDisplayName"   IsTextSearchEnabled="True"  Width="300"       HorizontalAlignment="Left"  
                        VerticalAlignment="Center" IsEditable="True"  >
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding LoadClient}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
                 <ComboBox.ItemsPanel>
                     <ItemsPanelTemplate>
                         <VirtualizingStackPanel  />
@@ -68,9 +73,9 @@
                    Template="{StaticResource SubmitButtonTemplate}"     HorizontalAlignment="Left" Width="170"  Height="25"      />
             <!--Row 2-->
             <Label Grid.Row="2" Grid.Column="0" Content="Client Name" />
-            <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding ClientName}" />
+            <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding  SelectedClient.ClientName}" />
             <Label Grid.Column="2" Content="Email Address"  Grid.Row="2"  Margin="100,0,0,0"/>
-            <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding EmailAddress}" />
+            <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding SelectedClient.EmailAddress}" />
 
             <!-- Row 3-->
             <Label Grid.Row="3" Grid.Column="0" Content="Comment" />
@@ -213,7 +218,7 @@
             </Grid>
 
             <StackPanel Width="400" Grid.Column="1" Grid.Row="10"    Grid.ColumnSpan="3"  Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Center">
-                <Button  Content="Update" HorizontalAlignment="Left" Width="110"    Template="{StaticResource SubmitButtonTemplate}"   Height="25" VerticalAlignment="Top" Click="Button_Click"/>
+                <Button  Content="Update" HorizontalAlignment="Left" Width="110"    Template="{StaticResource SubmitButtonTemplate}"   Height="25" VerticalAlignment="Top" />
                 <Button  Content="Exit" HorizontalAlignment="Left"   Width="100" Cursor="Hand" Click="btnExit_Click"  Name="btnExit"  Template="{StaticResource SubmitButtonTemplate}"   Height="25" Margin="20,0,0,0" VerticalAlignment="Top"/>
 
             </StackPanel>
