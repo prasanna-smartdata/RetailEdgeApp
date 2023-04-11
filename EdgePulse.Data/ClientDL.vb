@@ -142,4 +142,19 @@ Public Class ClientDL
         End Try
         Return _clients
     End Function
+
+    Function UpdateClient(ByVal Client As ClientEntity) As Boolean
+
+
+
+
+        Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.getClients)
+
+        Return True
+
+
+
+    End Function
+
+
 End Class

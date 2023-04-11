@@ -213,7 +213,7 @@
             </Grid>
 
             <StackPanel Width="400" Grid.Column="1" Grid.Row="10"    Grid.ColumnSpan="3"  Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Center">
-                <Button  Content="Update" HorizontalAlignment="Left" Width="110"    Template="{StaticResource SubmitButtonTemplate}"   Height="25" VerticalAlignment="Top"/>
+                <Button  Content="Update" HorizontalAlignment="Left" Width="110"    Template="{StaticResource SubmitButtonTemplate}"   Height="25" VerticalAlignment="Top" Click="Button_Click"/>
                 <Button  Content="Exit" HorizontalAlignment="Left"   Width="100" Cursor="Hand" Click="btnExit_Click"  Name="btnExit"  Template="{StaticResource SubmitButtonTemplate}"   Height="25" Margin="20,0,0,0" VerticalAlignment="Top"/>
 
             </StackPanel>
