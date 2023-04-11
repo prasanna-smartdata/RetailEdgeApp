@@ -125,7 +125,18 @@ Public Class AddEditClientViewModel
     End Sub
     Public Sub UpdateClient()
 
+        Try
+
+            _clientManagementBL.UpdateClient(SelectedClient)
+
+        Catch ex As Exception
+
+        End Try
+
+
+
     End Sub
+
 
 
 
@@ -144,6 +155,8 @@ Public Class AddEditClientViewModel
 
     End Sub
 #End Region
+
+
 
 
 End Class

@@ -1,5 +1,8 @@
-﻿Imports EdgePulse.Data
+﻿Imports System.Data
+Imports System.Data.SqlClient
+Imports EdgePulse.Data
 Imports EdgePulse.Entities
+Imports EdgePulse.Infrastructure
 
 Public Class ClientManagementBL
 
@@ -16,6 +19,24 @@ Public Class ClientManagementBL
         End Try
 
         Return Nothing
+    End Function
+
+    Function UpdateClient(ByVal Client As ClientEntity) As Boolean
+
+
+        Try
+            Dim clientDL As New ClientDL()
+            Return clientDL.UpdateClient(Client)
+
+        Catch ex As Exception
+
+        End Try
+
+
+        Return True
+
+
+
     End Function
 
 #End Region
