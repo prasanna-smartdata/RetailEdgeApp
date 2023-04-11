@@ -15,6 +15,8 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "RetailEdge.SuperstoreBuild.
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "EdgePulse.ClientManagement", "EdgePulse.ClientManagement\EdgePulse.ClientManagement.vbproj", "{2168B465-74E0-4C20-B9E7-A29DC7078967}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "EdgePulse.Database", "EdgePulse.Database\EdgePulse.Database.sqlproj", "{62AFFC03-E305-46D1-BD20-70EA4A8B400E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,12 @@ Global
 		{2168B465-74E0-4C20-B9E7-A29DC7078967}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2168B465-74E0-4C20-B9E7-A29DC7078967}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2168B465-74E0-4C20-B9E7-A29DC7078967}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62AFFC03-E305-46D1-BD20-70EA4A8B400E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62AFFC03-E305-46D1-BD20-70EA4A8B400E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62AFFC03-E305-46D1-BD20-70EA4A8B400E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{62AFFC03-E305-46D1-BD20-70EA4A8B400E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62AFFC03-E305-46D1-BD20-70EA4A8B400E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62AFFC03-E305-46D1-BD20-70EA4A8B400E}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
