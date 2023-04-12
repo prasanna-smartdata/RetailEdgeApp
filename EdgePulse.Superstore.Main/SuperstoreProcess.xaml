@@ -30,8 +30,7 @@
         <StackPanel Orientation="Horizontal" Margin="50">
             <Frame x:Name="mainWin"  NavigationUIVisibility="Hidden" Margin="4,45"/>
 
-            <Label  Grid.Column="1" Grid.Row="0" Height="500"></Label>
-
+            <TextBox Grid.Column="1" VerticalScrollBarVisibility="Visible" Grid.Row="0" Width="600" Height="400"  Text="{Binding LogText}"  VerticalContentAlignment="Top" ></TextBox>
         </StackPanel>
       </Grid>
 </Window>

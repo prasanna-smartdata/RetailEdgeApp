@@ -9,6 +9,7 @@
         AddHandler viewModel.BuildSuperstoreCompletedEvent, AddressOf LoadKPIReports
         AddHandler viewModel.RestartSuperstoreProcessEvent, AddressOf LoadBuildProcess
 
+        Me.DataContext = viewModel
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
@@ -24,7 +25,7 @@
             mainWin.Content = New KPIReport(viewModel)
 
         Catch ex As Exception
-
+            MessageBox.Show(ex.Message)
         End Try
     End Sub
 
@@ -32,8 +33,9 @@
         Try
 
             mainWin.Content = New ProcessForm(viewModel)
-
+            viewModel.LoadSuperstores()
         Catch ex As Exception
+            MessageBox.Show(ex.Message)
 
         End Try
     End Sub

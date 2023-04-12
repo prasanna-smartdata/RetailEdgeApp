@@ -104,6 +104,19 @@ Public Class AddEditClientViewModel
         End Get
     End Property
 
+
+    Private _logText As String
+    Public Property LogText() As String
+        Get
+            Return _logText
+        End Get
+        Set(ByVal value As String)
+            _logText = value
+            OnPropertyChanged("LogText")
+        End Set
+    End Property
+
+
 #End Region
 
 #Region "Methods"
