@@ -79,6 +79,16 @@ Public Class SuperstoreProcessViewModel
 
     End Property
 
+    Private _logText As String
+    Public Property LogText() As String
+        Get
+            Return _logText
+        End Get
+        Set(ByVal value As String)
+            _logText = value
+            OnPropertyChanged("LogText")
+        End Set
+    End Property
 
 
     Private _buildProcessClick As DelegateCommand
@@ -160,5 +170,20 @@ Public Class SuperstoreProcessViewModel
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Sub LoadSuperstores()
+        Try
+            AppendToLog("Loading superstores.... ")
+        Catch ex As Exception
+            Throw
+        End Try
+    End Sub
+
+    'Call this method to add the log
+    Sub AppendToLog(ByVal text)
+        _logText += text + Environment.NewLine
+        OnPropertyChanged("LogText")
+
     End Sub
 End Class
