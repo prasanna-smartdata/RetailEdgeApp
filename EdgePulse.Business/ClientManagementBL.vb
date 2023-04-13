@@ -8,11 +8,11 @@ Public Class ClientManagementBL
 
 
 #Region "Add Edit Client"
-
-    Shared Function GetClients() As List(Of ClientEntity)
+    Dim clientDL As New ClientDL()
+    Function GetClients() As List(Of ClientEntity)
 
         Try
-            Dim clientDL As New ClientDL()
+
             Return clientDL.GetClients()
         Catch ex As Exception
             Throw
@@ -21,10 +21,26 @@ Public Class ClientManagementBL
         Return Nothing
     End Function
 
-    Shared Function GetClientDetails(ByVal clientId As Int32) As ClientEntity
+    Function GetBuyingGroups() As List(Of BuyingGroupEntity)
 
         Try
-            Dim clientDL As New ClientDL()
+            Return clientDL.GetBuyingGroups()
+        Catch ex As Exception
+            Throw
+        End Try
+    End Function
+
+    Function GetSuperstores() As List(Of SuperstoreEntity)
+
+        Try
+            Return clientDL.GetSuperstores()
+        Catch ex As Exception
+
+        End Try
+    End Function
+    Function GetClientDetails(ByVal clientId As Int32) As ClientEntity
+
+        Try
             Return clientDL.GetClientDetails(clientId)
         Catch ex As Exception
             Throw
@@ -35,7 +51,6 @@ Public Class ClientManagementBL
 
 
         Try
-            Dim clientDL As New ClientDL()
             Return clientDL.UpdateClient(Client)
 
         Catch ex As Exception

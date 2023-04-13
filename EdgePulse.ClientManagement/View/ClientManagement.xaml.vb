@@ -5,7 +5,7 @@
 
         ' This call is required by the designer.
         InitializeComponent()
-        Me.DataContext = New AddEditClientViewModel()
+        Me.DataContext = New ClientViewModel()
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub

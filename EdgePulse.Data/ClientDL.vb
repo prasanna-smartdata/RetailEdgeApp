@@ -20,7 +20,7 @@ Public Class ClientDL
 
                 _clientEntity = New ClientEntity()
                 With _clientEntity
-                    .AccountManagerId = reader.Item("AccountManager")
+
                     .EmailAddress = reader.Item("Email")
                     .BuyingGroupId = reader.Item("BuyingGroupId")
                     .ClientName = reader.Item("ClientName")
@@ -30,14 +30,13 @@ Public Class ClientDL
                     .HoStoreNumber = reader.Item("HOStoreNumber")
                     .IsActiveClient = reader.Item("ActiveClient")
                     .IsDoorCounter = reader.Item("DoorCounter")
-                    .IsEdgePulseEnabled = reader.Item("EdgePulseEnabled")
+                    .IsEdgePulseEnabled = reader.Item("EdgePulseAllowed")
                     .IsKPILite = reader.Item("KPILite")
                     .IsMacroOked = reader.Item("MacroOked")
                     .IsMentorningClient = reader.Item("MentoringClient")
                     .IsSuperStoreActive = reader.Item("SuperstoreActive")
-                    .IsSupplierWebSystem = reader.Item("SupplierSystem")
                     .Jewelsure = reader.Item("Jewelsure")
-                    .LayawaysOnPickUp = reader.Item("LaybuysOnPickup")
+                    .LayawaysOnPickUp = reader.Item("LaybysOnPickup")
                     .NoOfSites = reader.Item("SilentManagerSites")
                     .Path = reader.Item("Where")
                     .ProactiveCallDate = reader.Item("LastAccountManagerCall")
@@ -45,14 +44,16 @@ Public Class ClientDL
                     .Results = reader.Item("Results")
                     .SqlServer = reader.Item("SQLServer")
                     .State = reader.Item("State")
+                    .IsSupplierWebSystem = reader.Item("SuppSystem")
                     .SupportEmail = reader.Item("TheirSupportEmail")
                     .UseEdgeSW = reader.Item("TheEdge")
-                    .SalesMaximum = reader.Item("SalesMaximum")
-                    .SalesMinimum = reader.Item("SalesMinimum")
-                    .StockMaximum = reader.Item("StockMaximum")
-                    .StockMinimum = reader.Item("StockMinimum")
-                    .StockMaximumQty = reader.Item("StockMaximumQty")
-                    .StockMinimumQty = reader.Item("StockMinimumQty")
+                    .AccountManagerId = If(reader.Item("AccountManager") = "Not Allocated", 0, reader.Item("AccountManager"))
+                    .SalesMaximum = If(reader.IsDBNull("SalesMaximum"), 0, reader.Item("SalesMaximum"))
+                    .SalesMinimum = If(reader.IsDBNull("SalesMinimum"), 0, reader.Item("SalesMinimum"))
+                    .StockMaximum = If(reader.IsDBNull("StockMaximum"), 0, reader.Item("StockMaximum"))
+                    .StockMinimum = If(reader.IsDBNull("StockMinimum"), 0, reader.Item("StockMinimum"))
+                    .StockMaximumQty = If(reader.IsDBNull("SalesMaximumQty"), 0, reader.Item("SalesMaximumQty"))
+                    .StockMinimumQty = If(reader.IsDBNull("SalesMinimumQty"), 0, reader.Item("SalesMinimumQty"))
                 End With
             End While
         Catch ex As Exception
@@ -132,9 +133,10 @@ Public Class ClientDL
 
             While reader.Read()
                 Dim _client = New ClientEntity()
-                _client.id = reader("ID")
+                _client.ID = reader("ID")
                 _client.ClientName = reader("ClientName")
                 _client.ClientNumber = reader("ClientNum")
+                _client.StoreName = reader("StoreName")
                 _client.ClientDisplayName = _client.ClientNumber + " ---- " + _client.ClientName
                 _clients.Add(_client)
             End While

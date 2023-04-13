@@ -36,11 +36,11 @@
             OnPropertyChanged("GroupName")
         End Set
     End Property
-    Public Property DeptsToUse() As Int16
+    Public Property DeptsToUse() As String
         Get
             Return _deptsToUse
         End Get
-        Set(ByVal Value As Int16)
+        Set(ByVal Value As String)
             _deptsToUse = Value
             OnPropertyChanged("DeptsToUse")
         End Set

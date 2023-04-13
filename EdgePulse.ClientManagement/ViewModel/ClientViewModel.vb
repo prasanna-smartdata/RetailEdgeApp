@@ -6,7 +6,7 @@ Imports Prism.Commands
 Imports System.Windows.Input
 Imports EdgePulse.Business
 
-Public Class AddEditClientViewModel
+Public Class ClientViewModel
     Inherits ViewModelBase
 
 #Region "Fields"
@@ -19,7 +19,7 @@ Public Class AddEditClientViewModel
     Private _clientsCollection As New ObservableCollection(Of ClientEntity)
     Private _clientManagementBL As New ClientManagementBL()
     Private _client As ClientEntity
-
+    Private _buyingGroups As New ObservableCollection(Of BuyingGroupEntity)
 
 #End Region
 
@@ -37,13 +37,33 @@ Public Class AddEditClientViewModel
         End Set
     End Property
 
+    Private _selectedBuyingGroup As BuyingGroupEntity
+    Public Property SelectedBuyingGroup() As BuyingGroupEntity
+        Get
+            Return _selectedBuyingGroup
+        End Get
+        Set(ByVal value As BuyingGroupEntity)
+            _selectedBuyingGroup = value
+            OnPropertyChanged("SelectedBuyingGroup")
+        End Set
+    End Property
+
+    Public Property BuyingGroups() As ObservableCollection(Of BuyingGroupEntity)
+        Get
+            Return _buyingGroups
+        End Get
+        Set(ByVal value As ObservableCollection(Of BuyingGroupEntity))
+            _buyingGroups = value
+            OnPropertyChanged("BuyingGroups")
+        End Set
+    End Property
     Public Property Client() As ClientEntity
         Get
             Return _client
         End Get
         Set(ByVal value As ClientEntity)
             _client = value
-
+            OnPropertyChanged("Client")
         End Set
     End Property
     Private _isClientsLoaded As Boolean
@@ -123,7 +143,8 @@ Public Class AddEditClientViewModel
 
     Public Sub LoadClientDetails()
         Try
-            Client = ClientManagementBL.GetClientDetails(SelectedClient.ID)
+            Client = _clientManagementBL.GetClientDetails(SelectedClient.ID)
+            SelectedBuyingGroup = BuyingGroups.Single(Function(i) i.BuyingGroupID = Client.BuyingGroupId)
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -133,16 +154,24 @@ Public Class AddEditClientViewModel
         Try
             Me._isClientsLoaded = True
 
-            _clientsCollection = New ObservableCollection(Of ClientEntity)(ClientManagementBL.GetClients())
+            _clientsCollection = New ObservableCollection(Of ClientEntity)(_clientManagementBL.GetClients())
             Me._isClientsLoaded = False
 
         Catch ex As Exception
-
+            MessageBox.Show(ex.Message)
         End Try
 
     End Sub
 
     Public Sub GetBuyingGroups()
+        Try
+
+
+            _buyingGroups = New ObservableCollection(Of BuyingGroupEntity)(_clientManagementBL.GetBuyingGroups())
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
 
     End Sub
 
@@ -186,6 +215,7 @@ Public Class AddEditClientViewModel
 
         Try
             GetClients()
+            GetBuyingGroups()
         Catch ex As Exception
 
         End Try

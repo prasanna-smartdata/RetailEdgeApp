@@ -36,7 +36,7 @@
                     <Button  Command="{Binding GenerateStaturReportClick}"  Template="{StaticResource SubmitButtonTemplate}"  Visibility="{Binding ShowStatusReport,Converter={StaticResource boolToVisibilityConverter}}"  Content="Generate Status Report" Width="150" Margin="5" Height="30" HorizontalAlignment="Center"></Button>
                     <Button  Command="{Binding CancelButtonClick}"  Template="{StaticResource SubmitButtonTemplate}"  Visibility="{Binding ShowCancel,Converter={StaticResource boolToVisibilityConverter}}"  Content="Cancel" Width="100" Margin="5" Height="30" HorizontalAlignment="Center"></Button>
 
-                    <Button  Command="{Binding BuildProcessClick}"  Name="btnBuildSuperstore"    Template="{StaticResource SubmitButtonTemplate}"  Visibility="{Binding ShowBuildSuperstore,Converter={StaticResource boolToVisibilityConverter}}"  Content="Build Superstore" Width="100" Margin="5" Height="30" HorizontalAlignment="Center"></Button>
+                    <Button  Command="{Binding BuildProcessClick}"  Name="btnBuildSuperstore"    Template="{StaticResource SubmitButtonTemplate}"  Visibility="{Binding ShowBuildSuperstore,Converter={StaticResource boolToVisibilityConverter}}"  Content="Build Superstore " Width="100" Margin="5" Height="30" HorizontalAlignment="Center"></Button>
                 </StackPanel>
             </Grid>
 
