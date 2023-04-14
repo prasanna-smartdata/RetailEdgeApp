@@ -87,12 +87,12 @@ Public Class ManageSuperstoreViewModel
         End Set
     End Property
 
-    Private _saveCommand As ICommand
+    Private _saveCommand As DelegateCommand
 
 
     Public ReadOnly Property SaveCommand As DelegateCommand
         Get
-            Return If(Me._saveCommand, New DelegateCommand(Of ClientEntity)(AddressOf SaveClientStore))
+            Return If(Me._saveCommand, New DelegateCommand(AddressOf SaveClientStore))
         End Get
     End Property
 
@@ -118,11 +118,12 @@ Public Class ManageSuperstoreViewModel
     '                        Return New ObservableCollection(Of ClientEntity)(_clientManagementBL.GetClients())
     '                    End Function)
     'End Function
-    Private Sub SaveClientStore(obj As ClientEntity)
+    Private Sub SaveClientStore()
         Try
 
+            _clientManagementBL.SaveSuperstoreClientData(ClientStoresCollection.ToList(), SelectedSuperstore.ID)
         Catch ex As Exception
-
+            Throw
         End Try
     End Sub
 

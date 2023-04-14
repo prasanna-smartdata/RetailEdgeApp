@@ -181,4 +181,42 @@ Public Class ClientDL
     End Function
 
 
+    Function SaveSuperstoreClient(ByVal ClientStoreID As Int32, ByVal SuperstoreGroupID As Int32) As Boolean
+        Try
+            Dim sqlParams(2) As SqlParameter
+            sqlParams(0) = New SqlParameter("@ClientStoreID", SqlDbType.Int)
+            sqlParams(0).Value = ClientStoreID
+            sqlParams(1) = New SqlParameter("@SuperstoreGroupID", SqlDbType.Int)
+            sqlParams(1).Value = SuperstoreGroupID
+
+            SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.StoredProcedure, StoredProcNames.SaveClientSuperstore, sqlParams)
+            Return True
+
+        Catch ex As Exception
+            Return False
+
+        End Try
+
+        Return True
+    End Function
+
+    Function DeleteSuperstoreClient(ByVal ClientStoreID As Int32, ByVal SuperstoreGroupID As Int32) As Boolean
+        Try
+            Dim sqlParams(2) As SqlParameter
+            sqlParams(0) = New SqlParameter("@ClientStoreID", SqlDbType.Int)
+            sqlParams(0).Value = ClientStoreID
+            sqlParams(1) = New SqlParameter("@SuperstoreGroupID", SqlDbType.Int)
+            sqlParams(1).Value = SuperstoreGroupID
+
+            SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.StoredProcedure, StoredProcNames.DeleteClientSuperstore, sqlParams)
+            Return True
+
+        Catch ex As Exception
+            Return False
+
+        End Try
+
+        Return True
+    End Function
+
 End Class
