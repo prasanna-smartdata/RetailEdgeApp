@@ -11,6 +11,6 @@ BEGIN
 	-- interfering with SELECT statements.
 	SET NOCOUNT ON;
 	
-  SELECT Clients.id,Clients.ClientNum, Clients.ClientName ,ClientStores.StoreName from Clients,ClientStores where Clients.ClientNum = ClientStores.ClientNum
+  SELECT Clients.id,Clients.ClientNum, Clients.ClientName, ClientStores.StoreID, ClientStores.StoreName from Clients,ClientStores where Clients.ClientNum = ClientStores.ClientNum
   Order by 2
 END

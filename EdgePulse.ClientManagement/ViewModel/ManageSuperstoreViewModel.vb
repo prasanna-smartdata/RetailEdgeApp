@@ -13,7 +13,9 @@ Public Class ManageSuperstoreViewModel
 
     Private ReadOnly _exitClickCommand As DelegateCommand = Nothing
 
-    Private _clientsCollection As New ObservableCollection(Of ClientEntity)
+    Private _clientStoresCollection As New ObservableCollection(Of ClientStoreEntity)
+    Private _orginalClientStoresCollection As New ObservableCollection(Of ClientStoreEntity)
+
     Private _superStoresCollection As New ObservableCollection(Of SuperstoreEntity)
     Private _clientManagementBL As New ClientManagementBL()
 #End Region
@@ -28,13 +30,25 @@ Public Class ManageSuperstoreViewModel
     '    End Get
 
     'End Property
-    Public Property ClientsCollection() As ObservableCollection(Of ClientEntity)
+    Public Property ClientStoresCollection() As ObservableCollection(Of ClientStoreEntity)
         Get
-            Return _clientsCollection
+            Return _clientStoresCollection
         End Get
-        Set(ByVal value As ObservableCollection(Of ClientEntity))
-            _clientsCollection = value
-            OnPropertyChanged("ClientsCollection")
+        Set(ByVal value As ObservableCollection(Of ClientStoreEntity))
+            _clientStoresCollection = value
+            OnPropertyChanged("ClientStoresCollection")
+
+        End Set
+    End Property
+
+    'Save the orginal collection for tracking the changes
+    Public Property OrignalClientStoresCollection() As ObservableCollection(Of ClientStoreEntity)
+        Get
+            Return _orginalClientStoresCollection
+        End Get
+        Set(ByVal value As ObservableCollection(Of ClientStoreEntity))
+            _orginalClientStoresCollection = value
+            OnPropertyChanged("OrignalClientStoresCollection")
 
         End Set
     End Property
@@ -73,6 +87,14 @@ Public Class ManageSuperstoreViewModel
         End Set
     End Property
 
+    Private _saveCommand As ICommand
+
+
+    Public ReadOnly Property SaveCommand As DelegateCommand
+        Get
+            Return If(Me._saveCommand, New DelegateCommand(Of ClientEntity)(AddressOf SaveClientStore))
+        End Get
+    End Property
 
 
 #End Region
@@ -96,22 +118,34 @@ Public Class ManageSuperstoreViewModel
     '                        Return New ObservableCollection(Of ClientEntity)(_clientManagementBL.GetClients())
     '                    End Function)
     'End Function
+    Private Sub SaveClientStore(obj As ClientEntity)
+        Try
 
+        Catch ex As Exception
+
+        End Try
+    End Sub
 
     Public Sub GetSuperStores()
         Try
             SuperstoresCollection = New ObservableCollection(Of SuperstoreEntity)(_clientManagementBL.GetSuperstores())
         Catch ex As Exception
+            MessageBox.Show(ex.Message)
 
         End Try
 
     End Sub
 
-    Public Sub GetClients()
+    Public Sub GetClientStores()
 
         Try
 
-            _clientsCollection = New ObservableCollection(Of ClientEntity)(_clientManagementBL.GetClients())
+            _clientStoresCollection = New ObservableCollection(Of ClientStoreEntity)(_clientManagementBL.GetClientStores())
+
+            'Saving the clientstores for future reference
+            For Each item As ClientStoreEntity In _clientStoresCollection
+                _orginalClientStoresCollection.Add(item.Clone())
+            Next
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -119,21 +153,23 @@ Public Class ManageSuperstoreViewModel
 
     End Sub
 
-    Private Function Filter(ByVal client As ClientEntity) As Boolean
-        Return SearchKey Is Nothing OrElse client.ClientName.IndexOf(SearchKey, StringComparison.OrdinalIgnoreCase) <> -1
-        'OrElse dragon.OriginalName.IndexOf(SearchKey, StringComparison.OrdinalIgnoreCase) <> -1 OrElse dragon.RomajiName.IndexOf(Search, StringComparison.OrdinalIgnoreCase) <> -1
+    Private Function Filter(ByVal client As ClientStoreEntity) As Boolean
+        Return SearchKey Is Nothing OrElse client.ClientName.IndexOf(SearchKey, StringComparison.OrdinalIgnoreCase) <> -1 OrElse client.ClientNumber.IndexOf(SearchKey, StringComparison.OrdinalIgnoreCase) <> -1
+        'OrElse dragon.RomajiName.IndexOf(Search, StringComparison.OrdinalIgnoreCase) <> -1
     End Function
+
+
 
 #End Region
 
-#Region "Wizards"
+#Region "Consctructors"
 
     Public Sub New()
 
         Try
             GetSuperStores()
-            GetClients()
-            ItemsView = CollectionViewSource.GetDefaultView(ClientsCollection)
+            GetClientStores()
+            ItemsView = CollectionViewSource.GetDefaultView(ClientStoresCollection)
             Dim searchFilter As Predicate(Of Object) = AddressOf Filter
             ItemsView.Filter = searchFilter
         Catch ex As Exception
