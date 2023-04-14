@@ -30,6 +30,14 @@ Public Class ClientManagementBL
         End Try
     End Function
 
+    Function GetClientStores() As List(Of ClientStoreEntity)
+
+        Try
+            Return clientDL.GetClientStores()
+        Catch ex As Exception
+            Throw
+        End Try
+    End Function
     Function GetSuperstores() As List(Of SuperstoreEntity)
 
         Try
@@ -47,6 +55,8 @@ Public Class ClientManagementBL
         End Try
         Return Nothing
     End Function
+
+
     Function UpdateClient(ByVal Client As ClientEntity) As Boolean
 
 

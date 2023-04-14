@@ -110,20 +110,6 @@ Public Class ClientDL
     End Function
 
 
-    Function GetClientStores() As List(Of ClientStoreDetailsEntity)
-        Dim _clientStores As New List(Of ClientStoreDetailsEntity)
-        Try
-            Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.GetClientStores)
-
-            While reader.Read()
-
-            End While
-
-        Catch ex As Exception
-            Throw
-        End Try
-        Return _clientStores
-    End Function
 
 
     Function GetClients() As List(Of ClientEntity)
@@ -145,6 +131,27 @@ Public Class ClientDL
 
         End Try
         Return _clients
+    End Function
+
+    Function GetClientStores() As List(Of ClientStoreEntity)
+        Dim _clientStores As New List(Of ClientStoreEntity)
+        Try
+            Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.getClients)
+
+            While reader.Read()
+                Dim _store = New ClientStoreEntity()
+                _store.ID = reader("ID")
+                _store.ClientName = reader("ClientName")
+                _store.ClientNumber = reader("ClientNum")
+                _store.StoreID = reader("StoreID")
+                _store.StoreName = reader("StoreName")
+                _clientStores.Add(_store)
+            End While
+
+        Catch ex As Exception
+            Throw
+        End Try
+        Return _clientStores
     End Function
 
     Function UpdateClient(ByVal client As ClientEntity) As Boolean
