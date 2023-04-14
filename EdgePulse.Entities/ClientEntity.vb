@@ -30,6 +30,7 @@
     Private _isKPILite As Boolean
     Private _jewelsure As Boolean
     Private _results As Boolean
+    Private _store As String
     Private _sqlServer As Boolean
     Private _salesMaximum As Long
     Private _stockMinimumQty As Long
@@ -37,6 +38,18 @@
     Private _salesMinimum As Long
     Private _stockMinimum As Long
     Private _stockMaximum As Long
+
+    Public Property StoreName() As String
+        Get
+            Return _store
+        End Get
+        Set(ByVal value As String)
+            _store = value
+            OnPropertyChanged("StoreName")
+
+        End Set
+    End Property
+
     Public Property StockMaximum() As Long
         Get
             Return _stockMaximum
@@ -313,11 +326,11 @@
             OnPropertyChanged("HoStoreNumber")
         End Set
     End Property
-    Public Property IsEdgePulseEnabled() As String
+    Public Property IsEdgePulseEnabled() As Boolean
         Get
             Return _isEdgePulseEnabled
         End Get
-        Set(ByVal Value As String)
+        Set(ByVal Value As Boolean)
             _isEdgePulseEnabled = Value
             OnPropertyChanged("IsEdgePulseEnabled")
         End Set

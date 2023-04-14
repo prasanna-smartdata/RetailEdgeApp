@@ -3,7 +3,9 @@
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE [dbo].[GetSuperstores]
+
+
+CREATE PROCEDURE [dbo].[getSuperstores]
 	 
 AS
 BEGIN
@@ -12,5 +14,8 @@ BEGIN
 	SET NOCOUNT ON;
 
     -- Insert statements for procedure here
-	 SELECT * FROM GroupNames;
+	 SELECT [ID]
+      ,[GroupNum]
+      ,[GroupName]
+      ,[DeptsToUse] FROM GroupNames;
 END
