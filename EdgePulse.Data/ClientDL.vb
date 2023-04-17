@@ -136,7 +136,7 @@ Public Class ClientDL
     Function GetClientStores() As List(Of ClientStoreEntity)
         Dim _clientStores As New List(Of ClientStoreEntity)
         Try
-            Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.getClients)
+            Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.getClientStores)
 
             While reader.Read()
                 Dim _store = New ClientStoreEntity()
