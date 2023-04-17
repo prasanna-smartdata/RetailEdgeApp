@@ -3,10 +3,14 @@
     [GroupNum]   INT           DEFAULT ((0)) NULL,
     [GroupName]  NVARCHAR (50) NULL,
     [DeptsToUse] NVARCHAR (1)  NULL,
+    [Region]     VARCHAR (5)   NULL,
+    [Status]     BIT           CONSTRAINT [DF_GroupNames_Status] DEFAULT ((1)) NOT NULL,
     CONSTRAINT [GroupNames$Id] PRIMARY KEY CLUSTERED ([ID] ASC) WITH (FILLFACTOR = 98),
     CONSTRAINT [SSMA_CC$GroupNames$DeptsToUse$disallow_zero_length] CHECK (len([DeptsToUse])>(0)),
     CONSTRAINT [SSMA_CC$GroupNames$GroupName$disallow_zero_length] CHECK (len([GroupName])>(0))
 );
+
+
 
 
 GO

@@ -92,12 +92,7 @@ Public Class ClientViewModel
 
     Public ReadOnly Property EditClickCommand As DelegateCommand
         Get
-            If _editClickCommand Is Nothing Then
-                _editClickCommand = New DelegateCommand(AddressOf UpdateClient)
-            End If
-
-            Return _editClickCommand
-
+            Return If(Me._editClickCommand, New DelegateCommand(Of ClientEntity)(AddressOf UpdateClient))
         End Get
     End Property
 
@@ -148,8 +143,12 @@ Public Class ClientViewModel
 
     Public Sub LoadClientDetails()
         Try
-            Client = _clientManagementBL.GetClientDetails(SelectedClient.ID)
-            SelectedBuyingGroup = BuyingGroups.Single(Function(i) i.BuyingGroupID = Client.BuyingGroupId)
+            If SelectedClient IsNot Nothing Then
+                Client = _clientManagementBL.GetClientDetails(SelectedClient.ID)
+                SelectedBuyingGroup = BuyingGroups.Single(Function(i) i.BuyingGroupID = Client.BuyingGroupId)
+            End If
+
+
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -198,8 +197,7 @@ Public Class ClientViewModel
 
         Try
 
-            _clientManagementBL.UpdateClient(SelectedClient.ID, Client)
-
+            ' _clientManagementBL.UpdateClient(SelectedClient)
 
         Catch ex As Exception
 

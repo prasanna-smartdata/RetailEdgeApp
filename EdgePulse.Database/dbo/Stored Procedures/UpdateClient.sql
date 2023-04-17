@@ -4,7 +4,7 @@
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE [dbo].[UpdateClient]
+CREATE PROCEDURE [dbo].[updateClient]
 	
 	-- Add the parameters for the stored procedure here
 	@ClientId	 int,

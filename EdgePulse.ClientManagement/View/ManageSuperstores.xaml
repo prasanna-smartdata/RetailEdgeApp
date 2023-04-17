@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:EdgePulse.ClientManagement"
         mc:Ignorable="d" WindowStartupLocation="CenterOwner"
         Title="ManageSuperstores"   
-    Left="0" Top="0" WindowState="Normal" Width="700"   Height="700"   WindowStyle="None"   Background="LightBlue"  >
+    Left="0" Top="0" WindowState="Normal" Width="700"   Height="800"   WindowStyle="None"   Background="LightBlue"  >
     <StackPanel>
 
         <Label Content="SUPERSTORE MANAGEMENT" Width="1050" Background="#FF726868"    VerticalAlignment="Top"    Height="40" Foreground="White"  HorizontalAlignment="Left" Margin="3" FontSize="22" />
 
-        <Grid Margin="10" Height="600">
+        <Grid Margin="10" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="690"></ColumnDefinition>
                 
@@ -32,14 +32,13 @@
                     <Label Content="Select Superstore" />
                     <ComboBox Width="300" Height="34" ItemsSource="{Binding  Path=SuperstoresCollection}" 
                       SelectedItem="{Binding SelectedSuperstore}"  DisplayMemberPath="GroupName"  Style="{ StaticResource ComboBox250}"  ></ComboBox>
-                    <Button Width="100" Height="25" Margin="20,0,0,0"    Template="{StaticResource SubmitButtonTemplate}"  Content="Edit Superstore"></Button>
-                    <Button Width="60" Height="25" Margin="20,0,0,0"    Name="btnClose" Click="btnClose_Click" Template="{StaticResource SubmitButtonTemplate}"  Content="Close"></Button>
+                    <Button Width="100" Height="25" Margin="20,0,0,0"  Name="btnEditSuperstore"  Click="btnEditSuperstore_Click" Template="{StaticResource SubmitButtonTemplate}"  Content="Edit Superstore"></Button>
 
                 </StackPanel>
-                <Border Grid.Column="1" Grid.Row="1" Width="550" Height="530" Margin="5" Padding="5"   
+                <Border Grid.Column="1" Grid.Row="1" Width="550"  Margin="5" Padding="5"   
           BorderBrush="White" BorderThickness="1" CornerRadius="2"
           VerticalAlignment="Top">
-                    <StackPanel >
+                    <StackPanel    >
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
                             <Label Content="Filter" ></Label>
 
@@ -53,8 +52,15 @@
 
                                     <GridView  
               ColumnHeaderToolTip="Client Information">
-                                        <GridViewColumn CellTemplate="{StaticResource CheckBoxCell}" 
-                Width="30"/>
+                                        <GridViewColumn   Width="30">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate  >
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <CheckBox IsChecked="{Binding IsSelected }"/>
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
                                         <GridViewColumn Header="Number" Width="120" DisplayMemberBinding="{Binding ClientNumber}" />
                                         <GridViewColumn   Header="Name" Width="200" DisplayMemberBinding="{Binding ClientName}" />
                                         <GridViewColumn   Header="Store" Width="200" DisplayMemberBinding="{Binding StoreName}" />
@@ -63,6 +69,13 @@
 
                                 </ListView.View>
                             </ListView>
+
+                           
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Width="200"  >
+                            <Button Content="Save" Width="70" Height="25" Command="{Binding SaveCommand}" Template="{StaticResource SubmitButtonTemplate}"></Button>
+                            <Button Width="60" Height="25" Margin="20,0,0,0"    Name="btnClose" Click="btnClose_Click" Template="{StaticResource SubmitButtonTemplate}"  Content="Close"></Button>
+
                         </StackPanel>
                     </StackPanel>
                 </Border>

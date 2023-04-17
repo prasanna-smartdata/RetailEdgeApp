@@ -17,5 +17,8 @@ BEGIN
 	 SELECT [ID]
       ,[GroupNum]
       ,[GroupName]
-      ,[DeptsToUse] FROM GroupNames;
+      ,[DeptsToUse]
+	  ,[Region]
+	  ,[Status]
+	  FROM GroupNames;
 END

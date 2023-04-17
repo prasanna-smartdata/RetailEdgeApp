@@ -73,5 +73,7 @@
     <Build Include="dbo\Stored Procedures\getClients.sql" />
     <Build Include="dbo\Stored Procedures\GetSuperstores.sql" />
     <Build Include="dbo\Stored Procedures\UpdateClient.sql" />
+    <Build Include="dbo\Stored Procedures\getClientStores.sql" />
+    <Build Include="dbo\Stored Procedures\GetSuperstoreClientStoresDetails.sql" />
   </ItemGroup>
 </Project>
