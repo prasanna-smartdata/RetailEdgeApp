@@ -75,5 +75,6 @@
     <Build Include="dbo\Stored Procedures\UpdateClient.sql" />
     <Build Include="dbo\Stored Procedures\SaveSuperstoreClient.sql" />
     <Build Include="dbo\Stored Procedures\DeleteSuperstoreClient.sql" />
+    <Build Include="dbo\Stored Procedures\GetSuperstoreClients.sql" />
   </ItemGroup>
 </Project>

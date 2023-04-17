@@ -94,6 +94,15 @@ Public Class ClientManagementBL
         End Try
         Return True
     End Function
+
+    Function GetSuperstoreClients(ByVal SuperstoreID As Int16) As List(Of ClientStoreSuperstoreEntity)
+
+        Try
+            Return clientDL.GetSuperstoreClients(SuperstoreID)
+        Catch ex As Exception
+            Throw
+        End Try
+    End Function
 #End Region
 
 

@@ -6,5 +6,6 @@
     Public Const getClientDetails = "getClientDetails"
     Public Const SaveClientSuperstore = "SaveSuperstoreClients"
     Public Const DeleteClientSuperstore = "DeleteSuperstoreClient"
+    Public Const GetSuperstoreClients = "GetSuperstoreClients"
 
 End Class
