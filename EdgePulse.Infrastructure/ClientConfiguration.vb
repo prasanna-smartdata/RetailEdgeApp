@@ -6,7 +6,7 @@ Public Class ClientConfiguration
         Return ConfigurationManager.ConnectionStrings("rmhClientConnection").ConnectionString
     End Function
 
-    Shared Function GetEdgePulseConnectionSource() As String
+    Shared Function GetEdgePulsrConnectionSource() As String
 
         Return ConfigurationManager.ConnectionStrings("edgePulseConnection").ConnectionString
     End Function
