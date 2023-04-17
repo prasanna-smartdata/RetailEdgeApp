@@ -49,7 +49,7 @@
             <Label Content="Select Clients"  Grid.Column="0" Grid.Row="1" Margin="2"  />
 
             <ComboBox x:Name="selectClients" SelectedItem="{Binding SelectedClient}"  
-                      Height="35"  Grid.Column="1" Grid.Row="1"   TextSearch.TextPath="ClientDisplayName"   
+                      Height="35"  Grid.Column="1" Grid.Row="1"   TextSearch.TextPath="ClientName"   
                       ItemsSource="{Binding  Path=ClientsCollection}" DisplayMemberPath="ClientDisplayName"   IsTextSearchEnabled="True"  Width="300"       HorizontalAlignment="Left"  
                        VerticalAlignment="Center" IsEditable="True"  >
                 <i:Interaction.Triggers>

@@ -11,6 +11,5 @@ BEGIN
 	-- interfering with SELECT statements.
 	SET NOCOUNT ON;
 	
-  SELECT ClientStores.ID,Clients.ClientNum, Clients.ClientName, ClientStores.StoreID, ClientStores.StoreName from Clients,ClientStores where Clients.ClientNum = ClientStores.ClientNum
-  Order by 2
+  Select Id, ClientNum,ClientName from Clients order by 2;
 END

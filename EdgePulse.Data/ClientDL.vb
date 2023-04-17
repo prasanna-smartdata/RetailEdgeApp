@@ -86,7 +86,7 @@ Public Class ClientDL
     Public Function GetSuperstores() As List(Of SuperstoreEntity)
         Dim _superStores As List(Of SuperstoreEntity) = New List(Of SuperstoreEntity)()
         Try
-            Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.GetSuperstores)
+            Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.getSuperstores)
             Dim _superStore As SuperstoreEntity = Nothing
             While reader.Read()
 
@@ -97,7 +97,8 @@ Public Class ClientDL
                     .GroupNum = reader.Item("GroupNum")
                     .GroupName = reader.Item("GroupName")
                     .DeptsToUse = reader.Item("DeptsToUse")
-
+                    .Region = If(reader.IsDBNull("Region"), "", reader.Item("Region"))
+                    .Status = If(reader.IsDBNull("Status"), False, reader.Item("Status"))
                 End With
 
                 _superStores.Add(_superStore)
@@ -122,7 +123,6 @@ Public Class ClientDL
                 _client.ID = reader("ID")
                 _client.ClientName = reader("ClientName")
                 _client.ClientNumber = reader("ClientNum")
-                _client.StoreName = reader("StoreName")
                 _client.ClientDisplayName = _client.ClientNumber + " ---- " + _client.ClientName
                 _clients.Add(_client)
             End While
@@ -136,7 +136,7 @@ Public Class ClientDL
     Function GetClientStores() As List(Of ClientStoreEntity)
         Dim _clientStores As New List(Of ClientStoreEntity)
         Try
-            Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.getClients)
+            Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.getClientStores)
 
             While reader.Read()
                 Dim _store = New ClientStoreEntity()

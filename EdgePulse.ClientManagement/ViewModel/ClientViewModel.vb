@@ -143,8 +143,12 @@ Public Class ClientViewModel
 
     Public Sub LoadClientDetails()
         Try
-            Client = _clientManagementBL.GetClientDetails(SelectedClient.ID)
-            SelectedBuyingGroup = BuyingGroups.Single(Function(i) i.BuyingGroupID = Client.BuyingGroupId)
+            If SelectedClient IsNot Nothing Then
+                Client = _clientManagementBL.GetClientDetails(SelectedClient.ID)
+                SelectedBuyingGroup = BuyingGroups.Single(Function(i) i.BuyingGroupID = Client.BuyingGroupId)
+            End If
+
+
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
