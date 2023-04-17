@@ -180,5 +180,71 @@ Public Class ClientDL
         Return True
     End Function
 
+    Function GetSuperstoreClients(ByVal SuperstoreID As Int16) As List(Of ClientStoreSuperstoreEntity)
+        Dim _superStoreClients As New List(Of ClientStoreSuperstoreEntity)
+        Try
+            Dim sqlParams(1) As SqlParameter
+            sqlParams(0) = New SqlParameter("@SuperstoreID", SqlDbType.Int)
+            sqlParams(0).Value = SuperstoreID
+
+            Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.GetSuperstoreClients, sqlParams)
+
+            Dim _clientStoreSuperstoreEntity As ClientStoreSuperstoreEntity = Nothing
+            While reader.Read()
+
+                _clientStoreSuperstoreEntity = New ClientStoreSuperstoreEntity()
+                With _clientStoreSuperstoreEntity
+
+                    .ID = reader.Item("ID")
+                    .ClientStoreId = reader.Item("ClientStoreId")
+                    .SuperStoreGroupId = reader.Item("SuperStoreGroupId")
+                End With
+                _superStoreClients.Add(_clientStoreSuperstoreEntity)
+
+            End While
+
+
+        Catch ex As Exception
+
+        End Try
+        Return _superStoreClients
+    End Function
+    Function SaveSuperstoreClient(ByVal ClientStoreID As Int32, ByVal SuperstoreGroupID As Int32) As Boolean
+        Try
+            Dim sqlParams(2) As SqlParameter
+            sqlParams(0) = New SqlParameter("@ClientStoreID", SqlDbType.Int)
+            sqlParams(0).Value = ClientStoreID
+            sqlParams(1) = New SqlParameter("@SuperstoreGroupID", SqlDbType.Int)
+            sqlParams(1).Value = SuperstoreGroupID
+
+            SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.StoredProcedure, StoredProcNames.SaveClientSuperstore, sqlParams)
+            Return True
+
+        Catch ex As Exception
+            Return False
+
+        End Try
+
+        Return True
+    End Function
+
+    Function DeleteSuperstoreClient(ByVal ClientStoreID As Int32, ByVal SuperstoreGroupID As Int32) As Boolean
+        Try
+            Dim sqlParams(2) As SqlParameter
+            sqlParams(0) = New SqlParameter("@ClientStoreID", SqlDbType.Int)
+            sqlParams(0).Value = ClientStoreID
+            sqlParams(1) = New SqlParameter("@SuperstoreGroupID", SqlDbType.Int)
+            sqlParams(1).Value = SuperstoreGroupID
+
+            SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.StoredProcedure, StoredProcNames.DeleteClientSuperstore, sqlParams)
+            Return True
+
+        Catch ex As Exception
+            Return False
+
+        End Try
+
+        Return True
+    End Function
 
 End Class

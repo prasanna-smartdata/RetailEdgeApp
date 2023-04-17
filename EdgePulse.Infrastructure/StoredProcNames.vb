@@ -7,6 +7,8 @@
     Public Const SaveClientSuperstore = "SaveSuperstoreClients"
     Public Const DeleteClientSuperstore = "DeleteSuperstoreClient"
     Public Const GetSuperstoreClients = "GetSuperstoreClients"
+ 
     Public Const getClientStoreStatusReportRecord = "spRMHNew_GetClientStoreStatusReportRecord"
+ 
 
 End Class
