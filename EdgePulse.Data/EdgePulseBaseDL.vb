@@ -1,7 +1,7 @@
 ﻿Public Class EdgePulseBaseDL
     Public ReadOnly Property ConnectionString() As String
         Get
-            Return Infrastructure.ClientConfiguration.GetEdgePulsrConnectionSource
+            Return Infrastructure.ClientConfiguration.GetEdgePulseConnectionSource
         End Get
     End Property
 
