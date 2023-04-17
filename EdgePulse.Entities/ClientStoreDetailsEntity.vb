@@ -1,4 +1,4 @@
-﻿Public Class ClientStoreDetailsEntityTemp
+﻿Public Class ClientStoreDetailsEntity
     Inherits BaseEntity
     Implements ICloneable
 
@@ -56,6 +56,6 @@
     End Property
 
     Public Function Clone() As Object Implements ICloneable.Clone
-        Return CType(Me.MemberwiseClone(), ClientStoreDetailsEntityTemp)
+        Return CType(Me.MemberwiseClone(), ClientStoreDetailsEntity)
     End Function
 End Class
