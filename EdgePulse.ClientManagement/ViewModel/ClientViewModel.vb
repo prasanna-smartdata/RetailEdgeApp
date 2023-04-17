@@ -92,12 +92,7 @@ Public Class ClientViewModel
 
     Public ReadOnly Property EditClickCommand As DelegateCommand
         Get
-            If _editClickCommand Is Nothing Then
-                _editClickCommand = New DelegateCommand(AddressOf UpdateClient)
-            End If
-
-            Return _editClickCommand
-
+            Return If(Me._editClickCommand, New DelegateCommand(Of ClientEntity)(AddressOf UpdateClient))
         End Get
     End Property
 
@@ -202,8 +197,7 @@ Public Class ClientViewModel
 
         Try
 
-            _clientManagementBL.UpdateClient(SelectedClient.ID, Client)
-
+            ' _clientManagementBL.UpdateClient(SelectedClient)
 
         Catch ex As Exception
 

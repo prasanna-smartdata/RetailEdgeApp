@@ -30,6 +30,14 @@ Public Class ClientManagementBL
         End Try
     End Function
 
+    Function GetClientStores() As List(Of ClientStoreEntity)
+
+        Try
+            Return clientDL.GetClientStores()
+        Catch ex As Exception
+            Throw
+        End Try
+    End Function
     Function GetSuperstores() As List(Of SuperstoreEntity)
 
         Try
@@ -47,20 +55,16 @@ Public Class ClientManagementBL
         End Try
         Return Nothing
     End Function
-    Function UpdateClient(ByVal clientId As Int32, ByVal Client As ClientEntity) As Boolean
 
 
+    Function UpdateClient(ByVal Client As ClientEntity) As Boolean
         Try
-            Return clientDL.UpdateClient(clientId, Client)
+            Return clientDL.UpdateClient(Client)
 
         Catch ex As Exception
             Throw
         End Try
-
-
         Return True
-
-
 
     End Function
 
@@ -69,6 +73,36 @@ Public Class ClientManagementBL
 
 #Region "Add Edit Client-Store-Superstore"
 
+    Function SaveSuperstoreClientData(ByVal clientStores As List(Of ClientStoreEntity), ByVal superStoreId As Int16) As Boolean
+        Try
+
+            For Each item As ClientStoreEntity In clientStores
+                If item.IsSelected Then
+                    'Add new record
+                    clientDL.SaveSuperstoreClient(item.ID, superStoreId)
+                Else
+                    'Delete the record
+                    clientDL.DeleteSuperstoreClient(item.ID, superStoreId)
+
+                End If
+            Next
+
+
+
+        Catch ex As Exception
+            Return False
+        End Try
+        Return True
+    End Function
+
+    Function GetSuperstoreClients(ByVal SuperstoreID As Int16) As List(Of ClientStoreSuperstoreEntity)
+
+        Try
+            Return clientDL.GetSuperstoreClients(SuperstoreID)
+        Catch ex As Exception
+            Throw
+        End Try
+    End Function
 #End Region
 
 

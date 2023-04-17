@@ -67,7 +67,7 @@
             </ComboBox>
 
             <Label Content=" Fake Client"  Grid.Column="2" Grid.Row="1" Margin="100,0,0,0" />
-            <CheckBox   Grid.Column="3" Grid.Row="1" Margin="2" IsChecked="{Binding Client.FakeClient}" ></CheckBox>
+            <CheckBox   Grid.Column="3" Grid.Row="1" Margin="2" IsChecked="{Binding FakeClient}" ></CheckBox>
 
             <Button Grid.Row="0" Grid.Column="3" Content="Manage Super Stores"  Command="{Binding OpenSuperstorCommand }"    Margin="80,0,0,0"
                    Template="{StaticResource SubmitButtonTemplate}"     HorizontalAlignment="Left" Width="170"  Height="25"      />
@@ -107,8 +107,8 @@
             <Label Grid.Row="6" Grid.Column="0" Content="REC/ERA Email"   />
             <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Client.RecEmail}" />
             <Label Grid.Row="6" Grid.Column="2" Content="Buying Group"   Margin="100,0,0,0"/>
-            <ComboBox Grid.Row="6" Grid.Column="3" Margin="2,2,2,2"  Height="34" ItemsSource="{Binding  Path=Client.BuyingGroups}" 
-                      SelectedItem="{Binding Client.SelectedBuyingGroup}"  DisplayMemberPath="BuyingGroupName"  Style="{ StaticResource ComboBox250}"   >
+            <ComboBox Grid.Row="6" Grid.Column="3" Margin="2,2,2,2"  Height="34" ItemsSource="{Binding  Path=BuyingGroups}" 
+                      SelectedItem="{Binding SelectedBuyingGroup}"  DisplayMemberPath="BuyingGroupName"  Style="{ StaticResource ComboBox250}"   >
 
                 
             </ComboBox>
@@ -215,7 +215,7 @@
             </Grid>
 
             <StackPanel Width="400" Grid.Column="1" Grid.Row="10"    Grid.ColumnSpan="3"  Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Center">
-                <Button  Content="Update" HorizontalAlignment="Left" Width="110"    Template="{StaticResource SubmitButtonTemplate}"   Height="25" VerticalAlignment="Top"   Command="{Binding EditClickCommand }"/>
+                <Button  Content="Update" HorizontalAlignment="Left" Width="110"    Template="{StaticResource SubmitButtonTemplate}"   Height="25" VerticalAlignment="Top" />
                 <Button  Content="Exit" HorizontalAlignment="Left"   Width="100" Cursor="Hand" Click="btnExit_Click"  Name="btnExit"  Template="{StaticResource SubmitButtonTemplate}"   Height="25" Margin="20,0,0,0" VerticalAlignment="Top"/>
 
             </StackPanel>

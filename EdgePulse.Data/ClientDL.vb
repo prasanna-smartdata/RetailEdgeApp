@@ -10,8 +10,9 @@ Public Class ClientDL
     Public Function GetClientDetails(ByVal clientId As Int16) As ClientEntity
         Dim _clientEntity As ClientEntity = Nothing
         Try
-            Dim sqlParams(0) As SqlParameter
-            sqlParams(0) = New SqlParameter("@ClientID", clientId)
+            Dim sqlParams(1) As SqlParameter
+            sqlParams(0) = New SqlParameter("@ClientID", SqlDbType.Int)
+            sqlParams(0).Value = clientId
 
             Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.getClientDetails, sqlParams)
 
@@ -96,8 +97,7 @@ Public Class ClientDL
                     .GroupNum = reader.Item("GroupNum")
                     .GroupName = reader.Item("GroupName")
                     .DeptsToUse = reader.Item("DeptsToUse")
-                    .Region = If(reader.IsDBNull("Region"), "", reader.Item("Region"))
-                    .Status = If(reader.IsDBNull("Status"), False, reader.Item("Status"))
+
                 End With
 
                 _superStores.Add(_superStore)
@@ -110,20 +110,6 @@ Public Class ClientDL
     End Function
 
 
-    Function GetClientStores() As List(Of ClientStoreDetailsEntity)
-        Dim _clientStores As New List(Of ClientStoreDetailsEntity)
-        Try
-            Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.GetClientStores)
-
-            While reader.Read()
-
-            End While
-
-        Catch ex As Exception
-            Throw
-        End Try
-        Return _clientStores
-    End Function
 
 
     Function GetClients() As List(Of ClientEntity)
@@ -136,6 +122,7 @@ Public Class ClientDL
                 _client.ID = reader("ID")
                 _client.ClientName = reader("ClientName")
                 _client.ClientNumber = reader("ClientNum")
+                _client.StoreName = reader("StoreName")
                 _client.ClientDisplayName = _client.ClientNumber + " ---- " + _client.ClientName
                 _clients.Add(_client)
             End While
@@ -146,12 +133,33 @@ Public Class ClientDL
         Return _clients
     End Function
 
-    Function UpdateClientStore(ByVal clientId As Int32, ByVal client As ClientEntity) As Boolean
+    Function GetClientStores() As List(Of ClientStoreEntity)
+        Dim _clientStores As New List(Of ClientStoreEntity)
+        Try
+            Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.getClientStores)
+
+            While reader.Read()
+                Dim _store = New ClientStoreEntity()
+                _store.ID = reader("ID")
+                _store.ClientName = reader("ClientName")
+                _store.ClientNumber = reader("ClientNum")
+                _store.StoreID = reader("StoreID")
+                _store.StoreName = reader("StoreName")
+                _clientStores.Add(_store)
+            End While
+
+        Catch ex As Exception
+            Throw
+        End Try
+        Return _clientStores
+    End Function
+
+    Function UpdateClient(ByVal client As ClientEntity) As Boolean
 
         Try
 
             Dim sqlParams(23) As SqlParameter
-            sqlParams(0) = New SqlParameter("@ClientId", clientId)
+            sqlParams(0) = New SqlParameter("@ClientId", client.ID)
             sqlParams(1) = New SqlParameter("@ClientName", client.ClientName)
             sqlParams(2) = New SqlParameter("@ResultsClientNum", client.ClientNumber)
             sqlParams(3) = New SqlParameter("@KPILite", client.IsKPILite)
@@ -187,5 +195,72 @@ Public Class ClientDL
         Return True
     End Function
 
+
+    Function GetSuperstoreClients(ByVal SuperstoreID As Int16) As List(Of ClientStoreSuperstoreEntity)
+        Dim _superStoreClients As New List(Of ClientStoreSuperstoreEntity)
+        Try
+            Dim sqlParams(1) As SqlParameter
+            sqlParams(0) = New SqlParameter("@SuperstoreID", SqlDbType.Int)
+            sqlParams(0).Value = SuperstoreID
+
+            Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.GetSuperstoreClients, sqlParams)
+
+            Dim _clientStoreSuperstoreEntity As ClientStoreSuperstoreEntity = Nothing
+            While reader.Read()
+
+                _clientStoreSuperstoreEntity = New ClientStoreSuperstoreEntity()
+                With _clientStoreSuperstoreEntity
+
+                    .ID = reader.Item("ID")
+                    .ClientStoreId = reader.Item("ClientStoreId")
+                    .SuperStoreGroupId = reader.Item("SuperStoreGroupId")
+                End With
+                _superStoreClients.Add(_clientStoreSuperstoreEntity)
+
+            End While
+
+
+        Catch ex As Exception
+
+        End Try
+        Return _superStoreClients
+    End Function
+    Function SaveSuperstoreClient(ByVal ClientStoreID As Int32, ByVal SuperstoreGroupID As Int32) As Boolean
+        Try
+            Dim sqlParams(2) As SqlParameter
+            sqlParams(0) = New SqlParameter("@ClientStoreID", SqlDbType.Int)
+            sqlParams(0).Value = ClientStoreID
+            sqlParams(1) = New SqlParameter("@SuperstoreGroupID", SqlDbType.Int)
+            sqlParams(1).Value = SuperstoreGroupID
+
+            SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.StoredProcedure, StoredProcNames.SaveClientSuperstore, sqlParams)
+            Return True
+
+        Catch ex As Exception
+            Return False
+
+        End Try
+
+        Return True
+    End Function
+
+    Function DeleteSuperstoreClient(ByVal ClientStoreID As Int32, ByVal SuperstoreGroupID As Int32) As Boolean
+        Try
+            Dim sqlParams(2) As SqlParameter
+            sqlParams(0) = New SqlParameter("@ClientStoreID", SqlDbType.Int)
+            sqlParams(0).Value = ClientStoreID
+            sqlParams(1) = New SqlParameter("@SuperstoreGroupID", SqlDbType.Int)
+            sqlParams(1).Value = SuperstoreGroupID
+
+            SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.StoredProcedure, StoredProcNames.DeleteClientSuperstore, sqlParams)
+            Return True
+
+        Catch ex As Exception
+            Return False
+
+        End Try
+
+        Return True
+    End Function
 
 End Class
