@@ -47,11 +47,11 @@ Public Class ClientManagementBL
         End Try
         Return Nothing
     End Function
-    Function UpdateClient(ByVal Client As ClientEntity) As Boolean
+    Function UpdateClient(ByVal clientId As Int32, ByVal Client As ClientEntity) As Boolean
 
 
         Try
-            Return clientDL.UpdateClient(Client)
+            Return clientDL.UpdateClient(clientId, Client)
 
         Catch ex As Exception
             Throw

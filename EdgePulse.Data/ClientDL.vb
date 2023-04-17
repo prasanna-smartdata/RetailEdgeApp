@@ -10,9 +10,8 @@ Public Class ClientDL
     Public Function GetClientDetails(ByVal clientId As Int16) As ClientEntity
         Dim _clientEntity As ClientEntity = Nothing
         Try
-            Dim sqlParams(1) As SqlParameter
-            sqlParams(0) = New SqlParameter("@ClientID", SqlDbType.Int)
-            sqlParams(0).Value = clientId
+            Dim sqlParams(0) As SqlParameter
+            sqlParams(0) = New SqlParameter("@ClientID", clientId)
 
             Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.getClientDetails, sqlParams)
 
@@ -147,23 +146,38 @@ Public Class ClientDL
         Return _clients
     End Function
 
-    Function UpdateClient(ByVal client As ClientEntity) As Boolean
+    Function UpdateClient(ByVal clientId As Int32, ByVal client As ClientEntity) As Boolean
 
         Try
 
-            Dim sqlParams(7) As SqlParameter
-            sqlParams(0) = New SqlParameter("@ClientId", client.ID, SqlDbType.Int)
-            sqlParams(1) = New SqlParameter("@ClientName", client.ClientName, SqlDbType.VarChar, 100)
-            sqlParams(2) = New SqlParameter("@AccountManager", client.AccountManagerId, SqlDbType.NVarChar, 50)
-            sqlParams(3) = New SqlParameter("@NoOfSites", client.NoOfSites, SqlDbType.Int)
-            sqlParams(4) = New SqlParameter("@Comment", client.Comment, SqlDbType.NVarChar)
-            sqlParams(5) = New SqlParameter("@Path", client.Path, SqlDbType.NVarChar)
-            sqlParams(6) = New SqlParameter("@BuyingGroupId", client.BuyingGroupId, SqlDbType.Int)
-            sqlParams(7) = New SqlParameter("@ProactiveCallDate", client.ProactiveCallDate.ToString(), SqlDbType.Date)
+            Dim sqlParams(23) As SqlParameter
+            sqlParams(0) = New SqlParameter("@ClientId", clientId)
+            sqlParams(1) = New SqlParameter("@ClientName", client.ClientName)
+            sqlParams(2) = New SqlParameter("@ResultsClientNum", client.ClientNumber)
+            sqlParams(3) = New SqlParameter("@KPILite", client.IsKPILite)
+            sqlParams(4) = New SqlParameter("@Where", client.Path)
+            sqlParams(5) = New SqlParameter("@Comment", client.Comment)
+            sqlParams(6) = New SqlParameter("@Email", client.EmailAddress)
+            sqlParams(7) = New SqlParameter("@ActiveClient", client.IsActiveClient)
+            sqlParams(8) = New SqlParameter("@DoorCounter", client.IsDoorCounter)
+            sqlParams(9) = New SqlParameter("@Results", client.Results)
+            sqlParams(10) = New SqlParameter("@MacroOked", client.IsMacroOked)
+            sqlParams(11) = New SqlParameter("@RecEmail", client.RecEmail.ToString)
+            sqlParams(12) = New SqlParameter("@SqlServer", client.SqlServer)
+            sqlParams(13) = New SqlParameter("@Jewelsure", client.Jewelsure)
+            sqlParams(14) = New SqlParameter("@HoStoreNumber", client.HoStoreNumber)
+            sqlParams(15) = New SqlParameter("@EdgePulseAllowed", client.IsEdgePulseEnabled)
+            sqlParams(16) = New SqlParameter("@State", client.State)
+            sqlParams(17) = New SqlParameter("@FakeClient", client.FakeClient)
+            sqlParams(18) = New SqlParameter("@SalesMaximum", client.SalesMaximum)
+            sqlParams(19) = New SqlParameter("@SalesMinimum", client.SalesMinimum)
+            sqlParams(20) = New SqlParameter("@StockMaximum", client.StockMaximum)
+            sqlParams(21) = New SqlParameter("@StockMinimum", client.StockMinimum)
+            sqlParams(22) = New SqlParameter("@SalesMaximumQty", client.StockMaximumQty)
+            sqlParams(23) = New SqlParameter("@SalesMinimumQty", client.StockMinimumQty)
 
 
-
-            SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.StoredProcedure, "UpdateClientInfo", sqlParams)
+            SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.StoredProcedure, "UpdateClient", sqlParams)
 
 
         Catch ex As Exception
