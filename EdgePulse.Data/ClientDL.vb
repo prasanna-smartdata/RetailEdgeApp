@@ -122,13 +122,12 @@ Public Class ClientDL
                 _client.ID = reader("ID")
                 _client.ClientName = reader("ClientName")
                 _client.ClientNumber = reader("ClientNum")
-                _client.StoreName = reader("StoreName")
                 _client.ClientDisplayName = _client.ClientNumber + " ---- " + _client.ClientName
                 _clients.Add(_client)
             End While
 
         Catch ex As Exception
-
+            Throw
         End Try
         Return _clients
     End Function
