@@ -90,7 +90,7 @@ Public Class ManageSuperstoreViewModel
     End Property
 
     Private _saveCommand As DelegateCommand
-
+    Private _updateCommand As DelegateCommand
 
     Public ReadOnly Property SaveCommand As DelegateCommand
         Get
@@ -99,6 +99,11 @@ Public Class ManageSuperstoreViewModel
     End Property
 
 
+    Public ReadOnly Property UpdateSuperStoreCommand As DelegateCommand
+        Get
+            Return If(Me._updateCommand, New DelegateCommand(AddressOf UpdateSuperStore))
+        End Get
+    End Property
 #End Region
 
 #Region "Methods"
@@ -155,6 +160,21 @@ Public Class ManageSuperstoreViewModel
         Catch ex As Exception
             Throw
         End Try
+    End Sub
+
+    Public Sub UpdateSuperStore()
+        Try
+
+            _clientManagementBL.UpdateorSaveSuperStore(SelectedSuperstore)
+
+            MessageBox.Show("Updated Sucessfully")
+
+        Catch ex As Exception
+            Throw
+        End Try
+
+
+
     End Sub
 
     Public Sub GetSuperStores()

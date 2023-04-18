@@ -19,7 +19,7 @@
         </StackPanel>
         <CheckBox Grid.Row="1" IsChecked="{Binding SelectedSuperstore.Status}" >Active</CheckBox>
         <StackPanel Orientation="Horizontal" Width="200" Grid.Row="2"  >
-            <Button Content="Save" Width="70" Height="25" Command="{Binding SaveCommand}" Template="{StaticResource SubmitButtonTemplate}"></Button>
+            <Button Content="Save" Width="70" Height="25" Command="{Binding UpdateSuperStoreCommand}" Template="{StaticResource SubmitButtonTemplate}"></Button>
             <Button Width="60" Height="25" Margin="20,0,0,0"    Name="btnClose" Click="btnClose_Click" Template="{StaticResource SubmitButtonTemplate}"  Content="Close"></Button>
 
         </StackPanel>

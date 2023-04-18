@@ -20,7 +20,7 @@ Public Class ClientDL
 
                 _clientEntity = New ClientEntity()
                 With _clientEntity
-
+                    .ID = reader.Item("ID")
                     .EmailAddress = reader.Item("Email")
                     .BuyingGroupId = reader.Item("BuyingGroupId")
                     .ClientName = reader.Item("ClientName")
@@ -97,6 +97,8 @@ Public Class ClientDL
                     .GroupNum = reader.Item("GroupNum")
                     .GroupName = reader.Item("GroupName")
                     .DeptsToUse = reader.Item("DeptsToUse")
+                    .Status = reader.Item("Status")
+
 
                 End With
 
@@ -223,6 +225,25 @@ Public Class ClientDL
 
         End Try
         Return _superStoreClients
+    End Function
+
+    Function UpdateSuperStore(SelectedSuperstore As SuperstoreEntity) As Boolean
+        Try
+            Dim sqlParams(3) As SqlParameter
+
+            sqlParams(0) = New SqlParameter("@SuperstoreGroupID", SelectedSuperstore.ID)
+            sqlParams(1) = New SqlParameter("@GroupName", SelectedSuperstore.GroupName)
+            sqlParams(2) = New SqlParameter("@Status", SelectedSuperstore.Status)
+
+
+            SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.StoredProcedure, StoredProcNames.getSuperStoreUpdate, sqlParams)
+            Return True
+
+        Catch ex As Exception
+            Return False
+        End Try
+
+        Return True
     End Function
     Function SaveSuperstoreClient(ByVal ClientStoreID As Int32, ByVal SuperstoreGroupID As Int32) As Boolean
         Try

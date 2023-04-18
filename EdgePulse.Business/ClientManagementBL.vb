@@ -95,6 +95,18 @@ Public Class ClientManagementBL
         Return True
     End Function
 
+    Function UpdateorSaveSuperStore(SelectedSuperstore As SuperstoreEntity) As Boolean
+        Try
+            clientDL.UpdateSuperStore(SelectedSuperstore)
+
+
+        Catch ex As Exception
+            Return False
+        End Try
+
+        Return True
+    End Function
+
     Function GetSuperstoreClients(ByVal SuperstoreID As Int16) As List(Of ClientStoreSuperstoreEntity)
 
         Try
