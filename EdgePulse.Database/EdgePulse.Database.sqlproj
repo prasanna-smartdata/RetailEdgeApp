@@ -61,6 +61,7 @@
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
     <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Security\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\BuyingGroups.sql" />
@@ -75,5 +76,12 @@
     <Build Include="dbo\Stored Procedures\UpdateClient.sql" />
     <Build Include="dbo\Stored Procedures\getClientStores.sql" />
     <Build Include="dbo\Stored Procedures\GetSuperstoreClientStoresDetails.sql" />
+    <Build Include="Security\DESKTOP-3JV8GFF_Sita.sql" />
+    <Build Include="Security\DESKTOP-3JV8GFF_Kumar.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Stored Procedures\SaveSuperstoreClients.sql" />
+    <Build Include="dbo\Stored Procedures\GetSuperstoreClients.sql" />
+    <Build Include="dbo\Stored Procedures\DeleteSuperstoreClient.sql" />
+    <Build Include="dbo\Stored Procedures\UpdateSuperStore.sql" />
   </ItemGroup>
 </Project>

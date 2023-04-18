@@ -63,7 +63,7 @@ Partial Public Class ProcessForm
             Return
         End If
         _contentLoaded = true
-        Dim resourceLocater As System.Uri = New System.Uri("/RetailEdge.SuperstoreBuild.Main;V1.0.0.0;component/view/processform.xaml", System.UriKind.Relative)
+        Dim resourceLocater As System.Uri = New System.Uri("/RetailEdge.SuperstoreBuild.Main;component/view/processform.xaml", System.UriKind.Relative)
         
         #ExternalSource("..\..\..\..\View\ProcessForm.xaml",1)
         System.Windows.Application.LoadComponent(Me, resourceLocater)

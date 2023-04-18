@@ -1,0 +1,36 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        
+        mc:Ignorable="d"
+        
+         d:DesignHeight="700" d:DesignWidth="1000"
+      Title="Management Main"  WindowState="Normal" WindowStyle="None" ResizeMode="NoResize"    Style="{StaticResource WinAll}"  Width="1100"  Background="LightBlue"  
+   >
+    <StackPanel >
+        <TabControl Height="600" >
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Client Management" Foreground="Blue" />
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+    
+                     
+                </TabItem.Content>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Superstore Management" Foreground="Blue" />
+                    </StackPanel>
+                </TabItem.Header>
+                <Label Content="Superstore Management" />
+            </TabItem>
+        </TabControl>
+
+    </StackPanel>
+</Window>

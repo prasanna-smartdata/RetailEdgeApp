@@ -1,4 +1,4 @@
-﻿Class CleintMaintenance
+﻿Class ClientMaintenancePage
 
 
     Public Sub New()
@@ -13,8 +13,8 @@
 
 
     Private Sub btnExit_Click(sender As Object, e As RoutedEventArgs)
-        Me.Close()
+        '   Me.Close()
     End Sub
 
-    
+
 End Class
