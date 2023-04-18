@@ -45,6 +45,30 @@
             OnPropertyChanged("DeptsToUse")
         End Set
     End Property
+
+    Private _region As String
+    Public Property Region() As String
+        Get
+            Return _region
+        End Get
+        Set(ByVal value As String)
+            _region = value
+            OnPropertyChanged("Region")
+
+        End Set
+    End Property
+    Private _status As Boolean
+    Public Property Status() As Boolean
+        Get
+            Return _status
+        End Get
+        Set(ByVal value As Boolean)
+            _status = value
+            OnPropertyChanged("Status")
+
+        End Set
+
+    End Property
     Public Function Clone() As Object Implements ICloneable.Clone
         Return CType(Me.MemberwiseClone(), SuperstoreEntity)
     End Function

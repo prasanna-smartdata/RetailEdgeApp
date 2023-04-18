@@ -1,9 +1,16 @@
-﻿-- =============================================
+﻿USE [RMHClients]
+GO
+/****** Object:  StoredProcedure [dbo].[getClients]    Script Date: 4/17/2023 9:06:36 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE  PROCEDURE [dbo].[getClients]
+ALTER    PROCEDURE [dbo].[getClients]
  
 AS
 BEGIN
@@ -11,6 +18,5 @@ BEGIN
 	-- interfering with SELECT statements.
 	SET NOCOUNT ON;
 	
-  SELECT Clients.id,Clients.ClientNum, Clients.ClientName, ClientStores.StoreID, ClientStores.StoreName from Clients,ClientStores where Clients.ClientNum = ClientStores.ClientNum
-  Order by 2
+  Select Id, ClientNum,ClientName from Clients order by 2;
 END
