@@ -3,34 +3,73 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        
+        xmlns:View="clr-namespace:EdgePulse.ClientManagement"
         mc:Ignorable="d"
-        
-         d:DesignHeight="700" d:DesignWidth="1000"
-      Title="Management Main"  WindowState="Normal" WindowStyle="None" ResizeMode="NoResize"    Style="{StaticResource WinAll}"  Width="1100"  Background="LightBlue"  
+         WindowStartupLocation="Manual"  Top="20" Left="20"
+          d:DesignWidth="1000"    Height="800"
+      Title="Management Main"  WindowState="Normal" WindowStyle="None" ResizeMode="NoResize"       Width="1100"  Background="LightBlue"  
    >
-    <StackPanel >
-        <TabControl Height="600" >
-            <TabItem>
-                <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Client Management" Foreground="Blue" />
-                    </StackPanel>
-                </TabItem.Header>
-                <TabItem.Content>
-    
-                     
-                </TabItem.Content>
-            </TabItem>
-            <TabItem>
-                <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Superstore Management" Foreground="Blue" />
-                    </StackPanel>
-                </TabItem.Header>
-                <Label Content="Superstore Management" />
-            </TabItem>
-        </TabControl>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="500*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel  Orientation="Vertical"  Grid.Row="0" >
+            <TabControl Height="750"  Background="LightBlue" Name="tbPages"  >
+                <TabControl.Resources>
+                    <Style TargetType="TabItem">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="TabItem">
+                                    <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Gainsboro" CornerRadius="4,4,0,0" Margin="5,0">
+                                        <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="Border" Property="Background" Value="LightSkyBlue" />
+                                        </Trigger>
+                                        <Trigger Property="IsSelected" Value="False">
+                                            <Setter TargetName="Border" Property="Background" Value="GhostWhite" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TabControl.Resources>
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="CLIENT MANAGEMENT"  />
 
-    </StackPanel>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <TabItem.Content >
+                        <View:ClientMaintenancePage VerticalAlignment="Top"></View:ClientMaintenancePage>
+                    </TabItem.Content>
+
+
+                </TabItem>
+                <TabItem   >
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="SUPERSTORE MANAGEMENT"    />
+
+                        </StackPanel>
+                    </TabItem.Header>
+                    <TabItem.Content>
+                        <View:ManageSuperstores></View:ManageSuperstores>
+                    </TabItem.Content>
+                </TabItem>
+            </TabControl>
+
+        </StackPanel>
+        <Button Grid.Row="1"  Content="Exit" HorizontalAlignment="Right"  Width="100" Cursor="Hand" Click="btnExit_Click"  Name="btnExit"  Template="{StaticResource SubmitButtonTemplate}"   Height="25" Margin="20,0,20,0" VerticalAlignment="Top"/>
+
+    </Grid>
+   
 </Window>

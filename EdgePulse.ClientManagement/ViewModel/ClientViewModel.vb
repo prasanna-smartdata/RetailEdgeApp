@@ -195,8 +195,7 @@ Public Class ClientViewModel
 
     Private Sub OpenSuperstore()
 
-        Dim superStoreWindows As New ManageSuperstores()
-        superStoreWindows.ShowDialog()
+        '
     End Sub
     Public Sub UpdateClient()
 

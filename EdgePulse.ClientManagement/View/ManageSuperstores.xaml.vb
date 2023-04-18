@@ -11,7 +11,7 @@
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As RoutedEventArgs)
-        Me.Close()
+        'Me.Close()
     End Sub
 
     Private Sub btnEditSuperstore_Click(sender As Object, e As RoutedEventArgs)
