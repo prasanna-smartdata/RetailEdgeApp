@@ -1,5 +1,10 @@
 ﻿Imports EdgePulse.Infrastructure
 Imports Prism.Commands
+Imports EdgePulse.Entities
+Imports EdgePulse.Business
+Imports System.Collections.ObjectModel
+Imports EdgePulse.Data
+
 Public Class SuperstoreProcessViewModel
     Inherits ViewModelBase
 
@@ -7,6 +12,12 @@ Public Class SuperstoreProcessViewModel
     Public Event RestartSuperstoreProcessEvent As EventHandler(Of EventArgs)
 
     Private _showStatusReport As Boolean = True
+    Private _statusReportBL As New StatusReportBL
+    Private _clientManagementBL As New ClientManagementBL()
+    Private _superStoresCollection As New ObservableCollection(Of SuperstoreEntity)
+    Private _statusReportRecords As List(Of StatusReportEntity) = Nothing
+
+
     Public Property ShowStatusReport() As Boolean
         Get
             Return _showStatusReport
@@ -124,6 +135,39 @@ Public Class SuperstoreProcessViewModel
             OnPropertyChanged("BuildSuperstoreCompleted")
         End Set
     End Property
+
+    Public Property SuperstoresCollection() As ObservableCollection(Of SuperstoreEntity)
+        Get
+            Return _superStoresCollection
+        End Get
+        Set(ByVal value As ObservableCollection(Of SuperstoreEntity))
+            _superStoresCollection = value
+            OnPropertyChanged("SuperstoresCollection")
+
+        End Set
+    End Property
+
+    Private _selectedSuperstore As SuperstoreEntity
+    Public Property SelectedSuperstore() As SuperstoreEntity
+        Get
+            Return _selectedSuperstore
+        End Get
+        Set(ByVal value As SuperstoreEntity)
+            _selectedSuperstore = value
+
+            OnPropertyChanged("SelectedSuperstore")
+
+        End Set
+    End Property
+    Public Sub GetSuperStores()
+        Try
+            SuperstoresCollection = New ObservableCollection(Of SuperstoreEntity)(_clientManagementBL.GetSuperstores())
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+
+        End Try
+
+    End Sub
     Private Sub GenerateStatusReport()
         Try
             'After successfully generating the report change the _isStatusReportGenerated to true.
@@ -132,6 +176,7 @@ Public Class SuperstoreProcessViewModel
             ShowBuildSuperstore = True
             ShowCancel = True
 
+            _statusReportRecords = _statusReportBL.GenerateStatusReport(_selectedSuperstore.ID, "012023")
 
 
         Catch ex As Exception
@@ -186,4 +231,19 @@ Public Class SuperstoreProcessViewModel
         OnPropertyChanged("LogText")
 
     End Sub
+
+#Region "Consctructors"
+
+    Public Sub New()
+
+        Try
+            GetSuperStores()
+
+        Catch ex As Exception
+            Throw
+        End Try
+
+    End Sub
+#End Region
+
 End Class

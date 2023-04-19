@@ -28,7 +28,8 @@
 
                 </Grid.RowDefinitions>
                 <Label Content="Select Superstore"  Grid.Column="0" Grid.Row="0" />
-                <ComboBox  Width="180" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0"  ></ComboBox>
+                <ComboBox  Width="180" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0" ItemsSource="{Binding  Path=SuperstoresCollection}" 
+                      DisplayMemberPath="GroupName"  SelectedItem="{Binding SelectedSuperstore}" ></ComboBox>
                 <Label Content="Process Month"  Grid.Column="0" Grid.Row="1" />
                 <ComboBox Width="100" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" ></ComboBox>
 
