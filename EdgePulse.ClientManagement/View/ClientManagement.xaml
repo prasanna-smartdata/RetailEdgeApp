@@ -74,7 +74,7 @@
             
             <!--Row 2-->
             <Label Grid.Row="2" Grid.Column="0" Content="Client Name" />
-            <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding  Client.ClientName , Mode=TwoWay, ValidatesOnDataErrors = True,  UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox  Grid.Row="2" Grid.Column="1" Validation.ErrorTemplate="{StaticResource ValidationErrorTemplate}" Text="{Binding  Client.ClientName , Mode=TwoWay, ValidatesOnDataErrors = True,  UpdateSourceTrigger=PropertyChanged}" />
             <Label Grid.Column="2" Content="Email Address"  Grid.Row="2"  Margin="100,0,0,0"/>
             <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding Client.EmailAddress , Mode=TwoWay, ValidatesOnDataErrors = True, UpdateSourceTrigger=PropertyChanged}"/>
 
@@ -95,7 +95,9 @@
             <!-- Row 5-->
             <Label Grid.Row="5" Grid.Column="0" Content="Proactive Call - Date"   />
 
-            <DatePicker Grid.Column="1" HorizontalAlignment="Left"   Grid.Row="5" Height="30" VerticalAlignment="Center" SelectedDate="{Binding Path=ProactiveCallDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <DatePicker Grid.Column="1" HorizontalAlignment="Left"  DisplayDate="2019-01-01" Grid.Row="5" Height="30" VerticalAlignment="Center" SelectedDate="{Binding  Client.ProactiveCallDate, StringFormat='dd MMMM yyyy', Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            
+            
             <Label Grid.Row="5" Grid.Column="2"   Margin="100,0,0,0"  >
                 <Label.Content>
                     <AccessText TextWrapping="Wrap"  Text="Proactive Call - Comment"/>
@@ -198,7 +200,7 @@
                 <CheckBox Grid.Row="2" Grid.Column="3"  IsChecked="{Binding Client.IsKPILite}"></CheckBox>
 
                 <Label  Grid.Row="2" Grid.Column="6" Content="EP S/Store allowed"  ></Label>
-                <CheckBox Grid.Row="2" Grid.Column="7"   ></CheckBox>
+                <CheckBox Grid.Row="2" Grid.Column="7" IsChecked="{Binding Client.IsSuperStoreActive}"  ></CheckBox>
                 <Label  Grid.Row="2" Grid.Column="0" Content="Jewelsure" ></Label>
                 <CheckBox Grid.Row="2" Grid.Column="1"  IsChecked="{Binding Client.Jewelsure}" ></CheckBox>
 
@@ -230,8 +232,12 @@
 
             <!-- Row 9-->
 
-
+         
 
         </Grid>
+        
     </StackPanel>
+
+
+    
 </UserControl>
