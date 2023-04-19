@@ -10,6 +10,7 @@
         AddHandler viewModel.RestartSuperstoreProcessEvent, AddressOf LoadBuildProcess
 
         Me.DataContext = viewModel
+
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
@@ -33,7 +34,7 @@
         Try
 
             mainWin.Content = New ProcessForm(viewModel)
-            viewModel.LoadSuperstores()
+
         Catch ex As Exception
             MessageBox.Show(ex.Message)
 

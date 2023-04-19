@@ -14,6 +14,8 @@ Public Class ClientViewModel
     Private _editClickCommand As DelegateCommand = Nothing
 
     Private _exitCommand As DelegateCommand = Nothing
+    Private _cancelCommand As DelegateCommand = Nothing
+
     Private _openSuperstoreCommand As DelegateCommand = Nothing
 
     Private _clientsCollection As New ObservableCollection(Of ClientEntity)
@@ -33,6 +35,7 @@ Public Class ClientViewModel
         End Get
         Set(ByVal value As ClientEntity)
             _selectedClient = value
+            OnPropertyChanged("SelectedClient")
 
         End Set
     End Property
@@ -101,16 +104,22 @@ Public Class ClientViewModel
         End Get
     End Property
 
-    Public ReadOnly Property OpenSuperstorCommand As DelegateCommand
+    Public ReadOnly Property CancelClickCommand As DelegateCommand
         Get
-
-            If _openSuperstoreCommand Is Nothing Then
-                _openSuperstoreCommand = New DelegateCommand(AddressOf OpenSuperstore)
+            If _cancelCommand Is Nothing Then
+                _cancelCommand = New DelegateCommand(AddressOf ResetClient)
             End If
 
-            Return _openSuperstoreCommand
+            Return _cancelCommand
+
         End Get
     End Property
+
+    Private Sub ResetClient()
+        SelectedClient = Nothing
+        Client = Nothing
+        SelectedBuyingGroup = Nothing
+    End Sub
 
     Public ReadOnly Property ExitCommand As ICommand
         Get
@@ -184,24 +193,20 @@ Public Class ClientViewModel
 
     End Sub
 
-    Public Sub GetSuperStores()
-
-    End Sub
 
     Public Sub Close()
         Me.Close()
 
     End Sub
 
-    Private Sub OpenSuperstore()
 
-        '
-    End Sub
     Public Sub UpdateClient()
 
         Try
+            If Client IsNot Nothing Then
+                _clientManagementBL.UpdateClient(Client)
 
-            _clientManagementBL.UpdateClient(Client)
+            End If
 
         Catch ex As Exception
 

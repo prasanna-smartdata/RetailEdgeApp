@@ -48,7 +48,7 @@
             </Grid.RowDefinitions>
             <Label Content="Select Clients"  Grid.Column="0" Grid.Row="1" Margin="2"  />
 
-            <ComboBox x:Name="selectClients" SelectedItem="{Binding SelectedClient}"  
+            <ComboBox x:Name="selectClients" SelectedItem="{Binding SelectedClient }"  
                       Height="35"  Grid.Column="1" Grid.Row="1"   TextSearch.TextPath="ClientName"   
                       ItemsSource="{Binding  Path=ClientsCollection}" DisplayMemberPath="ClientDisplayName"   IsTextSearchEnabled="True"  Width="300"       HorizontalAlignment="Left"  
                        VerticalAlignment="Center" IsEditable="True"  >
@@ -217,6 +217,7 @@
 
             <StackPanel Width="400" Grid.Column="1" Grid.Row="10"    Grid.ColumnSpan="3"  Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Center">
                 <Button  Content="Update" HorizontalAlignment="Left" Width="110"    Template="{StaticResource SubmitButtonTemplate}"   Height="25" VerticalAlignment="Top" Command="{Binding EditClickCommand }"/>
+                <Button  Content="Cancel" HorizontalAlignment="Left" Width="110"    Template="{StaticResource SubmitButtonTemplate}"   Height="25" Margin="20,0,0,0" VerticalAlignment="Top" Command="{Binding CancelClickCommand }"/>
 
             </StackPanel>
 

@@ -90,7 +90,7 @@ Public Class SuperstoreProcessViewModel
 
     End Property
 
-    Private _logText As String
+    Private _logText As String = "[BEGIN] Processing.... " & vbCrLf
     Public Property LogText() As String
         Get
             Return _logText
@@ -159,25 +159,60 @@ Public Class SuperstoreProcessViewModel
 
         End Set
     End Property
+
+    Private _selectedMonth As Object
+    Public Property SelectedMonth() As Object
+        Get
+            Return _selectedMonth
+        End Get
+        Set(ByVal value As Object)
+            _selectedMonth = value
+        End Set
+    End Property
+
+    Private _statusReportMonthsCollection As ObservableCollection(Of Object)
+    Public Property StatusReportMonthsCollection() As ObservableCollection(Of Object)
+        Get
+            Return _statusReportMonthsCollection
+        End Get
+        Set(ByVal value As ObservableCollection(Of Object))
+            _statusReportMonthsCollection = value
+        End Set
+    End Property
+
     Public Sub GetSuperStores()
         Try
+            AppendToLog("Loading Superstores")
             SuperstoresCollection = New ObservableCollection(Of SuperstoreEntity)(_clientManagementBL.GetSuperstores())
+
         Catch ex As Exception
             MessageBox.Show(ex.Message)
 
         End Try
 
     End Sub
+
+    Private Sub GetMonthsDataForPreviousMonths()
+        Try
+            StatusReportMonthsCollection = New ObservableCollection(Of Object)(HelperFile.GetMonthsListForStatusReport())
+            AppendToLog("Loading the Previous Months Dropdown")
+        Catch ex As Exception
+
+        End Try
+    End Sub
     Private Sub GenerateStatusReport()
         Try
-            'After successfully generating the report change the _isStatusReportGenerated to true.
-            'That will hide the generate status report button and show other  buttons
-            ShowStatusReport = False
-            ShowBuildSuperstore = True
-            ShowCancel = True
+            If SelectedSuperstore IsNot Nothing Then
+                'After successfully generating the report change the _isStatusReportGenerated to true.
+                'That will hide the generate status report button and show other  buttons
+                ShowStatusReport = False
+                ShowBuildSuperstore = True
+                ShowCancel = True
+                Dim lgText As String = ""
+                _statusReportRecords = _statusReportBL.GenerateStatusReport(_selectedSuperstore.ID, "012023", lgText)
 
-            _statusReportRecords = _statusReportBL.GenerateStatusReport(_selectedSuperstore.ID, "012023")
-
+                AppendToLog(lgText)
+            End If
 
         Catch ex As Exception
 
@@ -192,6 +227,7 @@ Public Class SuperstoreProcessViewModel
                 ShowStatusReport = True
                 ShowBuildSuperstore = False
                 ShowCancel = False
+                AppendToLog("Cancelling Status Report Creation")
 
             End If
 
@@ -217,13 +253,6 @@ Public Class SuperstoreProcessViewModel
         End Try
     End Sub
 
-    Sub LoadSuperstores()
-        Try
-            AppendToLog("Loading superstores.... ")
-        Catch ex As Exception
-            Throw
-        End Try
-    End Sub
 
     'Call this method to add the log
     Sub AppendToLog(ByVal text)
@@ -238,7 +267,7 @@ Public Class SuperstoreProcessViewModel
 
         Try
             GetSuperStores()
-
+            GetMonthsDataForPreviousMonths()
         Catch ex As Exception
             Throw
         End Try

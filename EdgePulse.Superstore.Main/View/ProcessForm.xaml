@@ -31,8 +31,7 @@
                 <ComboBox  Width="180" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0" ItemsSource="{Binding  Path=SuperstoresCollection}" 
                       DisplayMemberPath="GroupName"  SelectedItem="{Binding SelectedSuperstore}" ></ComboBox>
                 <Label Content="Process Month"  Grid.Column="0" Grid.Row="1" />
-                <ComboBox Width="100" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" ></ComboBox>
-
+                <ComboBox Width="100" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" DisplayMemberPath="Name" SelectedItem="{Binding SelectedMonth}" ItemsSource="{Binding StatusReportMonthsCollection}" ></ComboBox>
                 <StackPanel Grid.Row="2" Grid.Column="0" Margin="20"  VerticalAlignment="Top"  Grid.ColumnSpan="3" Orientation="Horizontal" >
                     <Button  Command="{Binding GenerateStaturReportClick}"  Template="{StaticResource SubmitButtonTemplate}"  Visibility="{Binding ShowStatusReport,Converter={StaticResource boolToVisibilityConverter}}"  Content="Generate Status Report" Width="150" Margin="5" Height="30" HorizontalAlignment="Center"></Button>
                     <Button  Command="{Binding CancelButtonClick}"  Template="{StaticResource SubmitButtonTemplate}"  Visibility="{Binding ShowCancel,Converter={StaticResource boolToVisibilityConverter}}"  Content="Cancel" Width="100" Margin="5" Height="30" HorizontalAlignment="Center"></Button>
