@@ -74,9 +74,9 @@
             
             <!--Row 2-->
             <Label Grid.Row="2" Grid.Column="0" Content="Client Name" />
-            <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding  Client.ClientName}" />
+            <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding  Client.ClientName , Mode=TwoWay, ValidatesOnDataErrors = True,  UpdateSourceTrigger=PropertyChanged}" />
             <Label Grid.Column="2" Content="Email Address"  Grid.Row="2"  Margin="100,0,0,0"/>
-            <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding Client.EmailAddress}" />
+            <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding Client.EmailAddress , Mode=TwoWay, ValidatesOnDataErrors = True, UpdateSourceTrigger=PropertyChanged}"/>
 
             <!-- Row 3-->
             <Label Grid.Row="3" Grid.Column="0" Content="Comment" />

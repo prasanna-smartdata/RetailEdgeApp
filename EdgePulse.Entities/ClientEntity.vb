@@ -1,6 +1,10 @@
-﻿Public Class ClientEntity
+﻿Imports System.ComponentModel
+Imports System.Text.RegularExpressions
+
+Public Class ClientEntity
     Inherits BaseEntity
     Implements ICloneable
+    Implements IDataErrorInfo
 
     Private _id As Int16
     Private _clientNum As String
@@ -389,7 +393,86 @@
             OnPropertyChanged("SqlServer")
         End Set
     End Property
+
     Public Function Clone() As Object Implements ICloneable.Clone
         Return CType(Me.MemberwiseClone(), ClientEntity)
     End Function
+
+    Private Function emailaddresscheck(ByVal emailaddress As String) As Boolean
+
+        Dim pattern As String = "^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"
+        Dim emailAddressMatch As Match = Regex.Match(emailaddress, pattern)
+        If emailAddressMatch.Success Then
+            Return True
+
+        Else
+            Return False
+
+        End If
+    End Function
+    Public ReadOnly Property [Error] As String Implements IDataErrorInfo.Error
+        Get
+
+            Return Nothing
+            Throw New NotImplementedException()
+        End Get
+    End Property
+
+    Default Public ReadOnly Property Item(columnName As String) As String Implements IDataErrorInfo.Item
+        Get
+            Dim result As String = Nothing
+            If columnName.Equals("ClientName") Then
+                If String.IsNullOrEmpty(Me.ClientName) Then
+                    Return "Field Cannot be Blank"
+                End If
+            End If
+            If columnName.Equals("EmailAddress") Then
+                If Not emailaddresscheck(Me.EmailAddress) Then
+                    Return "Error !"
+                End If
+            End If
+            If columnName.Equals("Comment") Then
+                If String.IsNullOrEmpty(Me.Comment) Then
+                    Return "Error !"
+                End If
+            End If
+            If columnName.Equals("NoOfSites") Then
+                If Not IsNumeric(Me.NoOfSites) Then
+                    Return "Error !"
+                End If
+            End If
+            If columnName.Equals("RecEmail") Then
+                If Not emailaddresscheck(Me.RecEmail) Then
+                    Return "Error !"
+                End If
+            End If
+            If columnName.Equals("SalesMaximum") Then
+                If Not IsNumeric(Me.SalesMaximum) Then
+                    Return "Error !"
+                End If
+            End If
+            If columnName.Equals("SalesMinimum") Then
+                If Not IsNumeric(Me.SalesMinimum) Then
+                    Return "Error !"
+                End If
+            End If
+            If columnName.Equals("StockMaximum") Then
+                If Not IsNumeric(Me.StockMaximum) Then
+                    Return "Error !"
+                End If
+            End If
+            If columnName.Equals("StockMinimum") Then
+                If Not IsNumeric(Me.StockMinimum) Then
+                    Return "Error !"
+                End If
+            End If
+            If columnName.Equals("StockMaximumQty") Then
+                If Not IsNumeric(Me.StockMaximumQty) Then
+                    Return "Error !"
+                End If
+            End If
+            Return result
+            Throw New NotImplementedException()
+        End Get
+    End Property
 End Class
