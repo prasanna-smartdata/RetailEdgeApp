@@ -41,6 +41,7 @@ Public Class ClientManagementBL
     Function GetSuperstores() As List(Of SuperstoreEntity)
 
         Try
+
             Return clientDL.GetSuperstores()
         Catch ex As Exception
 

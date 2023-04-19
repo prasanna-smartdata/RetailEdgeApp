@@ -2,7 +2,7 @@
 Imports EdgePulse.Entities
 Imports EdgePulse.Infrastructure
 Public Class StatusReportBL
-    Function GenerateStatusReport(ByVal superstorGroupId As Int16, processMonth As String) As List(Of StatusReportEntity)
+    Function GenerateStatusReport(ByVal superstorGroupId As Int16, processMonth As String, ByRef LogText As String) As List(Of StatusReportEntity)
         Try
             ' Get Client store list linked to Superstore
             Dim _superstoreDL As New SuperstoreDL()
@@ -16,7 +16,7 @@ Public Class StatusReportBL
 
             'Get list of Client stores linked to selected Superstore
             Dim _ssClientStoreList As List(Of Report_SSClientStoresDetailsEntity) = Nothing
-
+            LogText += "Client Status Report"
             Dim _statusReportCSLine As StatusReportEntity = Nothing
             Dim _statusReportCSLines As List(Of StatusReportEntity) = Nothing
 
