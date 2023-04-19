@@ -2,7 +2,7 @@
 Imports EdgePulse.Entities
 Imports EdgePulse.Infrastructure
 Public Class StatusReportBL
-    Function GenerateStatusReport(ByVal superstorGroupId As Int16, processMonth As String) As Boolean
+    Function GenerateStatusReport(ByVal superstorGroupId As Int16, processMonth As String) As List(Of StatusReportEntity)
         Try
             ' Get Client store list linked to Superstore
             Dim _superstoreDL As New SuperstoreDL()
@@ -24,7 +24,7 @@ Public Class StatusReportBL
             '----change to clientStoreSuperstoreEntity after getting DL methods
             _ssClientStoreList = _superstoreDL.GetSuperstoreClientStoresDetails(superstorGroupId)
 
-            processMonth = "012023" 'For testing only . Remove this later
+            '  processMonth = "012023" 'For testing only . Remove this later
 
             _reportMonth = Convert.ToInt16(processMonth.Substring(0, 2))
             _reportYear = Convert.ToInt16(processMonth.Substring(2, 4))
@@ -43,12 +43,10 @@ Public Class StatusReportBL
                 End If
 
             Next
-
+            Return _statusReportCSLines
         Catch ex As Exception
             Throw
         End Try
-
-        Return True
 
     End Function
 

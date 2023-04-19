@@ -38,7 +38,7 @@ Public Class SuperstoreDL
             sqlParams(0) = New SqlParameter("@SuperstoreId", SqlDbType.Int)
             sqlParams(0).Value = superstoreId
 
-            Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.GetSuperstoreClientStoresDetails)
+            Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.GetSuperstoreClientStoresDetails, sqlParams)
             Dim _ssClientStoreDetails As Report_SSClientStoresDetailsEntity = Nothing
 
             While reader.Read()
