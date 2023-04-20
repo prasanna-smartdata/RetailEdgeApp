@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net6.0-windows7.0": {
+      "CsvHelper/30.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CsvHelper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/CsvHelper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {
         "type": "package",
         "compile": {
@@ -18,10 +31,14 @@
           "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {}
+          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
@@ -37,10 +54,14 @@
       "Microsoft.Win32.SystemEvents/7.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {}
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {}
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -55,10 +76,14 @@
       "Microsoft.Xaml.Behaviors.Wpf/1.1.31": {
         "type": "package",
         "compile": {
-          "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {}
+          "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {}
+          "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
@@ -67,10 +92,14 @@
       "Prism.Core/8.1.97": {
         "type": "package",
         "compile": {
-          "lib/net5.0/Prism.dll": {}
+          "lib/net5.0/Prism.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net5.0/Prism.dll": {}
+          "lib/net5.0/Prism.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Prism.Wpf/8.1.97": {
@@ -80,10 +109,14 @@
           "Prism.Core": "8.1.97"
         },
         "compile": {
-          "lib/net5.0-windows7.0/Prism.Wpf.dll": {}
+          "lib/net5.0-windows7.0/Prism.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net5.0-windows7.0/Prism.Wpf.dll": {}
+          "lib/net5.0-windows7.0/Prism.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
@@ -131,10 +164,14 @@
           "System.Security.Permissions": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/System.Configuration.ConfigurationManager.dll": {}
+          "lib/net6.0/System.Configuration.ConfigurationManager.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Configuration.ConfigurationManager.dll": {}
+          "lib/net6.0/System.Configuration.ConfigurationManager.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -148,10 +185,14 @@
           "runtime.native.System.Data.SqlClient.sni": "4.7.0"
         },
         "compile": {
-          "ref/netcoreapp2.1/System.Data.SqlClient.dll": {}
+          "ref/netcoreapp2.1/System.Data.SqlClient.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netcoreapp2.1/System.Data.SqlClient.dll": {}
+          "lib/netcoreapp2.1/System.Data.SqlClient.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netcoreapp2.1/System.Data.SqlClient.dll": {
@@ -170,10 +211,14 @@
           "Microsoft.Win32.SystemEvents": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/System.Drawing.Common.dll": {}
+          "lib/net6.0/System.Drawing.Common.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Drawing.Common.dll": {}
+          "lib/net6.0/System.Drawing.Common.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -192,10 +237,14 @@
           "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Security.AccessControl.dll": {}
+          "lib/netstandard2.0/System.Security.AccessControl.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/win/lib/netcoreapp2.0/System.Security.AccessControl.dll": {
@@ -207,10 +256,14 @@
       "System.Security.Cryptography.ProtectedData/7.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {}
+          "lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {}
+          "lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -228,10 +281,14 @@
           "System.Windows.Extensions": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/System.Security.Permissions.dll": {}
+          "lib/net6.0/System.Security.Permissions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Security.Permissions.dll": {}
+          "lib/net6.0/System.Security.Permissions.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -240,10 +297,14 @@
       "System.Security.Principal.Windows/4.7.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp3.0/_._": {}
+          "ref/netcoreapp3.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {}
+          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netcoreapp2.1/System.Security.Principal.Windows.dll": {
@@ -262,10 +323,14 @@
           "System.Drawing.Common": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/System.Windows.Extensions.dll": {}
+          "lib/net6.0/System.Windows.Extensions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Windows.Extensions.dll": {}
+          "lib/net6.0/System.Windows.Extensions.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/win/lib/net6.0/System.Windows.Extensions.dll": {
@@ -342,6 +407,30 @@
     }
   },
   "libraries": {
+    "CsvHelper/30.0.1": {
+      "sha512": "rcZtgbWR+As4G3Vpgx0AMNmShGuQLFjkHAPIIflzrfkJCx8/AOd4m96ZRmiU1Wi39qS5UVjV0P8qdgqOo5Cwyg==",
+      "type": "package",
+      "path": "csvhelper/30.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "csvhelper.30.0.1.nupkg.sha512",
+        "csvhelper.nuspec",
+        "lib/net45/CsvHelper.dll",
+        "lib/net45/CsvHelper.xml",
+        "lib/net47/CsvHelper.dll",
+        "lib/net47/CsvHelper.xml",
+        "lib/net5.0/CsvHelper.dll",
+        "lib/net5.0/CsvHelper.xml",
+        "lib/net6.0/CsvHelper.dll",
+        "lib/net6.0/CsvHelper.xml",
+        "lib/netstandard2.0/CsvHelper.dll",
+        "lib/netstandard2.0/CsvHelper.xml",
+        "lib/netstandard2.1/CsvHelper.dll",
+        "lib/netstandard2.1/CsvHelper.xml"
+      ]
+    },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "sha512": "z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
       "type": "package",
@@ -937,6 +1026,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
+      "CsvHelper >= 30.0.1",
       "Prism.Wpf >= 8.1.97",
       "RetailEdge.Business >= 1.0.0",
       "RetailEdge.Data >= 1.0.0",
@@ -945,23 +1035,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Sds\\.nuget\\packages\\": {}
+    "C:\\Users\\Mahalakshmi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Superstore.Main\\RetailEdge.SuperstoreBuild.Main.vbproj",
+      "projectUniqueName": "C:\\Users\\Mahalakshmi\\Documents\\Sita\\Work\\Edge Retail\\EdgeRetailNew\\EdgePulse.Superstore.Main\\RetailEdge.SuperstoreBuild.Main.vbproj",
       "projectName": "RetailEdge.SuperstoreBuild.Main",
-      "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Superstore.Main\\RetailEdge.SuperstoreBuild.Main.vbproj",
-      "packagesPath": "C:\\Users\\Sds\\.nuget\\packages\\",
-      "outputPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Superstore.Main\\obj\\",
+      "projectPath": "C:\\Users\\Mahalakshmi\\Documents\\Sita\\Work\\Edge Retail\\EdgeRetailNew\\EdgePulse.Superstore.Main\\RetailEdge.SuperstoreBuild.Main.vbproj",
+      "packagesPath": "C:\\Users\\Mahalakshmi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mahalakshmi\\Documents\\Sita\\Work\\Edge Retail\\EdgeRetailNew\\EdgePulse.Superstore.Main\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Sds\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mahalakshmi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows7.0"
+        "net6.0-windows"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -971,17 +1061,17 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Business\\RetailEdge.Business.vbproj": {
-              "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Business\\RetailEdge.Business.vbproj"
+            "C:\\Users\\Mahalakshmi\\Documents\\Sita\\Work\\Edge Retail\\EdgeRetailNew\\EdgePulse.Business\\RetailEdge.Business.vbproj": {
+              "projectPath": "C:\\Users\\Mahalakshmi\\Documents\\Sita\\Work\\Edge Retail\\EdgeRetailNew\\EdgePulse.Business\\RetailEdge.Business.vbproj"
             },
-            "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Data\\RetailEdge.Data.vbproj": {
-              "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Data\\RetailEdge.Data.vbproj"
+            "C:\\Users\\Mahalakshmi\\Documents\\Sita\\Work\\Edge Retail\\EdgeRetailNew\\EdgePulse.Data\\RetailEdge.Data.vbproj": {
+              "projectPath": "C:\\Users\\Mahalakshmi\\Documents\\Sita\\Work\\Edge Retail\\EdgeRetailNew\\EdgePulse.Data\\RetailEdge.Data.vbproj"
             },
-            "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Entities\\RetailEdge.Entities.vbproj": {
-              "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Entities\\RetailEdge.Entities.vbproj"
+            "C:\\Users\\Mahalakshmi\\Documents\\Sita\\Work\\Edge Retail\\EdgeRetailNew\\EdgePulse.Entities\\RetailEdge.Entities.vbproj": {
+              "projectPath": "C:\\Users\\Mahalakshmi\\Documents\\Sita\\Work\\Edge Retail\\EdgeRetailNew\\EdgePulse.Entities\\RetailEdge.Entities.vbproj"
             },
-            "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj": {
-              "projectPath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj"
+            "C:\\Users\\Mahalakshmi\\Documents\\Sita\\Work\\Edge Retail\\EdgeRetailNew\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj": {
+              "projectPath": "C:\\Users\\Mahalakshmi\\Documents\\Sita\\Work\\Edge Retail\\EdgeRetailNew\\EdgePulse.Infrastructure\\RetailEdge.Infrastructure.vbproj"
             }
           }
         }
@@ -996,6 +1086,10 @@
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
         "dependencies": {
+          "CsvHelper": {
+            "target": "Package",
+            "version": "[30.0.1, )"
+          },
           "Prism.Wpf": {
             "target": "Package",
             "version": "[8.1.97, )"
@@ -1007,7 +1101,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -1019,7 +1114,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
