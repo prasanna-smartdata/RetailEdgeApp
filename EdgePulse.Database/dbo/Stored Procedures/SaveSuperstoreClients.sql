@@ -3,6 +3,11 @@
 	@SuperstoreGroupID int
 
 AS
+
+  IF NOT EXISTS (SELECT * FROM [ClientSuperstores] 
+                    WHERE ClientStoreID = @ClientStoreID AND SuperstoreGroupID = @SuperstoreGroupID)
+   BEGIN
+     
 	 INSERT INTO [dbo].[ClientSuperstores]
            ( 
            [ClientStoreID]
@@ -12,3 +17,4 @@ AS
            ( 
            @ClientStoreID 
            ,@SuperstoreGroupID )
+   END

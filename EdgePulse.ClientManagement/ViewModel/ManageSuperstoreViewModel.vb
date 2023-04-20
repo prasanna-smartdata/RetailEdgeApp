@@ -23,7 +23,17 @@ Public Class ManageSuperstoreViewModel
 
 #Region "Properties"
 
-    Public Property ItemsView As CollectionView
+    Public _itemsView As CollectionView
+    Public Property ItemsView() As CollectionView
+        Get
+            Return _ItemsView
+        End Get
+        Set(ByVal value As CollectionView)
+            _itemsView = value
+            OnPropertyChanged("ItemsView")
+
+        End Set
+    End Property
     'Public ReadOnly Property ItemsView As ICollectionView
     '    Get
     '        Return CollectionViewSource.GetDefaultView(ClientsCollection)
@@ -98,6 +108,14 @@ Public Class ManageSuperstoreViewModel
         End Get
     End Property
 
+    Private _resetCommand As DelegateCommand
+    Public ReadOnly Property ResetCommand() As DelegateCommand
+        Get
+            Return If(Me._resetCommand, New DelegateCommand(AddressOf ResetSuperstoreClients))
+        End Get
+    End Property
+
+
 
     Public ReadOnly Property UpdateSuperStoreCommand As DelegateCommand
         Get
@@ -125,6 +143,14 @@ Public Class ManageSuperstoreViewModel
     '                        Return New ObservableCollection(Of ClientEntity)(_clientManagementBL.GetClients())
     '                    End Function)
     'End Function
+
+    Private Sub ResetSuperstoreClients()
+        Try
+            GetSuperstoreClients()
+        Catch ex As Exception
+
+        End Try
+    End Sub
     Private Sub SaveClientStore()
         Try
             Dim finalCollection = New ObservableCollection(Of ClientStoreEntity)(ClientStoresCollection.Where(Function(x) x.IsSelected = True))
@@ -229,12 +255,33 @@ Public Class ManageSuperstoreViewModel
 
     Sub UpdateClientStoreCollection()
         Try
+            For Each clientStore In ClientStoresCollection
+                clientStore.IsSelected = False
+            Next
+
             For Each item As ClientStoreEntity In ClientStoresCollection
 
                 If (SelectedClientStoresCollection.Any(Function(x) x.ClientStoreId = item.ID)) Then
                     item.IsSelected = True
                 End If
             Next
+            ClientStoresCollection = New ObservableCollection(Of ClientStoreEntity)(ClientStoresCollection.OrderByDescending(Function(x) x.IsSelected))
+            ItemsView = CollectionViewSource.GetDefaultView(ClientStoresCollection)
+            ' SortClientStores()
+        Catch ex As Exception
+            Throw
+        End Try
+    End Sub
+
+    Sub SortClientStores()
+        Try
+            Dim selectedClientStores = New ObservableCollection(Of ClientStoreEntity)(ClientStoresCollection.Where(Function(x) x.IsSelected))
+
+            Dim nonSelectedClientStoresCollection = New ObservableCollection(Of ClientStoreEntity)(ClientStoresCollection.Where(Function(x) x.IsSelected = False))
+
+            selectedClientStores.Union(nonSelectedClientStoresCollection)
+            ClientStoresCollection.Clear()
+            ClientStoresCollection = selectedClientStores
 
         Catch ex As Exception
             Throw
