@@ -27,7 +27,7 @@ Public Class StatusReportBL
             '  processMonth = "012023" 'For testing only . Remove this later
 
             _reportMonth = Convert.ToInt16(processMonth.Substring(0, 2))
-            _reportYear = Convert.ToInt16(processMonth.Substring(2, 4))
+            _reportYear = Convert.ToInt16(processMonth.Substring(4, 4))
 
             _statusReportCSLines = New List(Of StatusReportEntity)
 
