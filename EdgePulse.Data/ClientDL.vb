@@ -159,7 +159,7 @@ Public Class ClientDL
 
         Try
 
-            Dim sqlParams(23) As SqlParameter
+            Dim sqlParams(30) As SqlParameter
             sqlParams(0) = New SqlParameter("@ClientId", client.ID)
             sqlParams(1) = New SqlParameter("@ClientName", client.ClientName)
             sqlParams(2) = New SqlParameter("@ResultsClientNum", client.ClientNumber)
@@ -184,9 +184,16 @@ Public Class ClientDL
             sqlParams(21) = New SqlParameter("@StockMinimum", client.StockMinimum)
             sqlParams(22) = New SqlParameter("@SalesMaximumQty", client.StockMaximumQty)
             sqlParams(23) = New SqlParameter("@SalesMinimumQty", client.StockMinimumQty)
+            sqlParams(24) = New SqlParameter("@LastAccountManagerCall", client.ProactiveCallDate)
+            sqlParams(25) = New SqlParameter("@BuyingGroupId", client.BuyingGroupId)
+            sqlParams(26) = New SqlParameter("@TheEdge", client.UseEdgeSW)
+            sqlParams(27) = New SqlParameter("@MentoringClient", client.IsMentorningClient)
+            sqlParams(28) = New SqlParameter("@LaybysOnPickup", client.LayawaysOnPickUp)
+            sqlParams(29) = New SqlParameter("@SuppSystem", client.IsSupplierWebSystem)
+            sqlParams(30) = New SqlParameter("@SuperstoreActive", client.IsSuperStoreActive)
 
 
-            SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.StoredProcedure, "UpdateClient", sqlParams)
+            SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.StoredProcedure, StoredProcNames.updateClient, sqlParams)
 
 
         Catch ex As Exception

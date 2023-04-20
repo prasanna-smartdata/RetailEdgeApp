@@ -74,7 +74,22 @@
             </Setter.Value>
         </Setter>
     </Style>
-   
+    <ControlTemplate x:Key="ValidationErrorTemplate">
+        <Border BorderBrush="Red" 
+          BorderThickness="2">
+            <StackPanel>
+                <!-- Placeholder for the DataGridTextColumn itself -->
+                <AdornedElementPlaceholder x:Name="AdornedElement" />
+
+                <Popup PlacementTarget="{Binding ElementName=AdornedElement}" 
+             IsOpen="True">
+                    <TextBlock Text="{Binding /ErrorContent}" Padding="3"
+                   Foreground="White" 
+                   Background="Red"/>
+                </Popup>
+            </StackPanel>
+        </Border>
+    </ControlTemplate>
     <!--<Style x:Key="ComboBoxTextBoxStyle" TargetType="{x:Type TextBox}">
         <Setter Property="IsEnabled" Value="False"></Setter>
         <Setter Property="Template">

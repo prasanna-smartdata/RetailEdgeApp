@@ -30,8 +30,14 @@ CREATE PROCEDURE [dbo].[updateClient]
     @StockMaximum decimal(19,4),
     @StockMinimum decimal(19,4),
     @SalesMinimumQty decimal(19,4),
-    @SalesMaximumQty decimal(19,4)
-
+    @SalesMaximumQty decimal(19,4),
+    @LastAccountManagerCall datetime,
+    @BuyingGroupId int,
+    @TheEdge bit,
+    @MentoringClient bit,
+    @LaybysOnPickup bit,
+    @SuppSystem  bit,
+    @SuperstoreActive bit
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -62,5 +68,12 @@ BEGIN
        ,[StockMinimum] = @StockMinimum  
        ,[SalesMinimumQty] = @SalesMinimumQty  
        ,[SalesMaximumQty] = @SalesMaximumQty  
+       ,[LastAccountManagerCall] = @LastAccountManagerCall
+       ,[BuyingGroupId] = @BuyingGroupId 
+       ,[TheEdge] = @TheEdge
+       ,[MentoringClient] = @MentoringClient
+       ,[LaybysOnPickup] = @LaybysOnPickup
+       ,[SuppSystem] = @SuppSystem
+       ,[SuperstoreActive] = @SuperstoreActive
  WHERE  ID=@ClientId
 END
