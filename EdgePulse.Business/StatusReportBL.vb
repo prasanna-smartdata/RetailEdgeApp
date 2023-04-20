@@ -29,17 +29,23 @@ Public Class StatusReportBL
             _reportMonth = Convert.ToInt16(processMonth.Substring(0, 2))
             _reportYear = Convert.ToInt16(processMonth.Substring(2, 4))
 
+            _statusReportCSLines = New List(Of StatusReportEntity)
+
             ' Loop through each client store and generate Report Line
             For Each clientStore As Report_SSClientStoresDetailsEntity In _ssClientStoreList
 
                 _edgeCustomerNumber = clientStore.ClientNum
                 _storeNumber = clientStore.StoreID
                 _reportMonthFirstDay = New Date(_reportYear, _reportMonth, 1)
+                LogText += "Processing client store " + _edgeCustomerNumber.ToString() + "-" + _storeNumber.ToString()
 
                 _statusReportCSLine = _statusReportDL.GetStatusReportClientStoreRecord(_edgeCustomerNumber, _storeNumber, _reportMonthFirstDay)
 
                 If Not IsNothing(_statusReportCSLine) Then
                     _statusReportCSLines.Add(_statusReportCSLine)
+                    LogText += "Report line generated for client " + _edgeCustomerNumber.ToString() + "-" + _storeNumber.ToString()
+                Else
+                    LogText += "Error in generating Report for client " + _edgeCustomerNumber.ToString() + "-" + _storeNumber.ToString()
                 End If
 
             Next

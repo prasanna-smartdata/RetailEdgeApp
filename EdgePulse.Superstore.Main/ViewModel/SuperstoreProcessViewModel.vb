@@ -4,6 +4,13 @@ Imports EdgePulse.Entities
 Imports EdgePulse.Business
 Imports System.Collections.ObjectModel
 Imports EdgePulse.Data
+Imports Microsoft.Win32.SafeHandles
+Imports Microsoft.Win32
+Imports Prism.Services.Dialogs
+Imports CsvHelper
+Imports System.IO
+Imports System.Globalization
+Imports System.Configuration
 
 Public Class SuperstoreProcessViewModel
     Inherits ViewModelBase
@@ -209,8 +216,20 @@ Public Class SuperstoreProcessViewModel
                 ShowBuildSuperstore = True
                 ShowCancel = True
                 Dim lgText As String = ""
-                _statusReportRecords = _statusReportBL.GenerateStatusReport(_selectedSuperstore.ID, "012023", lgText)
 
+                Dim _selectedMonthvalue = _selectedMonth.value.Replace("-", "")
+                Dim localPath = ConfigurationManager.AppSettings("StatusReportPath")
+                Dim csvPath = Path.Combine(localPath, $"StatusReport_{_selectedSuperstore.GroupName}_{System.DateTime.Now.ToString("yyyyMMdd")}.csv")
+                _statusReportRecords = _statusReportBL.GenerateStatusReport(_selectedSuperstore.ID, _selectedMonthvalue, lgText)
+
+                If Not IsNothing(_statusReportRecords) Then
+                    Using streamwriter = New StreamWriter(csvPath)
+                        Using csvwriter As New CsvWriter(streamwriter, CultureInfo.InvariantCulture)
+                            csvwriter.WriteRecords(_statusReportRecords)
+
+                        End Using
+                    End Using
+                End If
                 AppendToLog(lgText)
             End If
 

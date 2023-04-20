@@ -32,7 +32,7 @@ Public Class StatusReportDL
                     .Sales12Months = reader.Item("sales12Months")
                     .SalesPrevMonth = reader.Item("salesPrevMonth")
                     .SalesPercent = reader.Item("salesPercent")
-                    .CurrentStock = reader.Item("curentStock")
+                    .CurrentStock = reader.Item("currentStock")
                 End With
 
             End While
