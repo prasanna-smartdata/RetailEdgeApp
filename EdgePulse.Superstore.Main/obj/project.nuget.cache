@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "HpolJzA4055DPh7nxaW7LqD0Jnb+o69euMBnYFGH0YSuPYiwgk6qERHx4vmXnr9+TuadzFBR1ERvb9jTFcyzvw==",
+  "dgSpecHash": "5SLVMkeoRdrUpeP5NzrlyFmONOmL/fgbmPDJlyTEl+DXg7Hgsu8+a1cemv9PU1N5Sxd/5YP5SCrzifYOI3JlvA==",
   "success": true,
   "projectFilePath": "C:\\smartdata\\RetailAge\\RetailEdgeApplication\\EdgePulse.Superstore.Main\\RetailEdge.SuperstoreBuild.Main.vbproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Sds\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
     "C:\\Users\\Sds\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Sds\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Sds\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",

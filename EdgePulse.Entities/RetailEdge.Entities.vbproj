@@ -7,4 +7,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="ClientStoresEntity_Delvb" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="ClientStoresEntity_Delvb" />
+  </ItemGroup>
+
 </Project>
