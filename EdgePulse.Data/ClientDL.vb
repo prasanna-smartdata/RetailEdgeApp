@@ -310,4 +310,24 @@ Public Class ClientDL
         Return True
     End Function
 
+    Function getNewlyAddedstore()
+        Dim _newclientStores As New List(Of ClientStoreEntity)
+        Try
+            Dim reader As SqlDataReader = SqlHelper.ExecuteReader(ConnectionString, CommandType.StoredProcedure, StoredProcNames.getNewlyAddedClientStores)
+
+            While reader.Read()
+                Dim _store = New ClientStoreEntity()
+                _store.ID = reader("ID")
+                _store.ClientName = reader("ClientName")
+                _store.ClientNumber = reader("ClientNum")
+                _store.StoreID = reader("StoreID")
+                _store.StoreName = reader("StoreName")
+                _newclientStores.Add(_store)
+            End While
+
+        Catch ex As Exception
+            Throw
+        End Try
+        Return _newclientStores
+    End Function
 End Class
