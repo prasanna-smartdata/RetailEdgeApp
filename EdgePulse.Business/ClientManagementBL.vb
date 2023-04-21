@@ -69,6 +69,15 @@ Public Class ClientManagementBL
 
     End Function
 
+    Function GetnewClientStores() As List(Of ClientStoreEntity)
+
+        Try
+            Return clientDL.getNewlyAddedstore()
+        Catch ex As Exception
+            Throw
+        End Try
+    End Function
+
 #End Region
 
 

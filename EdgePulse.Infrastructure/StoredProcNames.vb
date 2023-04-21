@@ -11,5 +11,7 @@
     Public Const getClientStoreStatusReportRecord = "spRMHNew_GetClientStoreStatusReportRecord"
     Public Const getSuperStoreUpdate = "UpdateSuperStore"
     Public Const updateClient = "updateClient"
+    Public Const addSuperStore = "AddSuperStore"
+    Public Const getNewlyAddedClientStores = "getNewlyAddedClientStores"
 
 End Class

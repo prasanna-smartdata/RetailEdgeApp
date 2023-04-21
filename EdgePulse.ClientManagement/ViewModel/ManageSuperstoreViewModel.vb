@@ -14,6 +14,7 @@ Public Class ManageSuperstoreViewModel
     Private ReadOnly _exitClickCommand As DelegateCommand = Nothing
 
     Private _clientStoresCollection As New ObservableCollection(Of ClientStoreEntity)
+    Private _newClientStoresCollection As New ObservableCollection(Of ClientStoreEntity)
     Private _selectedClientStoresCollection As New ObservableCollection(Of ClientStoreSuperstoreEntity)
 
     Private _superStoresCollection As New ObservableCollection(Of SuperstoreEntity)
@@ -218,6 +219,19 @@ Public Class ManageSuperstoreViewModel
         Try
 
             _clientStoresCollection = New ObservableCollection(Of ClientStoreEntity)(_clientManagementBL.GetClientStores())
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Public Sub GetNewClientStores()
+
+        Try
+
+            _newClientStoresCollection = New ObservableCollection(Of ClientStoreEntity)(_clientManagementBL.GetnewClientStores())
 
 
         Catch ex As Exception
