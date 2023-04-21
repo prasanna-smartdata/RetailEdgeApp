@@ -96,9 +96,8 @@ Public Class ClientDL
                     .ID = reader.Item("ID")
                     .GroupNum = reader.Item("GroupNum")
                     .GroupName = reader.Item("GroupName")
-                    .DeptsToUse = reader.Item("DeptsToUse")
+                    .DeptsToUse = If(reader.IsDBNull("DeptsToUse"), "", reader.Item("DeptsToUse"))
                     .Status = reader.Item("Status")
-
 
                 End With
 
@@ -236,18 +235,39 @@ Public Class ClientDL
 
     Function UpdateSuperStore(SelectedSuperstore As SuperstoreEntity) As Boolean
         Try
-            Dim sqlParams(3) As SqlParameter
 
-            sqlParams(0) = New SqlParameter("@SuperstoreGroupID", SelectedSuperstore.ID)
-            sqlParams(1) = New SqlParameter("@GroupName", SelectedSuperstore.GroupName)
-            sqlParams(2) = New SqlParameter("@Status", SelectedSuperstore.Status)
+            If SelectedSuperstore.ID = 0 Then
+                Try
+                    Dim sqlParam(3) As SqlParameter
+
+                    sqlParam(0) = New SqlParameter("@GroupName", SelectedSuperstore.GroupName)
+                    sqlParam(1) = New SqlParameter("@Status", SelectedSuperstore.Status)
+                    sqlParam(2) = New SqlParameter("@DeptsToUse", "R")
+
+                    SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.StoredProcedure, StoredProcNames.addSuperStore, sqlParam)
+
+                    Return True
+                Catch ex As Exception
+                    Return False
+                End Try
+            End If
+
+            Try
+                Dim sqlParams(3) As SqlParameter
+
+                sqlParams(0) = New SqlParameter("@SuperstoreGroupID", SelectedSuperstore.ID)
+                sqlParams(1) = New SqlParameter("@GroupName", SelectedSuperstore.GroupName)
+                sqlParams(2) = New SqlParameter("@Status", SelectedSuperstore.Status)
 
 
-            SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.StoredProcedure, StoredProcNames.getSuperStoreUpdate, sqlParams)
-            Return True
+                SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.StoredProcedure, StoredProcNames.getSuperStoreUpdate, sqlParams)
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
 
         Catch ex As Exception
-            Return False
+                Return False
         End Try
 
         Return True
