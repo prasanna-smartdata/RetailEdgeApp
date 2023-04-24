@@ -5,6 +5,7 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <RootNamespace>EdgePulse.ClientManagement</RootNamespace>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>RED.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

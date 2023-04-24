@@ -27,7 +27,7 @@ Public Class ManageSuperstoreViewModel
     Public _itemsView As CollectionView
     Public Property ItemsView() As CollectionView
         Get
-            Return _ItemsView
+            Return _itemsView
         End Get
         Set(ByVal value As CollectionView)
             _itemsView = value
@@ -240,7 +240,7 @@ Public Class ManageSuperstoreViewModel
 
     End Sub
 
-    Function GetSuperstoreClients()
+    Sub GetSuperstoreClients()
 
         Try
             If Not SelectedSuperstore Is Nothing Then
@@ -252,10 +252,10 @@ Public Class ManageSuperstoreViewModel
 
             End If
         Catch ex As Exception
-
+            Throw
         End Try
 
-    End Function
+    End Sub
     Private Function Filter(ByVal client As ClientStoreEntity) As Boolean
         Return SearchKey Is Nothing OrElse client.ClientName.IndexOf(SearchKey, StringComparison.OrdinalIgnoreCase) <> -1 OrElse client.ClientNumber.IndexOf(SearchKey, StringComparison.OrdinalIgnoreCase) <> -1
         'OrElse dragon.RomajiName.IndexOf(Search, StringComparison.OrdinalIgnoreCase) <> -1

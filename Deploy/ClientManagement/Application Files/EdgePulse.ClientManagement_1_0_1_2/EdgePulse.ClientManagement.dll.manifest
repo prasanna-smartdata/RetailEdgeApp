@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="EdgePulse.ClientManagement.exe" version="1.0.1.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="EdgePulse.ClientManagement.exe" version="1.0.1.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="RED.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
     <assemblyIdentity name="Launcher" version="5.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -62,13 +63,13 @@
       <dsig:DigestValue>FrzIQWv2qhk54hXbjI6yBt/4WS8+by/VVbp7e43XZ6c=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="EdgePulse.ClientManagement.dll" size="40448">
+  <file name="EdgePulse.ClientManagement.dll" size="112640">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>9SxJaX4vHvT7nUvsT/fDBP5ljtrYrxNjny9nRXlVH4w=</dsig:DigestValue>
+      <dsig:DigestValue>wBQi5MQHC0ld99av2oOs/FpY0M2aeIxmgnBWrxbAN/A=</dsig:DigestValue>
     </hash>
   </file>
   <file name="EdgePulse.ClientManagement.dll.config" size="1629">
@@ -80,22 +81,22 @@
       <dsig:DigestValue>cSbEvj1XXp26TkwummC/CRav8VFMt8eJIG/IFD8Hiig=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="EdgePulse.ClientManagement.exe" size="147968">
+  <file name="EdgePulse.ClientManagement.exe" size="210944">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>6qx221WCXyDB220vtchQR+RKn22c2m98fI4tdUpFuNM=</dsig:DigestValue>
+      <dsig:DigestValue>G2WK756G1697qr6z4jYXdQm86bshZoJ8u/T53um8a2Y=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="EdgePulse.ClientManagement.runtimeconfig.json" size="372">
+  <file name="EdgePulse.ClientManagement.runtimeconfig.json" size="266">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>HsoPDHAHCqg7tgnkt0mybctECXhDJgMnJjlHIiJKCYo=</dsig:DigestValue>
+      <dsig:DigestValue>MhtORju6zWETqjN1Eb3r9ec1bplxdENGsoQkYHx7SDo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Microsoft.Win32.SystemEvents.dll" size="27768">
@@ -134,40 +135,49 @@
       <dsig:DigestValue>w7RLEYSGpddNaWwUhT5TBuyJPa3Qvo6m9ATtroxm8tM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="RetailEdge.Business.dll" size="7168">
+  <file name="RED.ico" size="62478">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>gKjB6FbpDMvcG0rFi+WE3eAyXAon+/SSZrqEj7P23ng=</dsig:DigestValue>
+      <dsig:DigestValue>5xXdQkfFH404yDaRRrieseSZ8xesMfHJlLW7mznJW+E=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="RetailEdge.Data.dll" size="31744">
+  <file name="RetailEdge.Business.dll" size="7680">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>kcRrnNqf45b0i5NIZ1RsPbTyweEP/1tHe1/UjSTJwXg=</dsig:DigestValue>
+      <dsig:DigestValue>PRWSHEMwxYfnho7IgUgRzj3J+RljMkFky6/zFXF6N/4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="RetailEdge.Entities.dll" size="18944">
+  <file name="RetailEdge.Data.dll" size="34816">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>+umgRGBxV7lx5j77u39Xig70k1T45CBjd/1/Ldn5igM=</dsig:DigestValue>
+      <dsig:DigestValue>gVbhYDk8D44PslnbiNXvYbYurvrgD5ocFg2cu7U/1hE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="RetailEdge.Infrastructure.dll" size="8704">
+  <file name="RetailEdge.Entities.dll" size="20992">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>miJflLp0tHt5vaWE5bcIH3HArONnKJXOBPGAI0f4N6g=</dsig:DigestValue>
+      <dsig:DigestValue>G2Dm7gVb6a3fjGQURh2Ti8CJ9sGZV7W4ikRXbnk2AAM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="RetailEdge.Infrastructure.dll" size="9216">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>eXAjr2AJwUGDkj8kebNESAJAoit9qRoSmfNtcYcdMgY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll" size="957376">

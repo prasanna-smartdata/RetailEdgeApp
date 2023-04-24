@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "EdgePulse.ClientManagement": {
+      "commandName": "Project"
+    }
+  }
+}
